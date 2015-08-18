@@ -1,0 +1,95 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [tpm-emulator-user] Error installation tpm emulator
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/tpm-emulator-user/2007-July/index.html" >
+   <LINK REL="made" HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20Error%20installation%20tpm%20emulator&In-Reply-To=%3C469CC93D0000194B%40mail15.jumpyint.it%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000065.html">
+   <LINK REL="Next"  HREF="000062.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[tpm-emulator-user] Error installation tpm emulator</H1>
+    <B>francy.fabbri at jumpy.it</B> 
+    <A HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20Error%20installation%20tpm%20emulator&In-Reply-To=%3C469CC93D0000194B%40mail15.jumpyint.it%3E"
+       TITLE="[tpm-emulator-user] Error installation tpm emulator">francy.fabbri at jumpy.it
+       </A><BR>
+    <I>Mon Jul 23 17:41:23 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000065.html">[tpm-emulator-user] TPM Emulator not working
+</A></li>
+        <LI>Next message: <A HREF="000062.html">[tpm-emulator-user] Error installation tpm emulator
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#61">[ date ]</a>
+              <a href="thread.html#61">[ thread ]</a>
+              <a href="subject.html#61">[ subject ]</a>
+              <a href="author.html#61">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi, I successfully installed tpm (version 0.5), but when i tried to do &quot;modprobe
+tpmd_dev&quot; it give me an error:
+
+&quot;
+<A HREF="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">root at francesca-laptop</A>:~/tpm_emulator-0.5# modprobe tpmd_dev
+FATAL: Error inserting tpmd_dev (/lib/modules/2.6.15-28-386/extra/tpmd_dev.ko):
+Invalid module format
+&quot;
+
+i have ubuntu 2.6.15-28-386.
+
+if i try to edit &quot;modprobe tpm&quot; it doesn't give me any error, i find /dev/tpm
+e the test in /tddl seems to work correctly. when i edit &quot;tpmd clear/save/deactivated&quot;
+the output is always the same:
+&quot;
+tpmd.c:367: Info: starting TPM Emulator daemon
+tpmd.c:145: Info: parsing options
+tpmd.c:187: Info: openening random device /dev/urandom
+tpmd.c:203: Info: installing signal handlers
+tpmd.c:225: Info: daemonizing process
+&quot;
+Is it right?
+
+Please help me. What have i to do to use tpm emulator in a correct way? What
+are the right steps (i have just red the readme file, in fact i followed
+the step described here, but error)?
+
+Francesca
+
+________________________________________
+Copyright 1999-2007 RTI Interactive Media S.p.A. - P.Iva 03976881007 - Tutti
+i diritti riservati
+
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000065.html">[tpm-emulator-user] TPM Emulator not working
+</A></li>
+	<LI>Next message: <A HREF="000062.html">[tpm-emulator-user] Error installation tpm emulator
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#61">[ date ]</a>
+              <a href="thread.html#61">[ thread ]</a>
+              <a href="subject.html#61">[ subject ]</a>
+              <a href="author.html#61">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">More information about the tpm-emulator-user
+mailing list</a><br>
+</body></html>

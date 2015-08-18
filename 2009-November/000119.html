@@ -1,0 +1,92 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [tpm-emulator-user] Error accessing PCRs from QEMU vm
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/tpm-emulator-user/2009-November/index.html" >
+   <LINK REL="made" HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20Error%20accessing%20PCRs%20from%20QEMU%20vm&In-Reply-To=%3C1B7B579317CDDA42A89B33BA1869316C02EF428256%40VMBX113.ihostexchange.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000118.html">
+   <LINK REL="Next"  HREF="000120.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[tpm-emulator-user] Error accessing PCRs from QEMU vm</H1>
+    <B>Roman Brehm</B> 
+    <A HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20Error%20accessing%20PCRs%20from%20QEMU%20vm&In-Reply-To=%3C1B7B579317CDDA42A89B33BA1869316C02EF428256%40VMBX113.ihostexchange.net%3E"
+       TITLE="[tpm-emulator-user] Error accessing PCRs from QEMU vm">mail at romanbrehm.de
+       </A><BR>
+    <I>Wed Nov  4 14:11:36 CET 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000118.html">[tpm-emulator-user] Error accessing PCRs from QEMU vm
+</A></li>
+        <LI>Next message: <A HREF="000120.html">[tpm-emulator-user] Error accessing PCRs from QEMU vm
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#119">[ date ]</a>
+              <a href="thread.html#119">[ thread ]</a>
+              <a href="subject.html#119">[ subject ]</a>
+              <a href="author.html#119">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Thanks Mario!
+I only use the tpm-emulator on the host and want to access it inside the QEMU vm.
+There is no additional &quot;real&quot; TPM.
+I thought I have to load the tpm_atmel module in order to access the TPM in the vm.
+
+I just found out that the error message originates from the QEMU-TPM patch but I haven't been able to retrieve why it's occurring on every TPM access from inside the vm, yet.
+
+Best regards,
+Roman
+
+-----Original Message-----
+From: Mario Strasser [mailto:<A HREF="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">strasser at tik.ee.ethz.ch</A>] 
+Sent: Wednesday, November 04, 2009 12:57 PM
+To: Roman Brehm
+Cc: <A HREF="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">tpm-emulator-user at lists.berlios.de</A>
+Subject: Re: [tpm-emulator-user] Error accessing PCRs from QEMU vm
+
+
+On Wednesday, 04. November 2009 10:22:06 Roman Brehm wrote:
+&gt;<i> I'm running tpm-emulator on my host and want to access it in a QEMU virtual machine.
+</I>&gt;<i> After I loaded the tpm_atmel module, the tpm appears as /sys/class/misc/tpm0.
+</I>&gt;<i> But when I want to print its PCRs using cat /sys/class/misc/tpm0/device/pcrs I do not
+</I>&gt;<i> get any message and in the (tpm-emulator-)terminal on the host I get multiple warnings:
+</I>&gt;<i> 
+</I>&gt;<i> &quot;WARNING: tpm received data when not supposed to! Discarding&quot;
+</I>Using the emulator and a real tpm at the same time is usually not advisable.
+The tpm emulator does not contain such an error message; I suppose
+it originates from the atmel driver.
+
+Regards,
+Mario
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000118.html">[tpm-emulator-user] Error accessing PCRs from QEMU vm
+</A></li>
+	<LI>Next message: <A HREF="000120.html">[tpm-emulator-user] Error accessing PCRs from QEMU vm
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#119">[ date ]</a>
+              <a href="thread.html#119">[ thread ]</a>
+              <a href="subject.html#119">[ subject ]</a>
+              <a href="author.html#119">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">More information about the tpm-emulator-user
+mailing list</a><br>
+</body></html>

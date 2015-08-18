@@ -1,0 +1,75 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [tpm-emulator-user] Error accessing PCRs from QEMU vm
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/tpm-emulator-user/2009-November/index.html" >
+   <LINK REL="made" HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20Error%20accessing%20PCRs%20from%20QEMU%20vm&In-Reply-To=%3C200911041256.54814.strasser%40tik.ee.ethz.ch%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000117.html">
+   <LINK REL="Next"  HREF="000119.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[tpm-emulator-user] Error accessing PCRs from QEMU vm</H1>
+    <B>Mario Strasser</B> 
+    <A HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20Error%20accessing%20PCRs%20from%20QEMU%20vm&In-Reply-To=%3C200911041256.54814.strasser%40tik.ee.ethz.ch%3E"
+       TITLE="[tpm-emulator-user] Error accessing PCRs from QEMU vm">strasser at tik.ee.ethz.ch
+       </A><BR>
+    <I>Wed Nov  4 12:56:54 CET 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000117.html">[tpm-emulator-user] Error accessing PCRs from QEMU vm
+</A></li>
+        <LI>Next message: <A HREF="000119.html">[tpm-emulator-user] Error accessing PCRs from QEMU vm
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#118">[ date ]</a>
+              <a href="thread.html#118">[ thread ]</a>
+              <a href="subject.html#118">[ subject ]</a>
+              <a href="author.html#118">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Wednesday, 04. November 2009 10:22:06 Roman Brehm wrote:
+&gt;<i> I'm running tpm-emulator on my host and want to access it in a QEMU virtual machine.
+</I>&gt;<i> After I loaded the tpm_atmel module, the tpm appears as /sys/class/misc/tpm0.
+</I>&gt;<i> But when I want to print its PCRs using cat /sys/class/misc/tpm0/device/pcrs I do not
+</I>&gt;<i> get any message and in the (tpm-emulator-)terminal on the host I get multiple warnings:
+</I>&gt;<i> 
+</I>&gt;<i> &quot;WARNING: tpm received data when not supposed to! Discarding&quot;
+</I>Using the emulator and a real tpm at the same time is usually not advisable.
+The tpm emulator does not contain such an error message; I suppose
+it originates from the atmel driver.
+
+Regards,
+Mario
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000117.html">[tpm-emulator-user] Error accessing PCRs from QEMU vm
+</A></li>
+	<LI>Next message: <A HREF="000119.html">[tpm-emulator-user] Error accessing PCRs from QEMU vm
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#118">[ date ]</a>
+              <a href="thread.html#118">[ thread ]</a>
+              <a href="subject.html#118">[ subject ]</a>
+              <a href="author.html#118">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">More information about the tpm-emulator-user
+mailing list</a><br>
+</body></html>

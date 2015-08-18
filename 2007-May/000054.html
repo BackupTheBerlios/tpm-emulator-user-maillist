@@ -1,0 +1,95 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [tpm-emulator-user] Can't open TPM Driver
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/tpm-emulator-user/2007-May/index.html" >
+   <LINK REL="made" HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20Can%27t%20open%20TPM%20Driver&In-Reply-To=%3C1e97c61a0705252314v5cf988dcodf1867d17fea124%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000053.html">
+   <LINK REL="Next"  HREF="000055.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[tpm-emulator-user] Can't open TPM Driver</H1>
+    <B>Tamleek Ali</B> 
+    <A HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20Can%27t%20open%20TPM%20Driver&In-Reply-To=%3C1e97c61a0705252314v5cf988dcodf1867d17fea124%40mail.gmail.com%3E"
+       TITLE="[tpm-emulator-user] Can't open TPM Driver">tamleek091 at gmail.com
+       </A><BR>
+    <I>Sat May 26 08:14:25 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000053.html">[tpm-emulator-user] Can't Open TPM Driver error
+</A></li>
+        <LI>Next message: <A HREF="000055.html">[tpm-emulator-user] Can't open TPM Driver
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#54">[ date ]</a>
+              <a href="thread.html#54">[ thread ]</a>
+              <a href="subject.html#54">[ subject ]</a>
+              <a href="author.html#54">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>it seems to be already installed ...
+
+[<A HREF="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">root at TaMLeEk</A> examples]# modinfo tpmd_dev
+filename:       /lib/modules/2.6.18-1.2798.fc6/extra/tpmd_dev.ko
+description:    Trusted Platform Module (TPM) Emulator
+author:         Mario Strasser &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">mast at gmx.net</A>&gt;
+license:        GPL
+srcversion:     3633AA4BCD3427D872F9547
+depends:
+vermagic:       2.6.18-1.2798.fc6 SMP mod_unload 686 REGPARM 4KSTACKS
+gcc-4.1
+parm:           tpmd_socket_name: Sets the name of the TPM daemon socket.
+(charp)
+
+[<A HREF="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">root at TaMLeEk</A> examples]# modinfo tpm
+filename:       /lib/modules/2.6.18-1.2798.fc6
+/kernel/drivers/char/tpm/tpm.ko
+license:        GPL
+version:        2.0
+description:    TPM Driver
+author:         Leendert van Doorn (<A HREF="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">leendert at watson.ibm.com</A>)
+srcversion:     1E41DADC3BB1B575FFBB930
+depends:        tpm_bios
+vermagic:       2.6.18-1.2798.fc6 SMP mod_unload 686 REGPARM 4KSTACKS
+gcc-4.1
+
+still giving same error :(
+
+[<A HREF="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">root at TaMLeEk</A> examples]# ./tcpa_demo
+Can't open TPM Driver
+
+where to go next... :-/ ??
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/tpm-emulator-user/attachments/20070525/f9653463/attachment.html">https://lists.berlios.de/pipermail/tpm-emulator-user/attachments/20070525/f9653463/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000053.html">[tpm-emulator-user] Can't Open TPM Driver error
+</A></li>
+	<LI>Next message: <A HREF="000055.html">[tpm-emulator-user] Can't open TPM Driver
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#54">[ date ]</a>
+              <a href="thread.html#54">[ thread ]</a>
+              <a href="subject.html#54">[ subject ]</a>
+              <a href="author.html#54">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">More information about the tpm-emulator-user
+mailing list</a><br>
+</body></html>

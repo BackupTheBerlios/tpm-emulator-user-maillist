@@ -1,0 +1,102 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [tpm-emulator-user] Error in Tspi_Key_CreateKey
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/tpm-emulator-user/2010-March/index.html" >
+   <LINK REL="made" HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20Error%20in%20Tspi_Key_CreateKey&In-Reply-To=%3C3d71ad241003230222t3c2f8997t605690a074e08534%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000148.html">
+   <LINK REL="Next"  HREF="000150.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[tpm-emulator-user] Error in Tspi_Key_CreateKey</H1>
+    <B>toro83</B> 
+    <A HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20Error%20in%20Tspi_Key_CreateKey&In-Reply-To=%3C3d71ad241003230222t3c2f8997t605690a074e08534%40mail.gmail.com%3E"
+       TITLE="[tpm-emulator-user] Error in Tspi_Key_CreateKey">toro83 at gmail.com
+       </A><BR>
+    <I>Tue Mar 23 10:22:57 CET 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000148.html">[tpm-emulator-user] Error in Tspi_Key_CreateKey
+</A></li>
+        <LI>Next message: <A HREF="000150.html">[tpm-emulator-user] Problem with tpm_emulator ... or maybe TSS?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#149">[ date ]</a>
+              <a href="thread.html#149">[ thread ]</a>
+              <a href="subject.html#149">[ subject ]</a>
+              <a href="author.html#149">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi ... just discovered ... i'm a stupid!
+The problem was not with the emulator ... it was a problem in the code:
+before calling Tspi_Key_CreateKey i had to do some stuff, but something
+wasn't written on the code snippet i started from (taken from &quot;a practical
+guide to trusted computing&quot;) ... it is necessary to get the policy / set the
+secret of the SRK (or in general that of the wrapping key used in
+Tspi_Key_CreateKey(key,wrappingKey,PCRs) before using it in the CreateKey
+function.
+
+So ... sorry for the erroneus message.
+Daniel.
+
+2010/3/22 Mario Strasser &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">strasser at tik.ee.ethz.ch</A>&gt;
+
+&gt;<i> Hi Daniel,
+</I>&gt;<i>
+</I>&gt;<i> On Monday, 22. March 2010 10:35:17 toro83 wrote:
+</I>&gt;<i> &gt; So, the problem i'm having is with this code, taken from the book &quot;a
+</I>&gt;<i> &gt; practical guide to trusted computing&quot; ... by challener et al.
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; Tspi_Key_CreateKey (hKey, hSRK, 0) ... where hKey is the key to be
+</I>&gt;<i> created
+</I>&gt;<i> &gt; and hSRK is the Storage Root Key already loaded.
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; So the problem is that that function returns an error ... have you got
+</I>&gt;<i> some
+</I>&gt;<i> &gt; similar problems when using it?
+</I>&gt;<i> Does your code work with a real TPM and if so,
+</I>&gt;<i> what is the debug output of the emulator when
+</I>&gt;<i> you run the code (start the daemon as &quot;tpmd -df&quot;)?
+</I>&gt;<i> Thanks.
+</I>&gt;<i>
+</I>&gt;<i> Regards,
+</I>&gt;<i> Mario
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> tpm-emulator-user mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">tpm-emulator-user at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">https://lists.berlios.de/mailman/listinfo/tpm-emulator-user</A>
+</I>&gt;<i>
+</I>-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/tpm-emulator-user/attachments/20100323/96272cc8/attachment.html">https://lists.berlios.de/pipermail/tpm-emulator-user/attachments/20100323/96272cc8/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000148.html">[tpm-emulator-user] Error in Tspi_Key_CreateKey
+</A></li>
+	<LI>Next message: <A HREF="000150.html">[tpm-emulator-user] Problem with tpm_emulator ... or maybe TSS?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#149">[ date ]</a>
+              <a href="thread.html#149">[ thread ]</a>
+              <a href="subject.html#149">[ subject ]</a>
+              <a href="author.html#149">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">More information about the tpm-emulator-user
+mailing list</a><br>
+</body></html>

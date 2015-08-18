@@ -1,0 +1,75 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [tpm-emulator-user] For help:how to use the fuction of	Tddli_TransmitData
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/tpm-emulator-user/2009-April/index.html" >
+   <LINK REL="made" HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20For%20help%3Ahow%20to%20use%20the%20fuction%20of%0A%09Tddli_TransmitData&In-Reply-To=%3C200904101021.57856.strasser%40tik.ee.ethz.ch%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000110.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[tpm-emulator-user] For help:how to use the fuction of	Tddli_TransmitData</H1>
+    <B>Mario Strasser</B> 
+    <A HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20For%20help%3Ahow%20to%20use%20the%20fuction%20of%0A%09Tddli_TransmitData&In-Reply-To=%3C200904101021.57856.strasser%40tik.ee.ethz.ch%3E"
+       TITLE="[tpm-emulator-user] For help:how to use the fuction of	Tddli_TransmitData">strasser at tik.ee.ethz.ch
+       </A><BR>
+    <I>Fri Apr 10 10:21:57 CEST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000110.html">[tpm-emulator-user] For help:how to use the fuction of	Tddli_TransmitData
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#111">[ date ]</a>
+              <a href="thread.html#111">[ thread ]</a>
+              <a href="subject.html#111">[ subject ]</a>
+              <a href="author.html#111">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Friday, 10. April 2009 06:36:46 ppj922911 wrote:
+&gt;<i>    I want to use the fuction Tddli_TransmitData for a serial random data.In test_tddl.c,
+</I>&gt;<i>    there is a example of using Tddli_TransmitData to send a reset  command.I want
+</I>&gt;<i>    to know how to fill the first parameter pTransmitBuf.Could you help me to slove the problem?
+</I>The transmit buffer contains a marshaled TPM command as specified
+by the TPM specification [1]. Note, however, that the TPM emulator
+internally uses the random source of the Linux kernel by default;
+this random source can be accessed much easier via the /dev/random
+or /dev/urandom device file.
+
+Regards,
+Mario
+
+[1] <A HREF="https://www.trustedcomputinggroup.org/specs/TPM/mainP3Commandsrev103.pdf">https://www.trustedcomputinggroup.org/specs/TPM/mainP3Commandsrev103.pdf</A>
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000110.html">[tpm-emulator-user] For help:how to use the fuction of	Tddli_TransmitData
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#111">[ date ]</a>
+              <a href="thread.html#111">[ thread ]</a>
+              <a href="subject.html#111">[ subject ]</a>
+              <a href="author.html#111">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">More information about the tpm-emulator-user
+mailing list</a><br>
+</body></html>

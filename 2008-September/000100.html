@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [tpm-emulator-user] VMKnoppix 5.3.1DVD 20080827 (Virtual TPM is supported on Xen and KVM/QEMU) is released.
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/tpm-emulator-user/2008-September/index.html" >
+   <LINK REL="made" HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20VMKnoppix%205.3.1DVD%2020080827%20%28Virtual%20TPM%20is%0A%20supported%20on%20Xen%20and%20KVM/QEMU%29%20is%20released.&In-Reply-To=%3C20080901.102513.193707468.k.suzaki%40aist.go.jp%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000101.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[tpm-emulator-user] VMKnoppix 5.3.1DVD 20080827 (Virtual TPM is supported on Xen and KVM/QEMU) is released.</H1>
+    <B>Kuniyasu Suzaki</B> 
+    <A HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20VMKnoppix%205.3.1DVD%2020080827%20%28Virtual%20TPM%20is%0A%20supported%20on%20Xen%20and%20KVM/QEMU%29%20is%20released.&In-Reply-To=%3C20080901.102513.193707468.k.suzaki%40aist.go.jp%3E"
+       TITLE="[tpm-emulator-user] VMKnoppix 5.3.1DVD 20080827 (Virtual TPM is supported on Xen and KVM/QEMU) is released.">k.suzaki at aist.go.jp
+       </A><BR>
+    <I>Mon Sep  1 03:25:13 CEST 2008</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000101.html">[tpm-emulator-user] Ubuntu8.04.1 - test_tddl in emulator 0.5 -	Segmentation fault
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#100">[ date ]</a>
+              <a href="thread.html#100">[ thread ]</a>
+              <a href="subject.html#100">[ subject ]</a>
+              <a href="author.html#100">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+Dear,
+
+We release new VMKnoppix 5.3.1DVD(20080827). It utilizes tpm-emulator 0.5. Thank you.
+  HP: <A HREF="http://www.rcis.aist.go.jp/project/knoppix/vmknoppix/index.html">http://www.rcis.aist.go.jp/project/knoppix/vmknoppix/index.html</A>
+  Guide-PDF: <A HREF="http://www.rcis.aist.go.jp/project/knoppix/vmknoppix/VMKnoppix-20080827-E.pdf">http://www.rcis.aist.go.jp/project/knoppix/vmknoppix/VMKnoppix-20080827-E.pdf</A>
+
+### Special Feature ###
+# Virtual TPM is supported on Xen and KVM/QEMU. The virtual machines 
+  are used for Trusted Computing.
+# The LiveCD of trusted computing (GRUB-IMA, Linux-IMA kernel,
+  TrouSerS 0.3.1, OpenPTS 0.1.2), which was called &quot;KNOPPIX for Trusted
+  Computing Geeks&quot; is included.
+# TPM Checker, which shows the status of TPM, is included. 
+# FailSafe-C, vx32, LLVM(Low Level Virtual Machine), which are the
+  compiler for security and dynamic optimization, are included.
+# Secure virtual machine monitor &quot;BitVisor 0.2&quot; is updated to 0.3. 
+# Internet boot loader &quot;InetBoot&quot; is included. 
+    The GRUB Menu includes items of InetBoot for old VMKnoppix/Xenoppix. 
+# Network bootloader &quot;gPXE&quot; is included. It deals with normal PXE and HTTP/iSCSI boot. 
+# Internet Client &quot;OS Circular&quot; is included.
+    It enables to boot some Linux Distributions {CentOS5 |Debian Etch|
+    Ubuntu606 |Ubuntu610 |Ubuntu704} on a virtual machine {Xen|QEMU|KQEMU|KVM} 
+    with Internet Virtual Disk &quot;Trusted HTTP-FUSE CLOOP&quot;.
+
+### Download ###
+File Name: knoppix_v5.3.1DVD_20080326_xen3.2.1-20080827.iso (MD5: bdf1ef34a688cef1e378919acbedccdf) 
+Bittorrent: <A HREF="http://www.rcis.aist.go.jp/project/knoppix/download/knoppix_v5.3.1DVD_20080326_xen3.2.1-20080827.iso.torrent">http://www.rcis.aist.go.jp/project/knoppix/download/knoppix_v5.3.1DVD_20080326_xen3.2.1-20080827.iso.torrent</A> 
+HTTP: <A HREF="http://ring.aist.go.jp/archives/linux/knoppix/iso/knoppix_v5.3.1DVD_20080326_xen3.2.1-20080827.iso">http://ring.aist.go.jp/archives/linux/knoppix/iso/knoppix_v5.3.1DVD_20080326_xen3.2.1-20080827.iso</A> 
+FTP: <A HREF="ftp://ring.aist.go.jp/archives/linux/knoppix/iso/knoppix_v5.3.1DVD_20080326_xen3.2.1-20080827.iso">ftp://ring.aist.go.jp/archives/linux/knoppix/iso/knoppix_v5.3.1DVD_20080326_xen3.2.1-20080827.iso</A> 
+
+### Reference ####
+[1] &quot;Virtual TPM on Xen/KVM for Trusted Computing&quot;,
+    Kuniyasu Suzaki, Toshiki Yagi, Kengo Iijima, Nguyen Anh Quynh,
+    Virtualization Mini Summit at Ottawa Linux Symposium 2008.
+    <A HREF="http://virtminisummit.linux.hp.com/program/OLS08-Virtualization-Suzaki.pdf">http://virtminisummit.linux.hp.com/program/OLS08-Virtualization-Suzaki.pdf</A>
+[2] &quot;Trusted Boot and Platform Trust Services on 1CD Linux&quot;, 
+     Kuniyasu Suzaki,  Kengo Iijima, Toshiki Yagi, and Nguyen Anh Quynh
+    IEEE International Forum on Trusted Infrastructure Technologies
+    and 3rd Asia-Pacific Trusted Infrastructure Technologies
+    Conference (APTC 2008),
+    <A HREF="http://grid.hust.edu.cn/aptc08/">http://grid.hust.edu.cn/aptc08/</A>
+
+-----
+suzaki
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000101.html">[tpm-emulator-user] Ubuntu8.04.1 - test_tddl in emulator 0.5 -	Segmentation fault
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#100">[ date ]</a>
+              <a href="thread.html#100">[ thread ]</a>
+              <a href="subject.html#100">[ subject ]</a>
+              <a href="author.html#100">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">More information about the tpm-emulator-user
+mailing list</a><br>
+</body></html>

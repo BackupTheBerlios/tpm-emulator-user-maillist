@@ -1,0 +1,99 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [tpm-emulator-user] problems compiling tddl_example.c
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/tpm-emulator-user/2006-April/index.html" >
+   <LINK REL="made" HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20problems%20compiling%20tddl_example.c&In-Reply-To=%3C4448BFB6.1020806%40unifr.ch%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000003.html">
+   <LINK REL="Next"  HREF="000005.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[tpm-emulator-user] problems compiling tddl_example.c</H1>
+    <B>Carolin Latze</B> 
+    <A HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20problems%20compiling%20tddl_example.c&In-Reply-To=%3C4448BFB6.1020806%40unifr.ch%3E"
+       TITLE="[tpm-emulator-user] problems compiling tddl_example.c">carolin.latze at unifr.ch
+       </A><BR>
+    <I>Fri Apr 21 13:19:18 CEST 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000003.html">[tpm-emulator-user] Trousers/testsuite cases failing when using TPM emulator
+</A></li>
+        <LI>Next message: <A HREF="000005.html">[tpm-emulator-user] problems compiling tddl_example.c
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#4">[ date ]</a>
+              <a href="thread.html#4">[ thread ]</a>
+              <a href="subject.html#4">[ subject ]</a>
+              <a href="author.html#4">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi,
+
+I tried to compile the example shown on page 16 of the thesis &quot;A 
+software based TPM Emulator for Linux&quot;, but I get the following result
+
+<A HREF="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">latze at diufpc266</A>:/home/latze/tpm/emul/tests$ gcc -o tddl_example -ltddl 
+tddl_example.c
+/tmp/ccokMMI1.o: In function `main':
+tddl_example.c:(.text+0x66): undefined reference to `Tddli_Open'
+tddl_example.c:(.text+0xb7): undefined reference to `Tddli_TransmitData'
+tddl_example.c:(.text+0xdb): undefined reference to `Tddli_Close'
+tddl_example.c:(.text+0x122): undefined reference to `Tddli_Close'
+tddl_example.c:(.text+0x133): undefined reference to `Tddli_Close'
+collect2: ld returned 1 exit status
+<A HREF="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">latze at diufpc266</A>:/home/latze/tpm/emul/tests$
+
+I copied exactly the example source code. Furthermore I installed the 
+tddl given on <A HREF="http://www.infsec.ethz.ch/education/projects/archive">http://www.infsec.ethz.ch/education/projects/archive</A>
+
+For the TPM emulator I use version 0.3 downloaded from sourceforge.net. 
+I run a Gentoo Linux and installed the trousers packages from IBM (tcsd 
+works fine) and the tpm-tools, which work fine.
+
+Does anybody see, whats going wrong? Did I forget to link a library?
+
+Thanks and bye
+Carolin
+
+-- 
+Carolin Latze
+Assistante Dipl&#244;m&#233;e
+
+Department of Computer Science
+Boulevard de P&#233;rolles 90
+CH-1700 Fribourg
+
+phone: +41 26 300 83 30
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000003.html">[tpm-emulator-user] Trousers/testsuite cases failing when using TPM emulator
+</A></li>
+	<LI>Next message: <A HREF="000005.html">[tpm-emulator-user] problems compiling tddl_example.c
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#4">[ date ]</a>
+              <a href="thread.html#4">[ thread ]</a>
+              <a href="subject.html#4">[ subject ]</a>
+              <a href="author.html#4">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">More information about the tpm-emulator-user
+mailing list</a><br>
+</body></html>

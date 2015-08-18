@@ -1,0 +1,86 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [tpm-emulator-user] Can't Open TPM Driver error
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/tpm-emulator-user/2007-May/index.html" >
+   <LINK REL="made" HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20Can%27t%20Open%20TPM%20Driver%20error&In-Reply-To=%3C22431.20338.qm%40web36503.mail.mud.yahoo.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000049.html">
+   <LINK REL="Next"  HREF="000051.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[tpm-emulator-user] Can't Open TPM Driver error</H1>
+    <B>TaMLeEk ALi</B> 
+    <A HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20Can%27t%20Open%20TPM%20Driver%20error&In-Reply-To=%3C22431.20338.qm%40web36503.mail.mud.yahoo.com%3E"
+       TITLE="[tpm-emulator-user] Can't Open TPM Driver error">tamleek091 at yahoo.com
+       </A><BR>
+    <I>Thu May 24 09:08:01 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000049.html">[tpm-emulator-user] I have questions about porting tpm-emulator	on the ARM architecture.
+</A></li>
+        <LI>Next message: <A HREF="000051.html">[tpm-emulator-user] Can't Open TPM Driver error
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#50">[ date ]</a>
+              <a href="thread.html#50">[ thread ]</a>
+              <a href="subject.html#50">[ subject ]</a>
+              <a href="author.html#50">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>tpmd is successfully run but when i run the ./tcpa_demo script it says
+
+Can't open TPM Driver
+
+Following is the tail from /var/log/messages after tpmd is run...
+
+May 24 16:56:20 TaMLeEk tpmd: tpmd.c:187: Info: openening random device /dev/urandom 
+May 24 16:56:20 TaMLeEk tpmd: tpmd.c:203: Info: installing signal handlers 
+May 24 16:56:20 TaMLeEk tpmd: tpmd.c:225: Info: daemonizing process 
+May 24 16:56:20 TaMLeEk tpmd: tpmd.c:246: Info: process was successfully daemonized: pid=2649 sid=2649 
+May 24 16:56:20 TaMLeEk tpmd: tpmd.c:280: Info: staring main loop 
+May 24 16:56:20 TaMLeEk tpmd: tpmd.c:253: Info: initializing socket /var/tpm/tpmd_socket:0 
+May 24 16:56:21 TaMLeEk tpmd: ../tpm/tpm_startup.c:30: Info: TPM_Init() 
+May 24 16:56:21 TaMLeEk tpmd: ../tpm/tpm_testing.c:242: Info: TPM_SelfTestFull() 
+May 24 16:56:21 TaMLeEk tpmd: ../tpm/tpm_testing.c:260: Info: Self-Test succeeded 
+May 24 16:56:21 TaMLeEk tpmd: ../tpm/tpm_startup.c:44: Info: TPM_Startup(2) 
+
+What can be the possible problem ??
+
+Tamleek
+
+
+       Shape Yahoo! in your own image.  Join our Network Research Panel today!<A HREF="http://us.rd.yahoo.com/evt=48517/*http://surveylink.yahoo.com/gmrs/yahoo_panel_invite.asp?a=7">http://us.rd.yahoo.com/evt=48517/*http://surveylink.yahoo.com/gmrs/yahoo_panel_invite.asp?a=7</A> hot CTA = Join our Network Research Panel
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/tpm-emulator-user/attachments/20070524/d15dc853/attachment.html">https://lists.berlios.de/pipermail/tpm-emulator-user/attachments/20070524/d15dc853/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000049.html">[tpm-emulator-user] I have questions about porting tpm-emulator	on the ARM architecture.
+</A></li>
+	<LI>Next message: <A HREF="000051.html">[tpm-emulator-user] Can't Open TPM Driver error
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#50">[ date ]</a>
+              <a href="thread.html#50">[ thread ]</a>
+              <a href="subject.html#50">[ subject ]</a>
+              <a href="author.html#50">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">More information about the tpm-emulator-user
+mailing list</a><br>
+</body></html>

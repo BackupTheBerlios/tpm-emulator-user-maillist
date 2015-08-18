@@ -1,0 +1,106 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [tpm-emulator-user] Hi, I have a problem with &quot;/tpm/tpm_startup.c&quot;!
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/tpm-emulator-user/2009-November/index.html" >
+   <LINK REL="made" HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20Hi%2C%20I%20have%20a%20problem%20with%20%22/tpm/tpm_startup.c%22%21&In-Reply-To=%3C771791542.370621257823493522.JavaMail.coremail%40app5.yeah.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000121.html">
+   <LINK REL="Next"  HREF="000123.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[tpm-emulator-user] Hi, I have a problem with &quot;/tpm/tpm_startup.c&quot;!</H1>
+    <B>&#31505;&#21547;</B> 
+    <A HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20Hi%2C%20I%20have%20a%20problem%20with%20%22/tpm/tpm_startup.c%22%21&In-Reply-To=%3C771791542.370621257823493522.JavaMail.coremail%40app5.yeah.net%3E"
+       TITLE="[tpm-emulator-user] Hi, I have a problem with &quot;/tpm/tpm_startup.c&quot;!">yxh21 at yeah.net
+       </A><BR>
+    <I>Tue Nov 10 04:24:53 CET 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000121.html">[tpm-emulator-user] Error accessing PCRs from QEMU vm
+</A></li>
+        <LI>Next message: <A HREF="000123.html">[tpm-emulator-user] Hi,	I have a problem with &quot;/tpm/tpm_startup.c&quot;!
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#122">[ date ]</a>
+              <a href="thread.html#122">[ thread ]</a>
+              <a href="subject.html#122">[ subject ]</a>
+              <a href="author.html#122">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi all!
+ 
+I already installed the &quot;TPM_Emulator 0.6.1&quot;,these went well, no errors, and then I ran it by these steps:
+ 
+Fristly,
+#modprobe tpm_bios
+#modprobe tpm
+#modprobe tpm_tis
+ 
+and then:
+
+1. #tpmd deactivated
+2. #killall tpmd
+3. #tpmd clear
+4. #rm /var/run/tpm/tpmd_socket:0 (Because of &quot;failed: address already in use&quot;)
+5. #modprobe tpmd_dev
+6. #tpmd -f -d
+ 
+Finally,it appeared these(notice the bold):
+...
+
+../tpm/tpm_testing.c:260: Info: Self-Test succeeded
+
+../tpm/tpm_startup.c:44: Info: TPM_Startup(2)
+
+../tpm/tpm_startup.c:88: Error: restoring permanent data failed
+
+tpmd.c:372:Debug:waiting for connections...
+
+...
+
+
+Q1:Is it does work?
+
+Q2:Am I doing sth wrong?
+
+Q3:How to solve this problem?
+
+ 
+
+                                                  THX!
+
+                                                  Alex
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/tpm-emulator-user/attachments/20091110/9e20b5bb/attachment.html">https://lists.berlios.de/pipermail/tpm-emulator-user/attachments/20091110/9e20b5bb/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000121.html">[tpm-emulator-user] Error accessing PCRs from QEMU vm
+</A></li>
+	<LI>Next message: <A HREF="000123.html">[tpm-emulator-user] Hi,	I have a problem with &quot;/tpm/tpm_startup.c&quot;!
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#122">[ date ]</a>
+              <a href="thread.html#122">[ thread ]</a>
+              <a href="subject.html#122">[ subject ]</a>
+              <a href="author.html#122">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">More information about the tpm-emulator-user
+mailing list</a><br>
+</body></html>

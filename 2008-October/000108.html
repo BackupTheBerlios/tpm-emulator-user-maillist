@@ -1,0 +1,82 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [tpm-emulator-user] Problem with CertifyKey
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/tpm-emulator-user/2008-October/index.html" >
+   <LINK REL="made" HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20Problem%20with%20CertifyKey&In-Reply-To=%3C200810051249.14846.strasser%40tik.ee.ethz.ch%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000107.html">
+   <LINK REL="Next"  HREF="000109.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[tpm-emulator-user] Problem with CertifyKey</H1>
+    <B>Mario Strasser</B> 
+    <A HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20Problem%20with%20CertifyKey&In-Reply-To=%3C200810051249.14846.strasser%40tik.ee.ethz.ch%3E"
+       TITLE="[tpm-emulator-user] Problem with CertifyKey">strasser at tik.ee.ethz.ch
+       </A><BR>
+    <I>Sun Oct  5 12:49:14 CEST 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000107.html">[tpm-emulator-user] Problem with CertifyKey
+</A></li>
+        <LI>Next message: <A HREF="000109.html">[tpm-emulator-user] DAA and IBM DAA test suite
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#108">[ date ]</a>
+              <a href="thread.html#108">[ thread ]</a>
+              <a href="subject.html#108">[ subject ]</a>
+              <a href="author.html#108">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Dear John,
+
+On Wednesday, 01. October 2008 18:49:01 John Lyle wrote:
+&gt;<i> I'm having some difficulty using the TPM Emulator for certifying keys 
+</I>&gt;<i> bound to PCR values.  
+</I>&gt;<i> [...]
+</I>&gt;<i>  * The TPM_PCR_INFO structure returned appears to be given the wrong 
+</I>&gt;<i> length (PCRInfoSize in the TPM_CERTIFY_INFO structure).  It reports at 
+</I>&gt;<i> 56 bytes but ought (I think) to be 44.
+</I>Since version 1.2 of the TPM specification, the data returned
+by TPM_CertifyKey depends on the key to be certified. If the
+PCRInfo structure of the respective key contains at most
+16 PCR values, the old TPM_TAG_CERTIFY_INFO is used;
+otherwise, if the key usage depends on more than 16 PCR
+values, the new TPM_TAG_CERTIFY_INFO2 structure is used.
+Could you please verify that the result is a valid
+TPM_TAG_CERTIFY_INFO2 structure (or send me a hex-dump
+of the result so that I can do it)? Thanks a lot.
+
+Kind regards,
+Mario
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000107.html">[tpm-emulator-user] Problem with CertifyKey
+</A></li>
+	<LI>Next message: <A HREF="000109.html">[tpm-emulator-user] DAA and IBM DAA test suite
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#108">[ date ]</a>
+              <a href="thread.html#108">[ thread ]</a>
+              <a href="subject.html#108">[ subject ]</a>
+              <a href="author.html#108">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">More information about the tpm-emulator-user
+mailing list</a><br>
+</body></html>

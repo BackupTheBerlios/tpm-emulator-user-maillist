@@ -1,0 +1,113 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [tpm-emulator-user] gmp_kernel_wrapper.c compile failed
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/tpm-emulator-user/2006-November/index.html" >
+   <LINK REL="made" HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20gmp_kernel_wrapper.c%20compile%20failed&In-Reply-To=%3Cb9437b950611011802tce52131l310575ef81001d64%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000023.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[tpm-emulator-user] gmp_kernel_wrapper.c compile failed</H1>
+    <B>RAY LEE</B> 
+    <A HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20gmp_kernel_wrapper.c%20compile%20failed&In-Reply-To=%3Cb9437b950611011802tce52131l310575ef81001d64%40mail.gmail.com%3E"
+       TITLE="[tpm-emulator-user] gmp_kernel_wrapper.c compile failed">ray.sunjae.lee at gmail.com
+       </A><BR>
+    <I>Thu Nov  2 03:02:40 CET 2006</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000023.html">[tpm-emulator-user] gmp_kernel_wrapper.c compile failed
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#22">[ date ]</a>
+              <a href="thread.html#22">[ thread ]</a>
+              <a href="subject.html#22">[ subject ]</a>
+              <a href="author.html#22">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>hi, all
+
+I am trying to complie tpm_emulator which is lastest version for SVN.
+
+but compiling is not completed and I could watch compiling message below.
+
+===========================================================================================
+
+
+[<A HREF="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">root at HomeServer</A> tpm_emulator_svn]# make
+test -r ./crypto/gmp.h || cat /usr/include/gmp.h | \
+        sed -e &quot;s/\(__GMP_DECLSPEC [^e].*\);/\1 __attribute__
+((regparm(0)));/&quot; | \
+        sed -e &quot;s/^int$/int __attribute__ ((regparm(0)))/&quot; | \
+        sed -e &quot;s/^void$/void __attribute__ ((regparm(0)))/&quot; | \
+        sed -e &quot;s/^size_t$/size_t __attribute__ ((regparm(0)))/&quot; | \
+        sed -e &quot;s/^mp_limb_t$/mp_limb_t __attribute__ ((regparm(0)))/&quot; | \
+        sed -e &quot;s/^__GMP_EXTERN_INLINE void$/__GMP_EXTERN_INLINE void
+__attribute__ ((regparm(0)))/&quot; | \
+        sed -e &quot;s/^unsigned long$/unsigned long __attribute__
+((regparm(0)))/&quot; | \
+        sed -e &quot;s/\(.* (\*__gmp_allocate_func) .*\);/\1 __attribute__
+((regparm(0)));/&quot; | \
+        sed -e &quot;s/\(.* (\*__gmp_reallocate_func) .*\);/\1 __attribute__
+((regparm(0)));/&quot; | \
+        sed -e &quot;s/\(.* (\*__gmp_free_func) .*\);/\1 __attribute__
+((regparm(0)));/&quot; \
+        &gt; ./crypto/gmp.h
+cat: /usr/include/gmp.h: No such file or directory
+test -f ./crypto/libgmp.a || ln -s /usr/lib/libgmp.a ./crypto/libgmp.a
+  CC [M]  /root/download/tpm_emulator_svn/./linux_module.o
+  CC [M]  /root/download/tpm_emulator_svn/crypto/gmp_kernel_wrapper.o
+/root/download/tpm_emulator_svn/crypto/gmp_kernel_wrapper.c:67: error:
+expected '=', ',', ';', 'asm' or '__attribute__' before '__GMP_PROTO'
+/root/download/tpm_emulator_svn/crypto/gmp_kernel_wrapper.c:69: error:
+expected '=', ',', ';', 'asm' or '__attribute__' before '__GMP_PROTO'
+/root/download/tpm_emulator_svn/crypto/gmp_kernel_wrapper.c:71: error:
+expected '=', ',', ';', 'asm' or '__attribute__' before '__GMP_PROTO'
+make[2]: *** [/root/download/tpm_emulator_svn/crypto/gmp_kernel_wrapper.o]
+Error 1
+make[1]: *** [_module_/root/download/tpm_emulator_svn] Error 2
+make: *** [all] Error 2
+
+==========================================================================================
+
+I don't know what is wrong.
+
+If you let me know this problem, I really appreciate it.
+
+thank you for your attention.
+
+ray s. lee
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/tpm-emulator-user/attachments/20061102/9fad371f/attachment.html">https://lists.berlios.de/pipermail/tpm-emulator-user/attachments/20061102/9fad371f/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000023.html">[tpm-emulator-user] gmp_kernel_wrapper.c compile failed
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#22">[ date ]</a>
+              <a href="thread.html#22">[ thread ]</a>
+              <a href="subject.html#22">[ subject ]</a>
+              <a href="author.html#22">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">More information about the tpm-emulator-user
+mailing list</a><br>
+</body></html>

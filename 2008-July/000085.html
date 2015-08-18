@@ -1,0 +1,93 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [tpm-emulator-user] Incompatible CFLAGS for kernel module
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/tpm-emulator-user/2008-July/index.html" >
+   <LINK REL="made" HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20Incompatible%20CFLAGS%20for%20kernel%20module&In-Reply-To=%3C7b740b700807041034m1df5ad54x4b1112d74905dc7c%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000086.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[tpm-emulator-user] Incompatible CFLAGS for kernel module</H1>
+    <B>Shaz</B> 
+    <A HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20Incompatible%20CFLAGS%20for%20kernel%20module&In-Reply-To=%3C7b740b700807041034m1df5ad54x4b1112d74905dc7c%40mail.gmail.com%3E"
+       TITLE="[tpm-emulator-user] Incompatible CFLAGS for kernel module">shazalive at gmail.com
+       </A><BR>
+    <I>Fri Jul  4 19:34:56 CEST 2008</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000086.html">[tpm-emulator-user] Incompatible CFLAGS for kernel module
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#85">[ date ]</a>
+              <a href="thread.html#85">[ thread ]</a>
+              <a href="subject.html#85">[ subject ]</a>
+              <a href="author.html#85">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi,
+
+I am porting tpm emulator to versatilepb, which is an arm platform. I
+have some problem with CFLAGS from /arch/arm/Makefile when building
+the kernel module for this software. I cannot figure out what to do in
+this case. Following is the error:
+
+[<A HREF="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">root at develbox</A> tpm_emulator-0.5]# make
+Making all in tpmd
+make[1]: Entering directory `/embedded/tpm_emulator-0.5/tpmd'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/embedded/tpm_emulator-0.5/tpmd'
+Making all in tpmd_dev
+make[1]: Entering directory `/embedded/tpm_emulator-0.5/tpmd_dev'
+  CC [M]  /embedded/tpm_emulator-0.5/tpmd_dev/tpmd_dev.o
+cc1: error: unrecognized command line option &quot;-mlittle-endian&quot;
+cc1: error: unrecognized command line option &quot;-mapcs&quot;
+cc1: error: unrecognized command line option &quot;-mno-sched-prolog&quot;
+cc1: error: unrecognized command line option &quot;-mabi=aapcs-linux&quot;
+cc1: error: unrecognized command line option &quot;-mno-thumb-interwork&quot;
+/embedded/tpm_emulator-0.5/tpmd_dev/tpmd_dev.c:1: error: bad value
+(armv4t) for -march= switch
+/embedded/tpm_emulator-0.5/tpmd_dev/tpmd_dev.c:1: error: bad value
+(arm9tdmi) for -mtune= switch
+make[3]: *** [/embedded/tpm_emulator-0.5/tpmd_dev/tpmd_dev.o] Error 1
+make[2]: *** [_module_/embedded/tpm_emulator-0.5/tpmd_dev] Error 2
+make[1]: *** [all] Error 2
+make[1]: Leaving directory `/embedded/tpm_emulator-0.5/tpmd_dev'
+make: *** [all-recursive] Error 255
+
+kindly help me understand the core issue here and point out some solutions.
+
+-- 
+Shaz
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000086.html">[tpm-emulator-user] Incompatible CFLAGS for kernel module
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#85">[ date ]</a>
+              <a href="thread.html#85">[ thread ]</a>
+              <a href="subject.html#85">[ subject ]</a>
+              <a href="author.html#85">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">More information about the tpm-emulator-user
+mailing list</a><br>
+</body></html>

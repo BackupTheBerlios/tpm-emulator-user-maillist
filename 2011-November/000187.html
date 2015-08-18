@@ -1,0 +1,173 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [tpm-emulator-user] How to add directories?
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/tpm-emulator-user/2011-November/index.html" >
+   <LINK REL="made" HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20How%20to%20add%20directories%3F&In-Reply-To=%3CCADFE97A.8D77%25uri%40ll.mit.edu%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000186.html">
+   <LINK REL="Next"  HREF="000188.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[tpm-emulator-user] How to add directories?</H1>
+    <B>Blumenthal, Uri - 0668 - MITLL</B> 
+    <A HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20How%20to%20add%20directories%3F&In-Reply-To=%3CCADFE97A.8D77%25uri%40ll.mit.edu%3E"
+       TITLE="[tpm-emulator-user] How to add directories?">uri at ll.mit.edu
+       </A><BR>
+    <I>Wed Nov  9 14:25:57 CET 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000186.html">[tpm-emulator-user] How to add directories?
+</A></li>
+        <LI>Next message: <A HREF="000188.html">[tpm-emulator-user] How to add directories?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#187">[ date ]</a>
+              <a href="thread.html#187">[ thread ]</a>
+              <a href="subject.html#187">[ subject ]</a>
+              <a href="author.html#187">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hmm...
+
+Your file fails on my system at the linking kext stage:
+
+$ make
+Scanning dependencies of target tpm
+[  2%] Building C object tpm/CMakeFiles/tpm.dir/tpm_audit.o
+[  4%] Building C object tpm/CMakeFiles/tpm.dir/tpm_authorization.o
+[  6%] Building C object tpm/CMakeFiles/tpm.dir/tpm_capability.o
+[  8%] Building C object tpm/CMakeFiles/tpm.dir/tpm_cmd_handler.o
+[ 10%] Building C object tpm/CMakeFiles/tpm.dir/tpm_context.o
+[ 12%] Building C object tpm/CMakeFiles/tpm.dir/tpm_counter.o
+[ 14%] Building C object tpm/CMakeFiles/tpm.dir/tpm_credentials.o
+[ 16%] Building C object tpm/CMakeFiles/tpm.dir/tpm_crypto.o
+[ 18%] Building C object tpm/CMakeFiles/tpm.dir/tpm_daa.o
+[ 20%] Building C object tpm/CMakeFiles/tpm.dir/tpm_data.o
+[ 22%] Building C object tpm/CMakeFiles/tpm.dir/tpm_delegation.o
+[ 24%] Building C object tpm/CMakeFiles/tpm.dir/tpm_deprecated.o
+[ 26%] Building C object tpm/CMakeFiles/tpm.dir/tpm_emulator_extern.o
+[ 28%] Building C object tpm/CMakeFiles/tpm.dir/tpm_error.o
+[ 30%] Building C object tpm/CMakeFiles/tpm.dir/tpm_eviction.o
+[ 32%] Building C object tpm/CMakeFiles/tpm.dir/tpm_handles.o
+[ 34%] Building C object tpm/CMakeFiles/tpm.dir/tpm_identity.o
+[ 36%] Building C object tpm/CMakeFiles/tpm.dir/tpm_integrity.o
+[ 38%] Building C object tpm/CMakeFiles/tpm.dir/tpm_maintenance.o
+[ 40%] Building C object tpm/CMakeFiles/tpm.dir/tpm_management.o
+[ 42%] Building C object tpm/CMakeFiles/tpm.dir/tpm_marshalling.o
+[ 44%] Building C object tpm/CMakeFiles/tpm.dir/tpm_migration.o
+[ 46%] Building C object tpm/CMakeFiles/tpm.dir/tpm_nv_storage.o
+[ 48%] Building C object tpm/CMakeFiles/tpm.dir/tpm_owner.o
+[ 50%] Building C object tpm/CMakeFiles/tpm.dir/tpm_startup.o
+[ 52%] Building C object tpm/CMakeFiles/tpm.dir/tpm_storage.o
+[ 54%] Building C object tpm/CMakeFiles/tpm.dir/tpm_testing.o
+[ 56%] Building C object tpm/CMakeFiles/tpm.dir/tpm_ticks.o
+[ 58%] Building C object tpm/CMakeFiles/tpm.dir/tpm_transport.o
+Linking C static library libtpm.a
+[ 58%] Built target tpm
+Scanning dependencies of target mtm
+[ 60%] Building C object mtm/CMakeFiles/mtm.dir/mtm_capability.o
+[ 62%] Building C object mtm/CMakeFiles/mtm.dir/mtm_cmd_handler.o
+[ 64%] Building C object mtm/CMakeFiles/mtm.dir/mtm_counter.o
+[ 66%] Building C object mtm/CMakeFiles/mtm.dir/mtm_data.o
+[ 68%] Building C object mtm/CMakeFiles/mtm.dir/mtm_eviction.o
+[ 70%] Building C object mtm/CMakeFiles/mtm.dir/mtm_handles.o
+[ 72%] Building C object mtm/CMakeFiles/mtm.dir/mtm_integrity.o
+[ 74%] Building C object mtm/CMakeFiles/mtm.dir/mtm_marshalling.o
+[ 76%] Building C object mtm/CMakeFiles/mtm.dir/mtm_verification.o
+[ 78%] Building C object mtm/CMakeFiles/mtm.dir/__/tpm/tpm_cmd_handler.o
+[ 80%] Building C object mtm/CMakeFiles/mtm.dir/__/tpm/tpm_data.o
+Linking C static library libmtm.a
+[ 80%] Built target mtm
+Scanning dependencies of target tpm_crypto
+[ 82%] Building C object crypto/CMakeFiles/tpm_crypto.dir/hmac.o
+[ 84%] Building C object crypto/CMakeFiles/tpm_crypto.dir/rc4.o
+[ 86%] Building C object crypto/CMakeFiles/tpm_crypto.dir/rsa.o
+[ 88%] Building C object crypto/CMakeFiles/tpm_crypto.dir/sha1.o
+[ 90%] Building C object crypto/CMakeFiles/tpm_crypto.dir/bn_gmp.o
+Linking C static library libtpm_crypto.a
+[ 90%] Built target tpm_crypto
+Scanning dependencies of target tddl
+[ 92%] Building C object tddl/CMakeFiles/tddl.dir/tddl.o
+Linking C shared library libtddl.dylib
+[ 92%] Built target tddl
+Scanning dependencies of target tddl_static
+[ 94%] Building C object tddl/CMakeFiles/tddl_static.dir/tddl.o
+Linking C static library libtddl.a
+[ 94%] Built target tddl_static
+Scanning dependencies of target test_tddl
+[ 96%] Building C object tddl/CMakeFiles/test_tddl.dir/test_tddl.o
+Linking C executable test_tddl
+[ 96%] Built target test_tddl
+Scanning dependencies of target tpmd_dev
+[ 96%] Generating darwin/build/Release/tpm_bridge.kext
+** BUILD FAILED **
+
+
+The following build commands failed:
+	Check dependencies
+(1 failure)
+make[3]: *** [all] Error 65
+make[2]: *** [tpmd_dev/darwin/build/Release/tpm_bridge.kext] Error 2
+make[1]: *** [tpmd_dev/CMakeFiles/tpmd_dev.dir/all] Error 2
+make: *** [all] Error 2
+$ 
+
+
+
+-- 
+Regards,
+Uri Blumenthal                            Voice: (781) 981-1638
+
+
+
+
+On 11/9/11 8:22 , &quot;Mario Strasser&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">mast at gmx.net</A>&gt; wrote:
+
+&gt;<i>On 11/9/11 2:17 PM, Blumenthal, Uri - 0668 - MITLL wrote:
+</I>&gt;&gt;<i> Thanks - but it does not seem to work. Cmake succeeds (like before), but
+</I>&gt;&gt;<i> &quot;make&quot; fails on compilation - reporting that it couldn't find the
+</I>&gt;&gt;<i>include
+</I>&gt;&gt;<i> file which is located in /opt/local/include:
+</I>&gt;<i>Strange ... the attached makefile works for me
+</I>&gt;<i>on OS X where gmp is also located under /opt/local/:
+</I>&gt;<i>
+</I>&gt;<i>Regards,
+</I>&gt;<i>Mario
+</I>-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: smime.p7s
+Type: application/pkcs7-signature
+Size: 5124 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/tpm-emulator-user/attachments/20111109/5f8c8b69/attachment.bin">https://lists.berlios.de/pipermail/tpm-emulator-user/attachments/20111109/5f8c8b69/attachment.bin</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000186.html">[tpm-emulator-user] How to add directories?
+</A></li>
+	<LI>Next message: <A HREF="000188.html">[tpm-emulator-user] How to add directories?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#187">[ date ]</a>
+              <a href="thread.html#187">[ thread ]</a>
+              <a href="subject.html#187">[ subject ]</a>
+              <a href="author.html#187">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">More information about the tpm-emulator-user
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,82 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [tpm-emulator-user] Hi,	I have a problem with &quot;/tpm/tpm_startup.c&quot;!
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/tpm-emulator-user/2009-November/index.html" >
+   <LINK REL="made" HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20Hi%2C%0A%09I%20have%20a%20problem%20with%20%22/tpm/tpm_startup.c%22%21&In-Reply-To=%3C200911100829.31206.strasser%40tik.ee.ethz.ch%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000122.html">
+   <LINK REL="Next"  HREF="000124.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[tpm-emulator-user] Hi,	I have a problem with &quot;/tpm/tpm_startup.c&quot;!</H1>
+    <B>Mario Strasser</B> 
+    <A HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20Hi%2C%0A%09I%20have%20a%20problem%20with%20%22/tpm/tpm_startup.c%22%21&In-Reply-To=%3C200911100829.31206.strasser%40tik.ee.ethz.ch%3E"
+       TITLE="[tpm-emulator-user] Hi,	I have a problem with &quot;/tpm/tpm_startup.c&quot;!">strasser at tik.ee.ethz.ch
+       </A><BR>
+    <I>Tue Nov 10 08:29:31 CET 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000122.html">[tpm-emulator-user] Hi, I have a problem with &quot;/tpm/tpm_startup.c&quot;!
+</A></li>
+        <LI>Next message: <A HREF="000124.html">[tpm-emulator-user] Fw:Problem with Tpm_emulator's PCRs
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#123">[ date ]</a>
+              <a href="thread.html#123">[ thread ]</a>
+              <a href="subject.html#123">[ subject ]</a>
+              <a href="author.html#123">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Tuesday, 10. November 2009 04:24:53 &#31505;&#21547; wrote:
+&gt;<i> [...]
+</I>&gt;<i> 1. #tpmd deactivated
+</I>&gt;<i> 2. #killall tpmd
+</I>&gt;<i> 3. #tpmd clear
+</I>&gt;<i> 4. #rm /var/run/tpm/tpmd_socket:0 (Because of &quot;failed: address already in use&quot;)
+</I>&gt;<i> 5. #modprobe tpmd_dev
+</I>&gt;<i> 6. #tpmd -f -d
+</I>&gt;<i> [...]
+</I>&gt;<i> ../tpm/tpm_startup.c:88: Error: restoring permanent data failed
+</I>First make sure that no instance of the emulator is running:
+# ps aux | grep tpmd
+
+Then delete the old state and restart the emulator in mode clear
+# rm /var/lib/* 
+# tpmd -f -d clear
+
+Regards,
+Mario
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000122.html">[tpm-emulator-user] Hi, I have a problem with &quot;/tpm/tpm_startup.c&quot;!
+</A></li>
+	<LI>Next message: <A HREF="000124.html">[tpm-emulator-user] Fw:Problem with Tpm_emulator's PCRs
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#123">[ date ]</a>
+              <a href="thread.html#123">[ thread ]</a>
+              <a href="subject.html#123">[ subject ]</a>
+              <a href="author.html#123">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">More information about the tpm-emulator-user
+mailing list</a><br>
+</body></html>

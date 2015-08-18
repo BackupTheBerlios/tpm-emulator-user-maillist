@@ -1,0 +1,79 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [tpm-emulator-user] Fwd: Trousers with TPM emulator problem
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/tpm-emulator-user/2010-February/index.html" >
+   <LINK REL="made" HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20Fwd%3A%20Trousers%20with%20TPM%20emulator%20problem&In-Reply-To=%3C201002020853.34700.strasser%40tik.ee.ethz.ch%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000138.html">
+   <LINK REL="Next"  HREF="000140.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[tpm-emulator-user] Fwd: Trousers with TPM emulator problem</H1>
+    <B>Mario Strasser</B> 
+    <A HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20Fwd%3A%20Trousers%20with%20TPM%20emulator%20problem&In-Reply-To=%3C201002020853.34700.strasser%40tik.ee.ethz.ch%3E"
+       TITLE="[tpm-emulator-user] Fwd: Trousers with TPM emulator problem">strasser at tik.ee.ethz.ch
+       </A><BR>
+    <I>Tue Feb  2 08:53:34 CET 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000138.html">[tpm-emulator-user] Fwd: Trousers with TPM emulator problem
+</A></li>
+        <LI>Next message: <A HREF="000140.html">[tpm-emulator-user] Fwd: Trousers with TPM emulator problem
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#139">[ date ]</a>
+              <a href="thread.html#139">[ thread ]</a>
+              <a href="subject.html#139">[ subject ]</a>
+              <a href="author.html#139">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Monday, 01. February 2010 10:01:49 Abhiram Kasina wrote:
+&gt;<i> I am trying to run trousers daemon with tpm emulator. But when I am trying
+</I>&gt;<i> to start tcsd, it gives me an error. Can someone tell me whats wrong with
+</I>&gt;<i> what I am doing??
+</I>&gt;<i> 
+</I>&gt;<i> $ sudo insmod tpmd_dev/tpmd_dev.ko
+</I>&gt;<i> $ sudo tpmd
+</I>Please start the tpmd in foreground and debug mode
+to facilitate the error identification:
+sudo tpmd -df
+
+Moreover, remember to add the clear argument if you
+are calling the tpmd for the first time (see README):
+sudo tpmd -df clear
+
+Regards,
+Mario
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000138.html">[tpm-emulator-user] Fwd: Trousers with TPM emulator problem
+</A></li>
+	<LI>Next message: <A HREF="000140.html">[tpm-emulator-user] Fwd: Trousers with TPM emulator problem
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#139">[ date ]</a>
+              <a href="thread.html#139">[ thread ]</a>
+              <a href="subject.html#139">[ subject ]</a>
+              <a href="author.html#139">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">More information about the tpm-emulator-user
+mailing list</a><br>
+</body></html>

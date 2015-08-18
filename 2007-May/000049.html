@@ -1,0 +1,123 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [tpm-emulator-user] I have questions about porting tpm-emulator	on the ARM architecture.
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/tpm-emulator-user/2007-May/index.html" >
+   <LINK REL="made" HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20I%20have%20questions%20about%20porting%20tpm-emulator%0A%09on%20the%20ARM%20architecture.&In-Reply-To=%3Cb9437b950705172013w762f69b8k851d06f912fbd8f4%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000048.html">
+   <LINK REL="Next"  HREF="000050.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[tpm-emulator-user] I have questions about porting tpm-emulator	on the ARM architecture.</H1>
+    <B>RAY LEE</B> 
+    <A HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20I%20have%20questions%20about%20porting%20tpm-emulator%0A%09on%20the%20ARM%20architecture.&In-Reply-To=%3Cb9437b950705172013w762f69b8k851d06f912fbd8f4%40mail.gmail.com%3E"
+       TITLE="[tpm-emulator-user] I have questions about porting tpm-emulator	on the ARM architecture.">ray.sunjae.lee at gmail.com
+       </A><BR>
+    <I>Fri May 18 05:13:43 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000048.html">[tpm-emulator-user] I have questions about porting tpm-emulator	on the ARM architecture.
+</A></li>
+        <LI>Next message: <A HREF="000050.html">[tpm-emulator-user] Can't Open TPM Driver error
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#49">[ date ]</a>
+              <a href="thread.html#49">[ thread ]</a>
+              <a href="subject.html#49">[ subject ]</a>
+              <a href="author.html#49">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Dear Hailun Tan,
+
+ My name is Shim. I am currently studying TPM and ARM processor. And I am
+trying to port the SW-TPM on the ARM board, TI OMAP OSK5912.
+
+I have heard your name from Mario Strasser that I emailed Mario Strasser to
+ask some tpm_emulator porting problem on the OMAP 5912. If you want to read
+this email, please read attached email.
+
+I have some questions about porting tpm_emulator on the OMAP 5912. First,
+what would I do to patch kernel increasing kernel stack size from 4K to 16K?
+To install tpm_emulator on the i386 architecture, I used kernel stack size
+patch of LINUXANT which is Wireless LAN device vender have made patch of
+increasing kernel stack size to 16K.
+
+Second, as you already know, tpm_emulator need GMP library. If you know to
+port GMP library to ARM architecture, let me know some information or
+related homepage address.
+
+Third, I additionally want to port trousers on the OMAP 5912 board. Had you
+try this work? I will appreciate it if you let me know some information.
+
+ Thank you in advance,
+Shim
+
+ps.
+My developing environment is as fallows.
+
+* Toolchain is GCC version 3.4.6
+* Cross compiler is GCC version 3.4.5
+* Kernel version 2.6.16.27 with OMAP1 patch.
+
+
+On 5/15/07, Mario Strasser &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">strasser at tik.ee.ethz.ch</A>&gt; wrote:
+&gt;<i>
+</I>&gt;<i> On Tuesday, 15. May 2007 08:17:11 RAY LEE wrote:
+</I>&gt;<i> &gt; Dear Mario Strasser,
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; My name is Shim. I am currently studying TCG TPM 1.2 and trying to port
+</I>&gt;<i> your
+</I>&gt;<i> &gt; tpm-emulator on the ARM board,
+</I>&gt;<i> &gt; TI OMAP OSK5912. I was successful to install tpm-emulator to the i386
+</I>&gt;<i> &gt; architecure. [...]
+</I>&gt;<i> &gt; First, do you think the job (porting it on the board) is feasible or
+</I>&gt;<i> have
+</I>&gt;<i> &gt; you ever tried/heard this kind of thing before?
+</I>&gt;<i> To my mind this should be feasible. In principle, all you have to do is
+</I>&gt;<i> to adapt the settings in tpm_emulator_config.h appropriately.
+</I>&gt;<i> You may want to contact, for instance, Hailun Tan (<A HREF="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">htan477 at cse.unsw.edu.au</A>
+</I>&gt;<i> ),
+</I>&gt;<i> who - to my best knowledge - has already done this.
+</I>&gt;<i>
+</I>&gt;<i> Regards,
+</I>&gt;<i> Mario
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> tpm-emulator-user mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">tpm-emulator-user at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">https://lists.berlios.de/mailman/listinfo/tpm-emulator-user</A>
+</I>&gt;<i>
+</I>-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/tpm-emulator-user/attachments/20070518/149dbceb/attachment.html">https://lists.berlios.de/pipermail/tpm-emulator-user/attachments/20070518/149dbceb/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000048.html">[tpm-emulator-user] I have questions about porting tpm-emulator	on the ARM architecture.
+</A></li>
+	<LI>Next message: <A HREF="000050.html">[tpm-emulator-user] Can't Open TPM Driver error
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#49">[ date ]</a>
+              <a href="thread.html#49">[ thread ]</a>
+              <a href="subject.html#49">[ subject ]</a>
+              <a href="author.html#49">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">More information about the tpm-emulator-user
+mailing list</a><br>
+</body></html>

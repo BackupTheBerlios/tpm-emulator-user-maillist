@@ -1,0 +1,72 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [tpm-emulator-user] TPM Emulator daemon startup failed
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/tpm-emulator-user/2007-April/index.html" >
+   <LINK REL="made" HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20TPM%20Emulator%20daemon%20startup%20failed&In-Reply-To=%3C200704031100.59450.strasser%40tik.ee.ethz.ch%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000043.html">
+   <LINK REL="Next"  HREF="000045.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[tpm-emulator-user] TPM Emulator daemon startup failed</H1>
+    <B>Mario Strasser</B> 
+    <A HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20TPM%20Emulator%20daemon%20startup%20failed&In-Reply-To=%3C200704031100.59450.strasser%40tik.ee.ethz.ch%3E"
+       TITLE="[tpm-emulator-user] TPM Emulator daemon startup failed">strasser at tik.ee.ethz.ch
+       </A><BR>
+    <I>Tue Apr  3 11:00:59 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000043.html">[tpm-emulator-user] TPM Emulator daemon startup failed
+</A></li>
+        <LI>Next message: <A HREF="000045.html">[tpm-emulator-user] About tpm-emulator
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#44">[ date ]</a>
+              <a href="thread.html#44">[ thread ]</a>
+              <a href="subject.html#44">[ subject ]</a>
+              <a href="author.html#44">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi,
+
+On Tuesday, 03. April 2007 10:56:59 Markus wrote:
+&gt;<i> tpmd.c:253: Info: initializing socket /var/tpm/tpmd_socket:0
+</I>&gt;<i> tpmd.c:262: Error: bind(/var/tpm/tpmd_socket:0) failed: Address already in use
+</I>&gt;<i> Where could I start to solve the problem?
+</I>Make sure that no other tpm-daemon is running (ps aux | grep tpmd),
+delete the file /var/tpm/tpmd_socket:0 and try it again.
+
+Regards,
+Mario
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000043.html">[tpm-emulator-user] TPM Emulator daemon startup failed
+</A></li>
+	<LI>Next message: <A HREF="000045.html">[tpm-emulator-user] About tpm-emulator
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#44">[ date ]</a>
+              <a href="thread.html#44">[ thread ]</a>
+              <a href="subject.html#44">[ subject ]</a>
+              <a href="author.html#44">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">More information about the tpm-emulator-user
+mailing list</a><br>
+</body></html>

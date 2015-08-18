@@ -1,0 +1,100 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [tpm-emulator-user] How to install tpm-emulator in FC-5(2.6.17	linux kernel-dev)
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/tpm-emulator-user/2006-September/index.html" >
+   <LINK REL="made" HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20How%20to%20install%20tpm-emulator%20in%20FC-5%282.6.17%0A%09linux%20kernel-dev%29&In-Reply-To=%3C000001c6cf38%247165e820%24bf06a8c0%40zhangamuufcjz4%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[tpm-emulator-user] How to install tpm-emulator in FC-5(2.6.17	linux kernel-dev)</H1>
+    <B>Zhang Ye</B> 
+    <A HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20How%20to%20install%20tpm-emulator%20in%20FC-5%282.6.17%0A%09linux%20kernel-dev%29&In-Reply-To=%3C000001c6cf38%247165e820%24bf06a8c0%40zhangamuufcjz4%3E"
+       TITLE="[tpm-emulator-user] How to install tpm-emulator in FC-5(2.6.17	linux kernel-dev)">yeahchang at vip.sina.com
+       </A><BR>
+    <I>Sun Sep  3 11:07:53 CEST 2006</I>
+    <P><UL>
+        
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#18">[ date ]</a>
+              <a href="thread.html#18">[ thread ]</a>
+              <a href="subject.html#18">[ subject ]</a>
+              <a href="author.html#18">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hello everyone:
+
+I installed the tpm-emulator 0.4 in FC5(2.6.17 linux kernel-dev).but after I
+enter the command &quot;make &quot;,it says like that:
+
+ 
+
+WARNING: /tpm_emulator-0.4/ tpm_emulator.o-Section mismatch:refernce to
+.init.text:init_module from gnu.linkonce.this_module after'__this_module'(at
+offset 0xd4)
+
+WARNING: could not find / tpm_emulator-0.4/crypto/.libgmp.a. cmd for
+/tpm_emulator/crypto/libgmp.a
+
+WARNING: &quot;__stack_chk_fail&quot; [/tpm_emulator/ tpm_emulator.ko] undefined!
+
+ 
+
+Then I &quot;make install&quot; and &quot;modprobe tpm_emulator startup=&quot;clear&quot;&quot;, it
+failed:
+
+FATAL:Error inserting tpm_emulator(/lib/modules/2.6.17-1.2174_FC5/extra/
+tpm_emulator.ko):Unknown symbol in module,or unknown parameter(see dmesg)
+
+ 
+
+Then #dmesg: tpm_emulator:Unknown symbol __stack_chk_fail.
+
+ 
+
+Who can tell me why it fail? And how can I install the tpm-emulator 0.4 in
+FC5?
+
+ 
+
+Thank you ! Thank you! Thank you!
+
+ 
+
+Zhang Ye
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/tpm-emulator-user/attachments/20060903/03413de6/attachment.html">https://lists.berlios.de/pipermail/tpm-emulator-user/attachments/20060903/03413de6/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#18">[ date ]</a>
+              <a href="thread.html#18">[ thread ]</a>
+              <a href="subject.html#18">[ subject ]</a>
+              <a href="author.html#18">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">More information about the tpm-emulator-user
+mailing list</a><br>
+</body></html>

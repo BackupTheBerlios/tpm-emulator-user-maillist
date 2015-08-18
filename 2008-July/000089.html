@@ -1,0 +1,141 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [tpm-emulator-user] Incompatible CFLAGS for kernel module
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/tpm-emulator-user/2008-July/index.html" >
+   <LINK REL="made" HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20Incompatible%20CFLAGS%20for%20kernel%20module&In-Reply-To=%3C7b740b700807060035y66bdc54byc8a5ad87b6e3d50d%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000088.html">
+   <LINK REL="Next"  HREF="000090.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[tpm-emulator-user] Incompatible CFLAGS for kernel module</H1>
+    <B>Shaz</B> 
+    <A HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20Incompatible%20CFLAGS%20for%20kernel%20module&In-Reply-To=%3C7b740b700807060035y66bdc54byc8a5ad87b6e3d50d%40mail.gmail.com%3E"
+       TITLE="[tpm-emulator-user] Incompatible CFLAGS for kernel module">shazalive at gmail.com
+       </A><BR>
+    <I>Sun Jul  6 09:35:24 CEST 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000088.html">[tpm-emulator-user] Incompatible CFLAGS for kernel module
+</A></li>
+        <LI>Next message: <A HREF="000090.html">[tpm-emulator-user] Incompatible CFLAGS for kernel module
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#89">[ date ]</a>
+              <a href="thread.html#89">[ thread ]</a>
+              <a href="subject.html#89">[ subject ]</a>
+              <a href="author.html#89">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Sun, Jul 6, 2008 at 10:34 AM, Shaz &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">shazalive at gmail.com</A>&gt; wrote:
+&gt;<i> On Sat, Jul 5, 2008 at 11:33 AM, Sam Ravnborg &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">sam at ravnborg.org</A>&gt; wrote:
+</I>&gt;&gt;<i> On Sat, Jul 05, 2008 at 10:33:28AM +0500, Shaz wrote:
+</I>&gt;&gt;&gt;<i> On Sat, Jul 5, 2008 at 1:32 AM, Sam Ravnborg &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">sam at ravnborg.org</A>&gt; wrote:
+</I>&gt;&gt;&gt;<i> &gt; On Fri, Jul 04, 2008 at 10:34:56PM +0500, Shaz wrote:
+</I>&gt;&gt;&gt;<i> &gt;&gt; Hi,
+</I>&gt;&gt;&gt;<i> &gt;&gt;
+</I>&gt;&gt;&gt;<i> &gt;&gt; I am porting tpm emulator to versatilepb, which is an arm platform. I
+</I>&gt;&gt;&gt;<i> &gt;&gt; have some problem with CFLAGS from /arch/arm/Makefile when building
+</I>&gt;&gt;&gt;<i> &gt;&gt; the kernel module for this software. I cannot figure out what to do in
+</I>&gt;&gt;&gt;<i> &gt;&gt; this case. Following is the error:
+</I>&gt;&gt;&gt;<i> &gt;&gt;
+</I>&gt;&gt;&gt;<i> &gt;&gt; [<A HREF="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">root at develbox</A> tpm_emulator-0.5]# make
+</I>&gt;&gt;&gt;<i> &gt;&gt; Making all in tpmd
+</I>&gt;&gt;&gt;<i> &gt;&gt; make[1]: Entering directory `/embedded/tpm_emulator-0.5/tpmd'
+</I>&gt;&gt;&gt;<i> &gt;&gt; make[1]: Nothing to be done for `all'.
+</I>&gt;&gt;&gt;<i> &gt;&gt; make[1]: Leaving directory `/embedded/tpm_emulator-0.5/tpmd'
+</I>&gt;&gt;&gt;<i> &gt;&gt; Making all in tpmd_dev
+</I>&gt;&gt;&gt;<i> &gt;&gt; make[1]: Entering directory `/embedded/tpm_emulator-0.5/tpmd_dev'
+</I>&gt;&gt;&gt;<i> &gt;&gt;   CC [M]  /embedded/tpm_emulator-0.5/tpmd_dev/tpmd_dev.o
+</I>&gt;&gt;&gt;<i> &gt;&gt; cc1: error: unrecognized command line option &quot;-mlittle-endian&quot;
+</I>&gt;&gt;&gt;<i> &gt;&gt; cc1: error: unrecognized command line option &quot;-mapcs&quot;
+</I>&gt;&gt;&gt;<i> &gt;&gt; cc1: error: unrecognized command line option &quot;-mno-sched-prolog&quot;
+</I>&gt;&gt;&gt;<i> &gt;&gt; cc1: error: unrecognized command line option &quot;-mabi=aapcs-linux&quot;
+</I>&gt;&gt;&gt;<i> &gt;&gt; cc1: error: unrecognized command line option &quot;-mno-thumb-interwork&quot;
+</I>&gt;&gt;&gt;<i> &gt;&gt; /embedded/tpm_emulator-0.5/tpmd_dev/tpmd_dev.c:1: error: bad value
+</I>&gt;&gt;&gt;<i> &gt;&gt; (armv4t) for -march= switch
+</I>&gt;&gt;&gt;<i> &gt;&gt; /embedded/tpm_emulator-0.5/tpmd_dev/tpmd_dev.c:1: error: bad value
+</I>&gt;&gt;&gt;<i> &gt;&gt; (arm9tdmi) for -mtune= switch
+</I>&gt;&gt;&gt;<i> &gt;&gt; make[3]: *** [/embedded/tpm_emulator-0.5/tpmd_dev/tpmd_dev.o] Error 1
+</I>&gt;&gt;&gt;<i> &gt;&gt; make[2]: *** [_module_/embedded/tpm_emulator-0.5/tpmd_dev] Error 2
+</I>&gt;&gt;&gt;<i> &gt;&gt; make[1]: *** [all] Error 2
+</I>&gt;&gt;&gt;<i> &gt;&gt; make[1]: Leaving directory `/embedded/tpm_emulator-0.5/tpmd_dev'
+</I>&gt;&gt;&gt;<i> &gt;&gt; make: *** [all-recursive] Error 255
+</I>&gt;&gt;&gt;<i> &gt;&gt;
+</I>&gt;&gt;&gt;<i> &gt;&gt; kindly help me understand the core issue here and point out some solutions.
+</I>&gt;&gt;&gt;<i> &gt;
+</I>&gt;&gt;&gt;<i> &gt; A quick guess is that you use your host gcc and not your target gcc.
+</I>&gt;&gt;&gt;<i> &gt; You most likely have to set CROSS_COMPILE=...
+</I>&gt;&gt;&gt;<i> &gt;
+</I>&gt;&gt;&gt;<i> &gt; Try with &quot;make V=1&quot; to see the exact gcc command line.
+</I>&gt;&gt;&gt;<i> &gt;
+</I>&gt;&gt;&gt;<i> &gt; If you continue to rn into trouble please post your Makefile.
+</I>&gt;&gt;&gt;<i> I tried make V=1 but the loads of info was given for the things that
+</I>&gt;&gt;&gt;<i> went right but nothing noticeable where the error is.
+</I>&gt;&gt;<i> What is interesting is the gcc commandline for a good case and
+</I>&gt;&gt;<i> a bad case. If they do not look the same we are on the right track.
+</I>I've noticed some issues in my rootfs and on to it but plz do look at
+the Makefile. i might be missing something there instead.
+&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> I've attached my arch/arm/Makefile. My build, host and target are on
+</I>&gt;&gt;&gt;<i> same system. i am emulating the board with Qemu. The process is very
+</I>&gt;&gt;&gt;<i> conventional. I've mounted my rootfs with -o loop and kernel and extra
+</I>&gt;&gt;&gt;<i> modules go there with INSTALL_MOD_PATH and INSTALL_MOD_DIR. ARCH=arm
+</I>&gt;&gt;&gt;<i> and CROSS_COMPILE=arm-linux-
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> But you do some kind of &quot;external module&quot; build judging from the output
+</I>&gt;&gt;<i> above. So the Makefile of interest is the one(s) that is special for
+</I>&gt;&gt;<i> your module. At lest the one you have in /embedded/tpm_emulator-0.5/tpmd_dev
+</I>&gt;<i> Yes am building tpm emulator. Its nature is generic but successfully
+</I>&gt;<i> runs on PC and might have some porting issues which I am figuring out.
+</I>&gt;<i> Thanx for sufficient attention. I am attaching the emulator's source
+</I>&gt;<i> archive which I've altered. The main change that I've done is add
+</I>&gt;<i> PREFIXDIR in all Makefiles. It includes the required Makefile in
+</I>&gt;<i> tpmd_dev. I am separately also attaching the required makefile so to
+</I>&gt;<i> make it easier.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>        Sam
+</I>&gt;&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> --
+</I>&gt;<i> Shaz
+</I>&gt;<i>
+</I>
+
+
+-- 
+Shaz
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000088.html">[tpm-emulator-user] Incompatible CFLAGS for kernel module
+</A></li>
+	<LI>Next message: <A HREF="000090.html">[tpm-emulator-user] Incompatible CFLAGS for kernel module
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#89">[ date ]</a>
+              <a href="thread.html#89">[ thread ]</a>
+              <a href="subject.html#89">[ subject ]</a>
+              <a href="author.html#89">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">More information about the tpm-emulator-user
+mailing list</a><br>
+</body></html>

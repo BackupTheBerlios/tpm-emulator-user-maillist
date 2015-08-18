@@ -1,0 +1,133 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [tpm-emulator-user] installation issue on Max OS X 10.7.3
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/tpm-emulator-user/2012-May/index.html" >
+   <LINK REL="made" HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20installation%20issue%20on%20Max%20OS%20X%2010.7.3&In-Reply-To=%3CCAADX0RzaEFQ-sqfyu4xfokbv_g9O4CMxP9QUjHxs56jaHorzuQ%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000202.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[tpm-emulator-user] installation issue on Max OS X 10.7.3</H1>
+    <B>jay patel</B> 
+    <A HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20installation%20issue%20on%20Max%20OS%20X%2010.7.3&In-Reply-To=%3CCAADX0RzaEFQ-sqfyu4xfokbv_g9O4CMxP9QUjHxs56jaHorzuQ%40mail.gmail.com%3E"
+       TITLE="[tpm-emulator-user] installation issue on Max OS X 10.7.3">jaypatel150 at gmail.com
+       </A><BR>
+    <I>Wed May  9 05:37:44 CEST 2012</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000202.html">[tpm-emulator-user] Input Output Error with tpm emulator
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#201">[ date ]</a>
+              <a href="thread.html#201">[ thread ]</a>
+              <a href="subject.html#201">[ subject ]</a>
+              <a href="author.html#201">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi,
+
+So I initially was able to get the TPM working on my mac; however, I had to
+put my TPM project to the side but I recently was asked to revisit it.
+Initially I created a script that runs the following two commands
+
+sudo kextload -v /System/Library/Extensions/tpm_bridge.kext
+sudo tpmd -df clear
+
+However, when the tpmd starts now I get the following error during startup:
+tpmd.c:390: Info: starting TPM Emulator daemon (1.2.0.7-475)
+tpmd.c:93: Info: parsing options
+tpmd.c:100: Debug: debug mode enabled
+tpmd.c:95: Debug: handling option '-f'
+tpmd.c:103: Debug: application is forced to run in foreground
+tpmd.c:145: Debug: startup mode = 'clear'
+tpmd.c:198: Info: installing signal handlers
+tpmd.c:295: Info: staring main loop
+tpmd.c:265: Info: initializing socket /private/var/run/tpm/tpmd_socket:0
+tpmd.c:300: Debug: initializing TPM emulator
+tpm_emulator_extern.c:101: Info: _tpm_extern_init()
+tpm_emulator_extern.c:104: Debug: openening random device /dev/urandom
+tpm_cmd_handler.c:4113: Debug: tpm_emulator_init(1, 0x00000000)
+tpm_startup.c:29: Info: TPM_Init()
+tpm_testing.c:243: Info: TPM_SelfTestFull()
+tpm_testing.c:39: Debug: tpm_test_prng()
+tpm_testing.c:69: Debug: Monobit: 10023
+tpm_testing.c:70: Debug: Poker:   5.5
+tpm_testing.c:71: Debug: run_1:   2478, 2484
+tpm_testing.c:72: Debug: run_2:   1270, 1232
+tpm_testing.c:73: Debug: run_3:   606, 632
+tpm_testing.c:74: Debug: run_4:   315, 296
+tpm_testing.c:75: Debug: run_5:   154, 169
+tpm_testing.c:76: Debug: run_6+:  160, 169
+tpm_testing.c:77: Debug: run_34:  0
+tpm_testing.c:111: Debug: tpm_test_sha1()
+tpm_testing.c:157: Debug: tpm_test_hmac()
+tpm_testing.c:184: Debug: tpm_test_rsa_EK()
+tpm_testing.c:186: Debug: tpm_rsa_generate_key()
+*tpm_testing.c:263: Error: Self-Test failed: tpm_test_rsa_EK() failed*
+tpm_startup.c:43: Info: TPM_Startup(1)
+
+Lastly, I tried trying to recompile 0.7.4; however, I got xcodebuild
+following xcodebuild error. I saw the thread that said you fixed the
+missing sdk and '_' issue in the plist file. However, it seems those
+changes are included in the most recent code but I still get the error.
+
+[ 96%] Building C object tddl/CMakeFiles/test_tddl.dir/test_tddl.o
+Linking C executable test_tddl
+[ 96%] Built target test_tddl
+Scanning dependencies of target tpmd_dev
+[ 98%] Generating darwin/build/Release/tpm_bridge.kext
+** BUILD FAILED **
+
+
+The following build commands failed:
+    CompileC
+build/tpm_bridge.build/Release/tpm_bridge.build/Objects-normal/x86_64/tpm_bridge.o
+tpm_bridge.c normal x86_64 c com.apple.compilers.llvm.clang.1_0.compiler
+    CompileC
+build/tpm_bridge.build/Release/tpm_bridge.build/Objects-normal/i386/tpm_bridge.o
+tpm_bridge.c normal i386 c com.apple.compilers.llvm.clang.1_0.compiler
+(2 failures)
+make[3]: *** [all] Error 65
+make[2]: *** [tpmd_dev/darwin/build/Release/tpm_bridge.kext] Error 2
+make[1]: *** [tpmd_dev/CMakeFiles/tpmd_dev.dir/all] Error 2
+make: *** [all] Error 2
+
+
+Thanks,
+~Jay
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/tpm-emulator-user/attachments/20120508/5165afb9/attachment.html">https://lists.berlios.de/pipermail/tpm-emulator-user/attachments/20120508/5165afb9/attachment.html</A>&gt;
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000202.html">[tpm-emulator-user] Input Output Error with tpm emulator
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#201">[ date ]</a>
+              <a href="thread.html#201">[ thread ]</a>
+              <a href="subject.html#201">[ subject ]</a>
+              <a href="author.html#201">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">More information about the tpm-emulator-user
+mailing list</a><br>
+</body></html>

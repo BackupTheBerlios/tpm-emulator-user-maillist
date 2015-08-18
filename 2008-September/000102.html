@@ -1,0 +1,81 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [tpm-emulator-user] Ubuntu8.04.1 - test_tddl in emulator 0.5 -	Segmentation fault
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/tpm-emulator-user/2008-September/index.html" >
+   <LINK REL="made" HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20Ubuntu8.04.1%20-%20test_tddl%20in%20emulator%200.5%20-%0A%09Segmentation%20fault&In-Reply-To=%3C200809150835.19100.strasser%40tik.ee.ethz.ch%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000101.html">
+   <LINK REL="Next"  HREF="000103.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[tpm-emulator-user] Ubuntu8.04.1 - test_tddl in emulator 0.5 -	Segmentation fault</H1>
+    <B>Mario Strasser</B> 
+    <A HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20Ubuntu8.04.1%20-%20test_tddl%20in%20emulator%200.5%20-%0A%09Segmentation%20fault&In-Reply-To=%3C200809150835.19100.strasser%40tik.ee.ethz.ch%3E"
+       TITLE="[tpm-emulator-user] Ubuntu8.04.1 - test_tddl in emulator 0.5 -	Segmentation fault">strasser at tik.ee.ethz.ch
+       </A><BR>
+    <I>Mon Sep 15 08:35:18 CEST 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000101.html">[tpm-emulator-user] Ubuntu8.04.1 - test_tddl in emulator 0.5 -	Segmentation fault
+</A></li>
+        <LI>Next message: <A HREF="000103.html">[tpm-emulator-user] TCSD TDDL ERROR
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#102">[ date ]</a>
+              <a href="thread.html#102">[ thread ]</a>
+              <a href="subject.html#102">[ subject ]</a>
+              <a href="author.html#102">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi Armin,
+
+On Sunday, 14. September 2008 17:20:52 <A HREF="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">armin.simma at bregenznet.at</A> wrote:
+&gt;<i> when trying to compile test_tddl I get the following error:
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">root at climb-desktop</A>:/home/climb/Desktop/tpm_emulator-0.5/tddl# make test_tddl
+</I>&gt;<i> [...]
+</I>&gt;<i> test_tddl.c:135: warning: comparison between signed and unsigned
+</I>&gt;<i> test_tddl.c:145: warning: comparison between signed and unsigned
+</I>&gt;<i> [...]
+</I>&gt;<i> /usr/bin/ld: test_tddl: hidden symbol `__stack_chk_fail_local' in
+</I>The warnings should be fixed in the latest release (0.5.1, available
+at <A HREF="http://download.berlios.de/tpm-emulator/tpm_emulator-0.5.1.tar.gz">http://download.berlios.de/tpm-emulator/tpm_emulator-0.5.1.tar.gz</A>).
+As for the __stack_chk_fail_local error please make sure that all source
+files are compiled with the same compiler version (e.g, run
+&quot;make clean all&quot; in the directory tpm_emulator-0.5.1).
+
+Regards,
+Mario
+
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000101.html">[tpm-emulator-user] Ubuntu8.04.1 - test_tddl in emulator 0.5 -	Segmentation fault
+</A></li>
+	<LI>Next message: <A HREF="000103.html">[tpm-emulator-user] TCSD TDDL ERROR
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#102">[ date ]</a>
+              <a href="thread.html#102">[ thread ]</a>
+              <a href="subject.html#102">[ subject ]</a>
+              <a href="author.html#102">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">More information about the tpm-emulator-user
+mailing list</a><br>
+</body></html>

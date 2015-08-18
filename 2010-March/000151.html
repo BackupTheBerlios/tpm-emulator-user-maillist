@@ -1,0 +1,95 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [tpm-emulator-user] Problem with tpm_emulator ... or maybe TSS?
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/tpm-emulator-user/2010-March/index.html" >
+   <LINK REL="made" HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20Problem%20with%20tpm_emulator%20...%20or%20maybe%20TSS%3F&In-Reply-To=%3C3d71ad241003250402o15ff1ce5ja8216ec53d0bee3d%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000150.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[tpm-emulator-user] Problem with tpm_emulator ... or maybe TSS?</H1>
+    <B>toro83</B> 
+    <A HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20Problem%20with%20tpm_emulator%20...%20or%20maybe%20TSS%3F&In-Reply-To=%3C3d71ad241003250402o15ff1ce5ja8216ec53d0bee3d%40mail.gmail.com%3E"
+       TITLE="[tpm-emulator-user] Problem with tpm_emulator ... or maybe TSS?">toro83 at gmail.com
+       </A><BR>
+    <I>Thu Mar 25 12:02:22 CET 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000150.html">[tpm-emulator-user] Problem with tpm_emulator ... or maybe TSS?
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#151">[ date ]</a>
+              <a href="thread.html#151">[ thread ]</a>
+              <a href="subject.html#151">[ subject ]</a>
+              <a href="author.html#151">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>... found it! :-) sorry ... but it is hard to work ... and on the book i
+have, it wasn't really clear how the error was returned ... so, now i have
+understood that the command Tspi_TPM_Quote, not only returns a TSS_ERROR
+(one of the 3 listed in its man page), but indeed could also return an error
+message related to other layers ... in this case i have done some researches
+in the /usr/include/tss/*error.h and found that my error was related to the
+TCS layer, and inside of it, it was related to an invalid key ... now i'll
+work on it. Sorry for the futile posting on the mailing list. I'll triple
+check every future question before posting it here :-)
+
+There is still one problem, with the error codes ... but now i think its
+really related only to the trousers (tss) group.
+
+Bye,
+Daniel.
+
+2010/3/25 toro83 &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">toro83 at gmail.com</A>&gt;
+
+&gt;<i> Hi,
+</I>&gt;<i>
+</I>&gt;<i> i continue having problems with some programs i'm developing ... now a
+</I>&gt;<i> problem arises, and i already spent a few days trying to solve it, so, here
+</I>&gt;<i> it comes:
+</I>&gt;<i>
+</I>&gt;<i> i try to call a Tspi_TPM_Quote operation, but it returns without success,
+</I>&gt;<i> returning a dec value of 8389 ... hex 0x20C5, and i haven't found it
+</I>&gt;<i> anywhere else, so, i really don't know what to do right now. I'll post this
+</I>&gt;<i> message on both mailing lists, of tpm_emulator-user and of tss_users, hoping
+</I>&gt;<i> to receive some advice.
+</I>&gt;<i>
+</I>&gt;<i> So, thanks in advance ...
+</I>&gt;<i>
+</I>&gt;<i> Daniel.
+</I>&gt;<i>
+</I>-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/tpm-emulator-user/attachments/20100325/e0571020/attachment.html">https://lists.berlios.de/pipermail/tpm-emulator-user/attachments/20100325/e0571020/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000150.html">[tpm-emulator-user] Problem with tpm_emulator ... or maybe TSS?
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#151">[ date ]</a>
+              <a href="thread.html#151">[ thread ]</a>
+              <a href="subject.html#151">[ subject ]</a>
+              <a href="author.html#151">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">More information about the tpm-emulator-user
+mailing list</a><br>
+</body></html>

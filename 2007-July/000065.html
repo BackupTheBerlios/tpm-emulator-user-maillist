@@ -1,0 +1,149 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [tpm-emulator-user] TPM Emulator not working
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/tpm-emulator-user/2007-July/index.html" >
+   <LINK REL="made" HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20TPM%20Emulator%20not%20working&In-Reply-To=%3C46AFAEF9.1040900%40sbox.tugraz.at%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000060.html">
+   <LINK REL="Next"  HREF="000061.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[tpm-emulator-user] TPM Emulator not working</H1>
+    <B>Andreas Niederl</B> 
+    <A HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20TPM%20Emulator%20not%20working&In-Reply-To=%3C46AFAEF9.1040900%40sbox.tugraz.at%3E"
+       TITLE="[tpm-emulator-user] TPM Emulator not working">niederl at sbox.tugraz.at
+       </A><BR>
+    <I>Tue Jul 31 23:51:53 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000060.html">[tpm-emulator-user] TPM Emulator not working
+</A></li>
+        <LI>Next message: <A HREF="000061.html">[tpm-emulator-user] Error installation tpm emulator
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#65">[ date ]</a>
+              <a href="thread.html#65">[ thread ]</a>
+              <a href="subject.html#65">[ subject ]</a>
+              <a href="author.html#65">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi,
+
+Roberto Nemirovsky wrote:
+&gt;<i> Hi, i'm trying to play with tpm_emulator in gentoo (installed with
+</I>&gt;<i> emerge) but it's not working. Can someone help me??
+</I>&gt;<i> 
+</I>&gt;<i> rj8 ~ # /etc/init.d/tpm-emulator start
+</I>&gt;<i> * Starting tpm-emulator daemon with mode 'save' (tpmd) ... [ ok ]
+</I>&gt;<i> 
+</I>&gt;<i> rj8 ~ # tcsd -f
+</I>&gt;<i> TDDL tddl.c:66 ERROR: Could not find a device to open!
+</I>&gt;<i> 
+</I>&gt;<i> rj8 ~ # dmesg
+</I>&gt;<i> ....
+</I>&gt;<i> tpm_dev /var/tmp/portage/app-crypt/tpm-emulator-0.5/work/tpm_emulator-0.5/tpmd_dev/tpmd_dev.c:141:
+</I>&gt;<i> Debug: tpm_open()
+</I>&gt;<i> tpm_dev /var/tmp/portage/app-crypt/tpm-emulator-0.5/work/tpm_emulator-0.5/tpmd_dev/tpmd_dev.c:85:
+</I>&gt;<i> Error: sock_connect() failed: -2
+</I>&gt;<i> 
+</I>&gt;<i> rj8 ~ # ls -l /dev/tpm*
+</I>&gt;<i> crw-rw---- 1 root tss 10, 224 Jul 11 12:22 /dev/tpm
+</I>&gt;<i> lrwxrwxrwx 1 root root 3 Jul 11 12:22 /dev/tpm0 -&gt; tpm
+</I>&gt;<i> 
+</I>&gt;<i> rj8 var # lsmod
+</I>&gt;<i> Module                  Size  Used by
+</I>&gt;<i> tpmd_dev                6288  0
+</I>&gt;<i> rtc                    13108  0
+</I>&gt;<i> serio_raw               7300  0
+</I>&gt;<i> i2c_piix4               8976  0
+</I>&gt;<i> i2c_core               21136  1 i2c_piix4
+</I>&gt;<i> evdev                   9728  0
+</I>&gt;<i> 
+</I>&gt;<i> rj8 var # modinfo tpmd_dev
+</I>&gt;<i> filename:       /lib/modules/2.6.16.49-xen/crypt/tpmd_dev.ko
+</I>&gt;<i> description:    Trusted Platform Module (TPM) Emulator
+</I>&gt;<i> author:         Mario Strasser &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">mast at gmx.net</A>&gt;
+</I>&gt;<i> license:        GPL
+</I>&gt;<i> srcversion:     3633AA4BCD3427D872F9547
+</I>&gt;<i> depends:
+</I>&gt;<i> vermagic:       2.6.16.49-xen PENTIUMIII REGPARM gcc-4.1
+</I>&gt;<i> parm:           tpmd_socket_name: Sets the name of the TPM daemon
+</I>&gt;<i> socket. (charp)
+</I>&gt;<i> 
+</I>&gt;<i> rj8 ~ # uname -a
+</I>&gt;<i> Linux rj8 2.6.16.49-xen #5 Tue Jul 10 16:01:13 BRT 2007 i686 Pentium
+</I>&gt;<i> III (Katmai) GenuineIntel GNU/Linux
+</I>
+I've encountered exactly the same error on my Gentoo box. So, I took a
+look at the tpm-emulator ebuild and noticed, that the location for
+tpmd_socket gets changed from /var/tpm to /var/run/tpm. Except that one
+source file is lost in the process.
+
+Please apply the following change to your ebuild (preferably in a
+private overlay), rebuild the tpm-emulator and retry. I've only tested
+it with a quick tpm_takeownership.
+
+--- /usr/portage/app-crypt/tpm-emulator/tpm-emulator-0.5.ebuild
+2007-07-14 00:05
+:<i>25.000000000 +0200
+</I>+++ /usr/local/portage/app-crypt/tpm-emulator/tpm-emulator-0.5.ebuild
+2007-07-
+31 23:20:07.000000000 +0200
+@@ -33,7 +33,7 @@
+        unpack ${A}
+        cd &quot;${S}&quot;
+        sed -i 's/LDFLAGS :=/override LDFLAGS +=/g' tpmd/Makefile
+-       sed -i 's#/var/tpm#/var/run/tpm#g' tpmd/tpmd.c tddl/tddl.c
+tpm_dev/linux_module.c
++       sed -i 's#/var/tpm#/var/run/tpm#g' tpmd/tpmd.c tddl/tddl.c
+tpm_dev/linux_module.c tpmd_dev/tpmd_dev.c
+ }
+
+ src_install() {
+
+
+I'll do some more testing of my own and will open a bug report about
+this by the end of the week.
+
+Btw, wouldn't it be more feasible to provide such information somewhere
+centralized instead of directly hardcoded into the source code?
+There's also a feature request about this issue[1].
+
+
+Regards,
+Andi
+
+[1]
+<A HREF="https://developer.berlios.de/feature/index.php?func=detailfeature&amp;feature_id=3304&amp;group_id=2491">https://developer.berlios.de/feature/index.php?func=detailfeature&amp;feature_id=3304&amp;group_id=2491</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000060.html">[tpm-emulator-user] TPM Emulator not working
+</A></li>
+	<LI>Next message: <A HREF="000061.html">[tpm-emulator-user] Error installation tpm emulator
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#65">[ date ]</a>
+              <a href="thread.html#65">[ thread ]</a>
+              <a href="subject.html#65">[ subject ]</a>
+              <a href="author.html#65">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">More information about the tpm-emulator-user
+mailing list</a><br>
+</body></html>

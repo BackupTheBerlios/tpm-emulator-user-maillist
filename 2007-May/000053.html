@@ -1,0 +1,75 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [tpm-emulator-user] Can't Open TPM Driver error
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/tpm-emulator-user/2007-May/index.html" >
+   <LINK REL="made" HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20Can%27t%20Open%20TPM%20Driver%20error&In-Reply-To=%3C200705241558.28959.strasser%40tik.ee.ethz.ch%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000052.html">
+   <LINK REL="Next"  HREF="000054.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[tpm-emulator-user] Can't Open TPM Driver error</H1>
+    <B>Mario Strasser</B> 
+    <A HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20Can%27t%20Open%20TPM%20Driver%20error&In-Reply-To=%3C200705241558.28959.strasser%40tik.ee.ethz.ch%3E"
+       TITLE="[tpm-emulator-user] Can't Open TPM Driver error">strasser at tik.ee.ethz.ch
+       </A><BR>
+    <I>Thu May 24 15:58:28 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000052.html">[tpm-emulator-user] Can't Open TPM Driver error
+</A></li>
+        <LI>Next message: <A HREF="000054.html">[tpm-emulator-user] Can't open TPM Driver
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#53">[ date ]</a>
+              <a href="thread.html#53">[ thread ]</a>
+              <a href="subject.html#53">[ subject ]</a>
+              <a href="author.html#53">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi,
+
+On Thursday, 24. May 2007 15:08:07 TaMLeEk ALi wrote:
+&gt;<i> the scripts in tpm-1.1b, which are demo scripts for testing tpm working, refers to a file transmit.c which contains following code segment..
+</I>&gt;<i> 
+</I>&gt;<i> if ((tpmfp = open(&quot;/dev/tpm&quot;, O_RDWR)) &lt; 0) {
+</I>&gt;<i>         fprintf(stderr, &quot;Can't open TPM Driver\n&quot;);
+</I>&gt;<i>         return -1;
+</I>&gt;<i>     }
+</I>&gt;<i> and i cant find any /dev/tpm on my system... Now what to do next ? 
+</I>In order to use the device interface, the tpmd_dev
+kernel module has to be loaded as well.
+
+-Mario
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000052.html">[tpm-emulator-user] Can't Open TPM Driver error
+</A></li>
+	<LI>Next message: <A HREF="000054.html">[tpm-emulator-user] Can't open TPM Driver
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#53">[ date ]</a>
+              <a href="thread.html#53">[ thread ]</a>
+              <a href="subject.html#53">[ subject ]</a>
+              <a href="author.html#53">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">More information about the tpm-emulator-user
+mailing list</a><br>
+</body></html>

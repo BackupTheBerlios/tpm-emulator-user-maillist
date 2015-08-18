@@ -1,0 +1,119 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [tpm-emulator-user] Problems using tpm emulator and tss -	unable to load 1.2 key in 1.1 tpm
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/tpm-emulator-user/2010-January/index.html" >
+   <LINK REL="made" HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20Problems%20using%20tpm%20emulator%20and%20tss%20-%0A%09unable%20to%20load%201.2%20key%20in%201.1%20tpm&In-Reply-To=%3C3d71ad241001101028v15b23dfbxb8b7167e96137171%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000135.html">
+   <LINK REL="Next"  HREF="000136.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[tpm-emulator-user] Problems using tpm emulator and tss -	unable to load 1.2 key in 1.1 tpm</H1>
+    <B>toro83</B> 
+    <A HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20Problems%20using%20tpm%20emulator%20and%20tss%20-%0A%09unable%20to%20load%201.2%20key%20in%201.1%20tpm&In-Reply-To=%3C3d71ad241001101028v15b23dfbxb8b7167e96137171%40mail.gmail.com%3E"
+       TITLE="[tpm-emulator-user] Problems using tpm emulator and tss -	unable to load 1.2 key in 1.1 tpm">toro83 at gmail.com
+       </A><BR>
+    <I>Sun Jan 10 19:28:29 CET 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000135.html">[tpm-emulator-user] Problems using tpm emulator and tss - unable to	load 1.2 key in 1.1 tpm
+</A></li>
+        <LI>Next message: <A HREF="000136.html">[tpm-emulator-user] PKCS#11 Data Management Commands fail
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#137">[ date ]</a>
+              <a href="thread.html#137">[ thread ]</a>
+              <a href="subject.html#137">[ subject ]</a>
+              <a href="author.html#137">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi Salvatore,
+
+there is a problem in the library and in the emulator. So the jTss people
+made a patch to workaround the problem. They sent the patched version of the
+jTss_0.4.1 to me. I don't know if i'm allowed to send it to you, so better
+ask them. However the problem should be resolved by that.
+Can i question you something: where are you from, are you working for
+university or something else?
+
+Bye,
+Daniel.
+
+2010/1/10 Salvatore Runci &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">salvatore.runci at gmail.com</A>&gt;
+
+&gt;<i>
+</I>&gt;<i> Hi! i have the same problem, have you resolved it?
+</I>&gt;<i> could you tell me how?
+</I>&gt;<i>
+</I>&gt;<i> Thanks
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Hi,
+</I>&gt;<i>
+</I>&gt;<i> i'm using tpmemulator_0.6.1 and jTSS_0.4.1.
+</I>&gt;<i>
+</I>&gt;<i> Running our own written program and the test program distributed with jTSS
+</I>&gt;<i>
+</I>&gt;<i> under test folder i've encountered following problem, and i was unable to
+</I>&gt;<i> find a solution. Could somebody please help me?
+</I>&gt;<i>
+</I>&gt;<i> If some more information are needed, only ask :-)
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> TSS Error:
+</I>&gt;<i> error layer:                0x3000 (TSP)
+</I>&gt;<i>
+</I>&gt;<i> error code (without layer): 0x04
+</I>&gt;<i> error code (full):          0x3004
+</I>&gt;<i> error message: An internal SW error has been detected.
+</I>&gt;<i> additional info: Unable to load 1.2 key in 1.1 TPM
+</I>&gt;<i>
+</I>&gt;<i>         at iaik.tc.tss.impl.java.tsp.TcRsaKey.loadKey(TcRsaKey.java:647)
+</I>&gt;<i>
+</I>&gt;<i> ....
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Bye,
+</I>&gt;<i> Daniel
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> tpm-emulator-user mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">tpm-emulator-user at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">https://lists.berlios.de/mailman/listinfo/tpm-emulator-user</A>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/tpm-emulator-user/attachments/20100110/684f403e/attachment.html">https://lists.berlios.de/pipermail/tpm-emulator-user/attachments/20100110/684f403e/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000135.html">[tpm-emulator-user] Problems using tpm emulator and tss - unable to	load 1.2 key in 1.1 tpm
+</A></li>
+	<LI>Next message: <A HREF="000136.html">[tpm-emulator-user] PKCS#11 Data Management Commands fail
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#137">[ date ]</a>
+              <a href="thread.html#137">[ thread ]</a>
+              <a href="subject.html#137">[ subject ]</a>
+              <a href="author.html#137">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">More information about the tpm-emulator-user
+mailing list</a><br>
+</body></html>

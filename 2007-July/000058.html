@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [tpm-emulator-user] TPM Emulator not working
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/tpm-emulator-user/2007-July/index.html" >
+   <LINK REL="made" HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20TPM%20Emulator%20not%20working&In-Reply-To=%3Cd5eaa710707111831p3cb764fuddba9cd0e77dabb4%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000059.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[tpm-emulator-user] TPM Emulator not working</H1>
+    <B>Roberto Nemirovsky</B> 
+    <A HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20TPM%20Emulator%20not%20working&In-Reply-To=%3Cd5eaa710707111831p3cb764fuddba9cd0e77dabb4%40mail.gmail.com%3E"
+       TITLE="[tpm-emulator-user] TPM Emulator not working">roberto.paes at gmail.com
+       </A><BR>
+    <I>Thu Jul 12 03:31:34 CEST 2007</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000059.html">[tpm-emulator-user] TPM Emulator not working
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#58">[ date ]</a>
+              <a href="thread.html#58">[ thread ]</a>
+              <a href="subject.html#58">[ subject ]</a>
+              <a href="author.html#58">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi, i'm trying to play with tpm_emulator in gentoo (installed with
+emerge) but it's not working. Can someone help me??
+
+rj8 ~ # /etc/init.d/tpm-emulator start
+* Starting tpm-emulator daemon with mode 'save' (tpmd) ... [ ok ]
+
+rj8 ~ # tcsd -f
+TDDL tddl.c:66 ERROR: Could not find a device to open!
+
+rj8 ~ # dmesg
+....
+tpm_dev /var/tmp/portage/app-crypt/tpm-emulator-0.5/work/tpm_emulator-0.5/tpmd_dev/tpmd_dev.c:141:
+Debug: tpm_open()
+tpm_dev /var/tmp/portage/app-crypt/tpm-emulator-0.5/work/tpm_emulator-0.5/tpmd_dev/tpmd_dev.c:85:
+Error: sock_connect() failed: -2
+
+rj8 ~ # ls -l /dev/tpm*
+crw-rw---- 1 root tss 10, 224 Jul 11 12:22 /dev/tpm
+lrwxrwxrwx 1 root root 3 Jul 11 12:22 /dev/tpm0 -&gt; tpm
+
+rj8 var # lsmod
+Module                  Size  Used by
+tpmd_dev                6288  0
+rtc                    13108  0
+serio_raw               7300  0
+i2c_piix4               8976  0
+i2c_core               21136  1 i2c_piix4
+evdev                   9728  0
+
+rj8 var # modinfo tpmd_dev
+filename:       /lib/modules/2.6.16.49-xen/crypt/tpmd_dev.ko
+description:    Trusted Platform Module (TPM) Emulator
+author:         Mario Strasser &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">mast at gmx.net</A>&gt;
+license:        GPL
+srcversion:     3633AA4BCD3427D872F9547
+depends:
+vermagic:       2.6.16.49-xen PENTIUMIII REGPARM gcc-4.1
+parm:           tpmd_socket_name: Sets the name of the TPM daemon
+socket. (charp)
+
+rj8 ~ # uname -a
+Linux rj8 2.6.16.49-xen #5 Tue Jul 10 16:01:13 BRT 2007 i686 Pentium
+III (Katmai) GenuineIntel GNU/Linux
+
+[]'s Roberto
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000059.html">[tpm-emulator-user] TPM Emulator not working
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#58">[ date ]</a>
+              <a href="thread.html#58">[ thread ]</a>
+              <a href="subject.html#58">[ subject ]</a>
+              <a href="author.html#58">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">More information about the tpm-emulator-user
+mailing list</a><br>
+</body></html>

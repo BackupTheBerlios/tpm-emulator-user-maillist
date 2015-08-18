@@ -1,0 +1,143 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [tpm-emulator-user] problems compiling tddl_example.c
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/tpm-emulator-user/2006-April/index.html" >
+   <LINK REL="made" HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20problems%20compiling%20tddl_example.c&In-Reply-To=%3C444E0273.1020207%40unifr.ch%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000005.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[tpm-emulator-user] problems compiling tddl_example.c</H1>
+    <B>Carolin Latze</B> 
+    <A HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20problems%20compiling%20tddl_example.c&In-Reply-To=%3C444E0273.1020207%40unifr.ch%3E"
+       TITLE="[tpm-emulator-user] problems compiling tddl_example.c">carolin.latze at unifr.ch
+       </A><BR>
+    <I>Tue Apr 25 13:05:23 CEST 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000005.html">[tpm-emulator-user] problems compiling tddl_example.c
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#6">[ date ]</a>
+              <a href="thread.html#6">[ thread ]</a>
+              <a href="subject.html#6">[ subject ]</a>
+              <a href="author.html#6">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi,
+
+I solved this problem. It was just a problem of the order of the files. 
+I wrote
+
+gcc -o tddl_example -ltddl tddl_example.c
+
+but it has to be:
+
+gcc -d tddl_example tddl_example.c -ltddl
+
+because the linker goes from the left to the right...
+
+But now, I get:
+
+<A HREF="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">latze at diufpc266</A>:/home/latze/tpm/emul/tests$ gcc -o tddl_example tddl_example.c -ltddl
+/usr/lib/gcc/i386-pc-linux-gnu/3.4.5/../../../libtddl.a(libtddl_a-tddl.o): In function `Tddli_Open':
+tddl.c:(.text+0x94): undefined reference to `foreground'
+/usr/lib/gcc/i386-pc-linux-gnu/3.4.5/../../../libtddl.a(libtddl_a-tddl.o): In function `Tddli_TransmitData':
+tddl.c:(.text+0x1ec): undefined reference to `foreground'
+tddl.c:(.text+0x259): undefined reference to `foreground'
+tddl.c:(.text+0x2cc): undefined reference to `foreground'
+tddl.c:(.text+0x3a6): undefined reference to `foreground'
+/usr/lib/gcc/i386-pc-linux-gnu/3.4.5/../../../libtddl.a(libtddl_a-tddl.o):tddl.c:(.text+0x457): more undefined references to `foreground' follow
+collect2: ld returned 1 exit status
+<A HREF="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">latze at diufpc266</A>:/home/latze/tpm/emul/tests$ 
+
+That seems to be ok, since:
+
+<A HREF="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">latze at diufpc266</A>:/home/latze$ nm /usr/local/lib/libtddl.a | grep foreground
+         U foreground
+<A HREF="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">latze at diufpc266</A>:/home/latze$
+
+Has anybody an idea how to solve this problem? I tried to find the missing symbol in other libraries. It is defined in libX11.a, but linking this library does not help...
+
+Bye
+Carolin
+
+
+
+Mario Strasser wrote:
+
+&gt;<i>Hi,
+</I>&gt;<i>
+</I>&gt;<i>On Friday, 21. April 2006 13:19, Carolin Latze wrote:
+</I>&gt;<i>  
+</I>&gt;<i>
+</I>&gt;&gt;<i>I tried to compile the example shown on page 16 of the thesis &quot;A 
+</I>&gt;&gt;<i>software based TPM Emulator for Linux&quot;, but I get the following result
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i><A HREF="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">latze at diufpc266</A>:/home/latze/tpm/emul/tests$ gcc -o tddl_example -ltddl 
+</I>&gt;&gt;<i>tddl_example.c
+</I>&gt;&gt;<i>/tmp/ccokMMI1.o: In function `main':
+</I>&gt;&gt;<i>tddl_example.c:(.text+0x66): undefined reference to `Tddli_Open'
+</I>&gt;&gt;<i>tddl_example.c:(.text+0xb7): undefined reference to `Tddli_TransmitData'
+</I>&gt;&gt;<i>tddl_example.c:(.text+0xdb): undefined reference to `Tddli_Close'
+</I>&gt;&gt;<i>tddl_example.c:(.text+0x122): undefined reference to `Tddli_Close'
+</I>&gt;&gt;<i>tddl_example.c:(.text+0x133): undefined reference to `Tddli_Close'
+</I>&gt;&gt;<i>collect2: ld returned 1 exit status
+</I>&gt;&gt;<i><A HREF="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">latze at diufpc266</A>:/home/latze/tpm/emul/tests$
+</I>&gt;&gt;<i>[...]
+</I>&gt;&gt;<i>Does anybody see, whats going wrong? Did I forget to link a library?
+</I>&gt;&gt;<i>    
+</I>&gt;&gt;<i>
+</I>&gt;<i>It seems as if the tddl library cannot be linked properly.
+</I>&gt;<i>Make sure that it is in the default search path of the linker
+</I>&gt;<i>and that there are no conflicts with the one provided by
+</I>&gt;<i>the trousers package.
+</I>&gt;<i>
+</I>&gt;<i>Regards,
+</I>&gt;<i>Mario
+</I>&gt;<i>  
+</I>&gt;<i>
+</I>
+-- 
+Carolin Latze
+Assistante Dipl&#244;m&#233;e
+
+Department of Computer Science
+Boulevard de P&#233;rolles 90
+CH-1700 Fribourg
+
+phone: +41 26 300 83 30
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000005.html">[tpm-emulator-user] problems compiling tddl_example.c
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#6">[ date ]</a>
+              <a href="thread.html#6">[ thread ]</a>
+              <a href="subject.html#6">[ subject ]</a>
+              <a href="author.html#6">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">More information about the tpm-emulator-user
+mailing list</a><br>
+</body></html>

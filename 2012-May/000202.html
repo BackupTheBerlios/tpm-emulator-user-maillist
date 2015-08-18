@@ -1,0 +1,217 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [tpm-emulator-user] Input Output Error with tpm emulator
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/tpm-emulator-user/2012-May/index.html" >
+   <LINK REL="made" HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20Input%20Output%20Error%20with%20tpm%20emulator&In-Reply-To=%3C4FBA88EB.5010209%40gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000201.html">
+   <LINK REL="Next"  HREF="000203.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[tpm-emulator-user] Input Output Error with tpm emulator</H1>
+    <B>santosh</B> 
+    <A HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20Input%20Output%20Error%20with%20tpm%20emulator&In-Reply-To=%3C4FBA88EB.5010209%40gmail.com%3E"
+       TITLE="[tpm-emulator-user] Input Output Error with tpm emulator">santosh.aditham at gmail.com
+       </A><BR>
+    <I>Mon May 21 20:26:51 CEST 2012</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000201.html">[tpm-emulator-user] installation issue on Max OS X 10.7.3
+</A></li>
+        <LI>Next message: <A HREF="000203.html">[tpm-emulator-user] Help with using TPM emulator with TPMJ
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#202">[ date ]</a>
+              <a href="thread.html#202">[ thread ]</a>
+              <a href="subject.html#202">[ subject ]</a>
+              <a href="author.html#202">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I am trying to use the tpm emulator with tpmj and I get the following error:
+BasicTPMDriver: TPMIOException encountered. 
+(edu.mit.csail.tpmj.TPMIOException: java.io.FileNotFoundException: 
+/dev/tpm0 (Input/output error))
+
+How do I make this work?
+
+Please find log file attached that has the steps I followed. Do let me 
+know if I missed on anything.
+
+I appreciate the help.
+
+- Santosh
+
+-------------- next part --------------
+<A HREF="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">santosh at ubuntu</A>:~$ sudo depmod -a
+[sudo] password for santosh: 
+<A HREF="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">santosh at ubuntu</A>:~$ sudo modprobe tpmd_dev
+<A HREF="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">santosh at ubuntu</A>:~$ sudo tpmd -d -f clear
+tpmd.c:390: Info: starting TPM Emulator daemon (1.2.0.7-475)
+tpmd.c:93: Info: parsing options
+tpmd.c:100: Debug: debug mode enabled
+tpmd.c:95: Debug: handling option '-f'
+tpmd.c:103: Debug: application is forced to run in foreground
+tpmd.c:145: Debug: startup mode = 'clear'
+tpmd.c:198: Info: installing signal handlers
+tpmd.c:295: Info: staring main loop
+tpmd.c:265: Info: initializing socket /var/run/tpm/tpmd_socket:0
+tpmd.c:300: Debug: initializing TPM emulator
+tpm_emulator_extern.c:101: Info: _tpm_extern_init()
+tpm_emulator_extern.c:104: Debug: openening random device /dev/urandom
+tpm_cmd_handler.c:4113: Debug: tpm_emulator_init(1, 0x00000000)
+tpm_startup.c:29: Info: TPM_Init()
+tpm_testing.c:243: Info: TPM_SelfTestFull()
+tpm_testing.c:39: Debug: tpm_test_prng()
+tpm_testing.c:69: Debug: Monobit: 9962
+tpm_testing.c:70: Debug: Poker:   10.5
+tpm_testing.c:71: Debug: run_1:   2543, 2555
+tpm_testing.c:72: Debug: run_2:   1280, 1263
+tpm_testing.c:73: Debug: run_3:   612, 647
+tpm_testing.c:74: Debug: run_4:   312, 323
+tpm_testing.c:75: Debug: run_5:   156, 136
+tpm_testing.c:76: Debug: run_6+:  157, 136
+tpm_testing.c:77: Debug: run_34:  0
+tpm_testing.c:111: Debug: tpm_test_sha1()
+tpm_testing.c:157: Debug: tpm_test_hmac()
+tpm_testing.c:184: Debug: tpm_test_rsa_EK()
+tpm_testing.c:186: Debug: tpm_rsa_generate_key()
+tpm_testing.c:191: Debug: testing endorsement key
+tpm_testing.c:197: Debug: tpm_rsa_sign(RSA_SSA_PKCS1_SHA1)
+tpm_testing.c:200: Debug: tpm_rsa_verify(RSA_SSA_PKCS1_SHA1)
+tpm_testing.c:203: Debug: tpm_rsa_sign(RSA_SSA_PKCS1_DER)
+tpm_testing.c:206: Debug: tpm_rsa_verify(RSA_SSA_PKCS1_DER)
+tpm_testing.c:210: Debug: tpm_rsa_encrypt(RSA_ES_PKCSV15)
+tpm_testing.c:214: Debug: tpm_rsa_decrypt(RSA_ES_PKCSV15)
+tpm_testing.c:218: Debug: verify plain text
+tpm_testing.c:221: Debug: tpm_rsa_encrypt(RSA_ES_OAEP_SHA1)
+tpm_testing.c:225: Debug: tpm_rsa_decrypt(RSA_ES_OAEP_SHA1)
+tpm_testing.c:229: Debug: verify plain text
+tpm_testing.c:261: Info: Self-Test succeeded
+tpm_startup.c:43: Info: TPM_Startup(1)
+tpmd.c:310: Debug: waiting for connections...
+tpmd.c:310: Debug: waiting for connections...
+
+
+==================================================================================
+
+
+<A HREF="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">santosh at ubuntu</A>:~$ ps -ef | grep tpmd
+root      2463  2345  0 13:44 pts/0    00:00:00 sudo tpmd -d -f clear
+root      2464  2463  0 13:44 pts/0    00:00:00 tpmd -d -f clear
+santosh   2467  2398  0 13:45 pts/1    00:00:00 grep --color=auto tpmd
+<A HREF="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">santosh at ubuntu</A>:~$ ls -al /var/run/tpm
+total 0
+drwxr-xr-x  2 root root  60 2012-05-21 13:44 .
+drwxr-xr-x 21 root root 780 2012-05-21 13:44 ..
+srw-------  1 root root   0 2012-05-21 13:44 tpmd_socket:0
+<A HREF="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">santosh at ubuntu</A>:~$ sudo chmod 777 /var/run/tpm*
+[sudo] password for santosh: 
+<A HREF="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">santosh at ubuntu</A>:~$ ls -al /dev/tpm*
+crw-rw---- 1 root root 10, 224 2012-05-21 13:44 /dev/tpm
+lrwxrwxrwx 1 root root       3 2012-05-21 13:44 /dev/tpm0 -&gt; tpm
+<A HREF="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">santosh at ubuntu</A>:~$ sudo chmod 777 /dev/tpm*
+<A HREF="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">santosh at ubuntu</A>:~/Documents/summer 2012/research/tpm/tpmj/tpmjdemo$ export CLASSPATH=~/Documents/summer\ 2012/research/tpm/tpmj/lib/tpmj.jar:~/Documents/summer\ 2012/research/tpm/tpmj/lib/bcprov-jdk15-131.jar
+<A HREF="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">santosh at ubuntu</A>:~/Documents/summer 2012/research/tpm/tpmj/bin/edu/mit/csail/tpmj/tools$ java edu.mit.csail.tpmj.tools.TPMInfo ownerPwd = null, Encoded = null
+BasicTPMDriver: TPMIOException encountered. (edu.mit.csail.tpmj.TPMIOException: java.io.FileNotFoundException: /dev/tpm0 (Input/output error))
+Waiting 2.0 s, then retrying ... 
+edu.mit.csail.tpmj.TPMIOException: java.io.FileNotFoundException: /dev/tpm0 (Input/output error)
+	at edu.mit.csail.tpmj.drivers.linux.LinuxTPMDriver.transmitBytes(LinuxTPMDriver.java:123)
+	at edu.mit.csail.tpmj.drivers.BasicTPMDriver.transmit(BasicTPMDriver.java:274)
+	at edu.mit.csail.tpmj.drivers.BasicTPMDriver.transmit(BasicTPMDriver.java:1)
+	at edu.mit.csail.tpmj.commands.TPMCommand.execute(TPMCommand.java:230)
+	at edu.mit.csail.tpmj.commands.TPM_GetCapability.execute(TPM_GetCapability.java:110)
+	at edu.mit.csail.tpmj.drivers.BasicTPMDriver.getTPMManufacturer(BasicTPMDriver.java:102)
+	at edu.mit.csail.tpmj.drivers.BasicTPMDriver.init(BasicTPMDriver.java:73)
+	at edu.mit.csail.tpmj.drivers.TPMDriverFactory.createTPMDriver(TPMDriverFactory.java:77)
+	at edu.mit.csail.tpmj.drivers.TPMDriverFactory.getTPMDriver(TPMDriverFactory.java:85)
+	at edu.mit.csail.tpmj.funcs.TPMUtilityFuncs.initTPMDriver(TPMUtilityFuncs.java:64)
+	at edu.mit.csail.tpmj.funcs.TPMUtilityFuncs.getTPMDriver(TPMUtilityFuncs.java:82)
+	at edu.mit.csail.tpmj.util.TPMToolsUtil.initDriverFromParams(TPMToolsUtil.java:95)
+	at edu.mit.csail.tpmj.tools.TPMInfo.main(TPMInfo.java:46)
+Caused by: java.io.FileNotFoundException: /dev/tpm0 (Input/output error)
+	at java.io.RandomAccessFile.open(Native Method)
+	at java.io.RandomAccessFile.&lt;init&gt;(RandomAccessFile.java:233)
+	at java.io.RandomAccessFile.&lt;init&gt;(RandomAccessFile.java:118)
+	at edu.mit.csail.tpmj.drivers.linux.LinuxTPMDriver.transmitBytes(LinuxTPMDriver.java:82)
+	... 12 more
+BasicTPMDriver: TPMIOException encountered. (edu.mit.csail.tpmj.TPMIOException: java.io.FileNotFoundException: /dev/tpm0 (Input/output error))
+Waiting 2.0 s, then retrying ... 
+BasicTPMDriver: TPMIOException encountered. (edu.mit.csail.tpmj.TPMIOException: java.io.FileNotFoundException: /dev/tpm0 (Input/output error))
+Waiting 2.0 s, then retrying ... 
+ownerPwd = ownerPwd, Encoded (Infineon/Vista (SHA1 of UTF16LE without null terminator) = e22bdf15e69277f7cb45296f3ead38adae94668a
+
+*****
+Getting manufacturer ID ... 
+BasicTPMDriver: TPMIOException encountered. (edu.mit.csail.tpmj.TPMIOException: java.io.FileNotFoundException: /dev/tpm0 (Input/output error))
+Waiting 2.0 s, then retrying ... 
+TPM Exception: edu.mit.csail.tpmj.TPMIOException: java.io.FileNotFoundException: /dev/tpm0 (Input/output error)
+Occured on input: edu.mit.csail.tpmj.structs.ByteArrayTPMInputStruct: 
+00 c1 00 00 00 16 00 00 00 65 00 00 00 05 00 00 00 04 00 00
+01 03
+
+Output (if any): null
+Return Code (if any): -1 (UNKNOWN ERROR: -1)
+----
+
+Getting version via TPM 1.1 way ... 
+BasicTPMDriver: TPMIOException encountered. (edu.mit.csail.tpmj.TPMIOException: java.io.FileNotFoundException: /dev/tpm0 (Input/output error))
+Waiting 2.0 s, then retrying ... 
+TPM Exception: edu.mit.csail.tpmj.TPMIOException: java.io.FileNotFoundException: /dev/tpm0 (Input/output error)
+Occured on input: edu.mit.csail.tpmj.structs.ByteArrayTPMInputStruct: 00 c1 00 00 00 12 00 00 00 65 00 00 00 06 00 00 00 00
+Output (if any): null
+Return Code (if any): -1 (UNKNOWN ERROR: -1)
+Returned: null
+
+----
+
+Getting version via TPM 1.2 way ... 
+BasicTPMDriver: TPMIOException encountered. (edu.mit.csail.tpmj.TPMIOException: java.io.FileNotFoundException: /dev/tpm0 (Input/output error))
+Waiting 2.0 s, then retrying ... 
+TPM Exception: edu.mit.csail.tpmj.TPMIOException: java.io.FileNotFoundException: /dev/tpm0 (Input/output error)
+Occured on input: edu.mit.csail.tpmj.structs.ByteArrayTPMInputStruct: 00 c1 00 00 00 12 00 00 00 65 00 00 00 1a 00 00 00 00
+Output (if any): null
+Return Code (if any): -1 (UNKNOWN ERROR: -1)
+----
+
+Getting TPM Flags (TPM 1.2 only) ... 
+BasicTPMDriver: TPMIOException encountered. (edu.mit.csail.tpmj.TPMIOException: java.io.FileNotFoundException: /dev/tpm0 (Input/output error))
+Waiting 2.0 s, then retrying ... 
+BasicTPMDriver: TPMIOException encountered. (edu.mit.csail.tpmj.TPMIOException: java.io.FileNotFoundException: /dev/tpm0 (Input/output error))
+Waiting 2.0 s, then retrying ... 
+Exception in thread &quot;main&quot; java.lang.NullPointerException
+	at edu.mit.csail.tpmj.drivers.BasicTPMDriver.isTPM11(BasicTPMDriver.java:151)
+	at edu.mit.csail.tpmj.tools.TPMInfo.getTPMFlags(TPMInfo.java:193)
+	at edu.mit.csail.tpmj.tools.TPMInfo.main(TPMInfo.java:60)
+<A HREF="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">santosh at ubuntu</A>:~/Documents/summer 2012/research/tpm/tpmj/bin/edu/mit/csail/tpmj/tools$
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000201.html">[tpm-emulator-user] installation issue on Max OS X 10.7.3
+</A></li>
+	<LI>Next message: <A HREF="000203.html">[tpm-emulator-user] Help with using TPM emulator with TPMJ
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#202">[ date ]</a>
+              <a href="thread.html#202">[ thread ]</a>
+              <a href="subject.html#202">[ subject ]</a>
+              <a href="author.html#202">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">More information about the tpm-emulator-user
+mailing list</a><br>
+</body></html>

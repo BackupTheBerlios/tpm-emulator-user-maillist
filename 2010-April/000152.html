@@ -1,0 +1,138 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [tpm-emulator-user] tpm_emulator + TrouSerS gives TCSD TCS ERROR: TCS GetCapability failed with result = 0x3
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/tpm-emulator-user/2010-April/index.html" >
+   <LINK REL="made" HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20tpm_emulator%20%2B%20TrouSerS%20gives%20TCSD%20TCS%20ERROR%3A%0A%20TCS%20GetCapability%20failed%20with%20result%20%3D%200x3&In-Reply-To=%3C1009863007.8187591270129101800.JavaMail.root%40spooler1-g27.priv.proxad.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000153.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[tpm-emulator-user] tpm_emulator + TrouSerS gives TCSD TCS ERROR: TCS GetCapability failed with result = 0x3</H1>
+    <B>Olivier Valentin</B> 
+    <A HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20tpm_emulator%20%2B%20TrouSerS%20gives%20TCSD%20TCS%20ERROR%3A%0A%20TCS%20GetCapability%20failed%20with%20result%20%3D%200x3&In-Reply-To=%3C1009863007.8187591270129101800.JavaMail.root%40spooler1-g27.priv.proxad.net%3E"
+       TITLE="[tpm-emulator-user] tpm_emulator + TrouSerS gives TCSD TCS ERROR: TCS GetCapability failed with result = 0x3">valentio at free.fr
+       </A><BR>
+    <I>Thu Apr  1 15:38:21 CEST 2010</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000153.html">[tpm-emulator-user] tpm_emulator + TrouSerS gives TCSD TCS	ERROR: TCS GetCapability failed with result = 0x3
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#152">[ date ]</a>
+              <a href="thread.html#152">[ thread ]</a>
+              <a href="subject.html#152">[ subject ]</a>
+              <a href="author.html#152">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi,
+
+I'm having problems to make work TrouSerS over the TPM emulator...
+
+Installation of the emulator (v0.6.1) goes like a charm, and test_tddl says:
+Driver status: DRIVER OK
+Device status: DEVICE OK
+DRV version: 1.5.0.0
+TPM Version: 1.1.0.0
+Manufacturer: Mario Strasser, ETH Zurich
+Module type: Software-based TPM Emulator
+Transmit: 00 c1 00 00 00 0a 00 00 00 5a 
+Result:   00 c4 00 00 00 0a 00 00 00 00
+
+Now, I try to start the tcsd daemon (trousers version 0.3.2), and I get:
+TCSD TCS ERROR: TCS GetCapability failed with result = 0x3
+
+In the log of tpmd, I get:
+===================================================================
+tpmd.c:448: Info: starting TPM Emulator daemon (1.2.0.1717986918)
+tpmd.c:160: Info: parsing options
+tpmd.c:167: Debug: debug mode enabled
+tpmd.c:162: Debug: handling option '-f'
+tpmd.c:170: Debug: application is forced to run in foreground
+tpmd.c:244: Info: openening random device /dev/urandom
+tpmd.c:260: Info: installing signal handlers
+tpmd.c:359: Info: staring main loop
+tpmd.c:327: Info: initializing socket /var/run/tpm/tpmd_socket:0
+tpmd.c:367: Debug: initializing TPM emulator: 2
+../tpm/tpm_cmd_handler.c:4079: Debug: tpm_emulator_init()
+../tpm/tpm_startup.c:30: Info: TPM_Init()
+../tpm/tpm_testing.c:242: Info: TPM_SelfTestFull()
+../tpm/tpm_testing.c:40: Debug: tpm_test_prng()
+../tpm/tpm_testing.c:68: Debug: Monobit: 9972
+../tpm/tpm_testing.c:69: Debug: Poker:   18.9
+../tpm/tpm_testing.c:70: Debug: run_1:   2480, 2476
+../tpm/tpm_testing.c:71: Debug: run_2:   1239, 1275
+../tpm/tpm_testing.c:72: Debug: run_3:   617, 601
+../tpm/tpm_testing.c:73: Debug: run_4:   304, 293
+../tpm/tpm_testing.c:74: Debug: run_5:   160, 158
+../tpm/tpm_testing.c:75: Debug: run_6+:  170, 167
+../tpm/tpm_testing.c:76: Debug: run_34:  0
+../tpm/tpm_testing.c:110: Debug: tpm_test_sha1()
+../tpm/tpm_testing.c:156: Debug: tpm_test_hmac()
+../tpm/tpm_testing.c:183: Debug: tpm_test_rsa_EK()
+../tpm/tpm_testing.c:185: Debug: tpm_rsa_generate_key()
+../tpm/tpm_testing.c:190: Debug: testing endorsement key
+../tpm/tpm_testing.c:196: Debug: tpm_rsa_sign(RSA_SSA_PKCS1_SHA1)
+../tpm/tpm_testing.c:199: Debug: tpm_rsa_verify(RSA_SSA_PKCS1_SHA1)
+../tpm/tpm_testing.c:202: Debug: tpm_rsa_sign(RSA_SSA_PKCS1_DER)
+../tpm/tpm_testing.c:205: Debug: tpm_rsa_verify(RSA_SSA_PKCS1_DER)
+../tpm/tpm_testing.c:209: Debug: tpm_rsa_encrypt(RSA_ES_PKCSV15)
+../tpm/tpm_testing.c:213: Debug: tpm_rsa_decrypt(RSA_ES_PKCSV15)
+../tpm/tpm_testing.c:217: Debug: verify plain text
+../tpm/tpm_testing.c:220: Debug: tpm_rsa_encrypt(RSA_ES_OAEP_SHA1)
+../tpm/tpm_testing.c:224: Debug: tpm_rsa_decrypt(RSA_ES_OAEP_SHA1)
+../tpm/tpm_testing.c:228: Debug: verify plain text
+../tpm/tpm_testing.c:260: Info: Self-Test succeeded
+../tpm/tpm_startup.c:44: Info: TPM_Startup(2)
+tpmd.c:372: Debug: waiting for connections...
+tpmd.c:393: Debug: waiting for commands...
+tpmd.c:414: Debug: received 4096 bytes
+../tpm/tpm_cmd_handler.c:4102: Debug: tpm_handle_command()
+../tpm/tpm_cmd_handler.c:3423: Debug: [TPM_TAG_RQU_COMMAND]
+../tpm/tpm_cmd_handler.c:3539: Debug: [TPM_ORD_GetCapability]
+../tpm/tpm_cmd_handler.c:4046: Info: TPM command failed: (0x03) One or more parameter is bad.
+tpmd.c:420: Debug: sending 10 bytes
+...
+===================================================================
+
+Looking into the code (tpm_cmd_handler.c:365:execute_TPM_GetCapability()), I found out that at the end of the unmarshaling, len==4078 which is different from the expected value of 0.
+
+My understanding of this is that trousers gives big buffers (4096B) whatever the size of the command and the emulator expects the buffer to be truncated to the length of the command.
+
+There comes my questions: How is this supposed to work ? What am I doing wrong ?
+
+Thanks for any help :)
+
+Olivier
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000153.html">[tpm-emulator-user] tpm_emulator + TrouSerS gives TCSD TCS	ERROR: TCS GetCapability failed with result = 0x3
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#152">[ date ]</a>
+              <a href="thread.html#152">[ thread ]</a>
+              <a href="subject.html#152">[ subject ]</a>
+              <a href="author.html#152">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">More information about the tpm-emulator-user
+mailing list</a><br>
+</body></html>

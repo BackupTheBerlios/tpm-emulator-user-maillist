@@ -1,0 +1,173 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [tpm-emulator-user] Error accessing PCRs from QEMU vm
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/tpm-emulator-user/2009-November/index.html" >
+   <LINK REL="made" HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20Error%20accessing%20PCRs%20from%20QEMU%20vm&In-Reply-To=%3C4AF1A67F.2080303%40novalyst.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000119.html">
+   <LINK REL="Next"  HREF="000121.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[tpm-emulator-user] Error accessing PCRs from QEMU vm</H1>
+    <B>Andreas Leicher</B> 
+    <A HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20Error%20accessing%20PCRs%20from%20QEMU%20vm&In-Reply-To=%3C4AF1A67F.2080303%40novalyst.de%3E"
+       TITLE="[tpm-emulator-user] Error accessing PCRs from QEMU vm">andreas.leicher at novalyst.de
+       </A><BR>
+    <I>Wed Nov  4 17:06:23 CET 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000119.html">[tpm-emulator-user] Error accessing PCRs from QEMU vm
+</A></li>
+        <LI>Next message: <A HREF="000121.html">[tpm-emulator-user] Error accessing PCRs from QEMU vm
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#120">[ date ]</a>
+              <a href="thread.html#120">[ thread ]</a>
+              <a href="subject.html#120">[ subject ]</a>
+              <a href="author.html#120">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi Roman,
+
+from your description you are following up with the work I started 
+during my diploma thesis on Trusted Ticket Systems at Fraunhofer SIT:-)
+As I ported the patch to the qemu version 0.9.1 (originally from Thomas 
+Bleher, see 
+<A HREF="http://www.mail-archive.com/qemu-devel@nongnu.org/msg13408.html">http://www.mail-archive.com/qemu-devel@nongnu.org/msg13408.html</A>) and set 
+up several TPM enabled clients in a TCG experimentation and development 
+environment I might be able to give you some hints.
+
+What kernel version did you use in your QEMU client?
+I used kernel version 2.6.24-3 which was recompiled to enable TPM support.
+The following kernel options were set:
+&#8226; CONFIG_TCG_TPM=y
+&#8226; CONFIG_TCG_ATMEL=y
+If you want to use Integrity Measurement (IMA) capabilities, you would 
+also have to apply the IMA patch then and set kernel options for 
+integrating IMA:
+&#8226; CONFIG_IMA_MEASURE=y
+&#8226; CONFIG_IMA_TEST_MODE=y
+&#8226; CONFIG_IMA_MEASURE_PCR_IDX=10
+
+Hope that this helps,
+BR, Andreas Leicher
+
+On 04.11.2009 14:11, Roman Brehm wrote:
+&gt;<i> Thanks Mario!
+</I>&gt;<i> I only use the tpm-emulator on the host and want to access it inside the QEMU vm.
+</I>&gt;<i> There is no additional &quot;real&quot; TPM.
+</I>&gt;<i> I thought I have to load the tpm_atmel module in order to access the TPM in the vm.
+</I>&gt;<i>
+</I>&gt;<i> I just found out that the error message originates from the QEMU-TPM patch but I haven't been able to retrieve why it's occurring on every TPM access from inside the vm, yet.
+</I>&gt;<i>
+</I>&gt;<i> Best regards,
+</I>&gt;<i> Roman
+</I>&gt;<i>
+</I>&gt;<i> -----Original Message-----
+</I>&gt;<i> From: Mario Strasser [mailto:<A HREF="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">strasser at tik.ee.ethz.ch</A>]
+</I>&gt;<i> Sent: Wednesday, November 04, 2009 12:57 PM
+</I>&gt;<i> To: Roman Brehm
+</I>&gt;<i> Cc: <A HREF="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">tpm-emulator-user at lists.berlios.de</A>
+</I>&gt;<i> Subject: Re: [tpm-emulator-user] Error accessing PCRs from QEMU vm
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> On Wednesday, 04. November 2009 10:22:06 Roman Brehm wrote:
+</I>&gt;<i>    
+</I>&gt;&gt;<i> I'm running tpm-emulator on my host and want to access it in a QEMU virtual machine.
+</I>&gt;&gt;<i> After I loaded the tpm_atmel module, the tpm appears as /sys/class/misc/tpm0.
+</I>&gt;&gt;<i> But when I want to print its PCRs using cat /sys/class/misc/tpm0/device/pcrs I do not
+</I>&gt;&gt;<i> get any message and in the (tpm-emulator-)terminal on the host I get multiple warnings:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> &quot;WARNING: tpm received data when not supposed to! Discarding&quot;
+</I>&gt;&gt;<i>      
+</I>&gt;<i> Using the emulator and a real tpm at the same time is usually not advisable.
+</I>&gt;<i> The tpm emulator does not contain such an error message; I suppose
+</I>&gt;<i> it originates from the atmel driver.
+</I>&gt;<i>
+</I>&gt;<i> Regards,
+</I>&gt;<i> Mario
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> tpm-emulator-user mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">tpm-emulator-user at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">https://lists.berlios.de/mailman/listinfo/tpm-emulator-user</A>
+</I>&gt;<i>    
+</I>
+
+Andreas Leicher
+Wissenschaftlicher Mitarbeiter // Senior Researcher, novalyst IT AG
+
+Phone +49 (0)6039-9154-1502, Fax +49 (0)6039-9154-1602
+Postal address Robert-Bosch Strasse 38, 61184 Karben, Germany
+Internet <A HREF="http://www.novalyst.de">http://www.novalyst.de</A>
+-- 
+novalyst IT AG
+Sitz der Gesellschaft // Registered Office: Robert-Bosch Strasse 38, 61184 Karben.
+Registergericht // Commercial Register: Amtsgericht Frankfurt am Main.
+Handelsregiser-Nr. // Commercial Register No. HR B 80549.
+Umsatzsteuer-Ident. // Tax No. DE 255205456
+Vorstand // Board of Directors: Jerry Artishdad, Dr. Andreas U. Schmidt.
+Aufsichtsratsvorsitzender // Chairman of the Supervisory Board: Eugen Partes
+
+CONFIDENTIALITY AND DISCLAIMER NOTICE
+We would like to draw your attention to the fact that  communication via e-mail
+is neither  safe nor confidential.  By  sending  us  messages  via e-mail,  you
+authorise  and instruct us  to  correspond by e-mail  in  the relevant  matter.
+novalyst IT  declines  any liability  whatsoever in  the case  of  breaches  of
+confidentiality insofar as the breach is due to communication via the Internet.
+The information contained in this e-mail message and  any attachments hereto is
+privileged and  confidential, and  it  is  only  for  the use  of  the intended
+recipient  and others  who have  been specifically authorised to receive it. If
+you  are  not  the  intended  recipient,  you  are  hereby  notified  that  any
+dissemination, distribution, disclosure, use, or copying of this communication,
+or making or retaining of a copy of this communication, is strictly prohibited.
+If you have  received this communication in error, please contact the sender by
+reply e-mail.  The views expressed  in this email are not necessarily the views
+of novalyst IT, and the company,  its  directors, officers or employees make no
+representation or accept  any liability for its accuracy or completeness unless
+expressly stated to the contrary. If this e-mail message has any files attached
+to it, they should be scanned for  computer  viruses  before  they  are opened.
+Thank you for your cooperation.
+
+
+
+
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: andreas_leicher.vcf
+Type: text/x-vcard
+Size: 258 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/tpm-emulator-user/attachments/20091104/28723b8f/attachment.vcf">https://lists.berlios.de/pipermail/tpm-emulator-user/attachments/20091104/28723b8f/attachment.vcf</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000119.html">[tpm-emulator-user] Error accessing PCRs from QEMU vm
+</A></li>
+	<LI>Next message: <A HREF="000121.html">[tpm-emulator-user] Error accessing PCRs from QEMU vm
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#120">[ date ]</a>
+              <a href="thread.html#120">[ thread ]</a>
+              <a href="subject.html#120">[ subject ]</a>
+              <a href="author.html#120">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">More information about the tpm-emulator-user
+mailing list</a><br>
+</body></html>

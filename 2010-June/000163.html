@@ -1,0 +1,135 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [tpm-emulator-user] Help: errors of TrouSers's Testsuites on tpm	emulator
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/tpm-emulator-user/2010-June/index.html" >
+   <LINK REL="made" HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20Help%3A%20errors%20of%20TrouSers%27s%20Testsuites%20on%20tpm%0A%09emulator&In-Reply-To=%3CDM__100617154354_58155562624%40202.38.64.8%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000162.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[tpm-emulator-user] Help: errors of TrouSers's Testsuites on tpm	emulator</H1>
+    <B>&#40644;&#25991;&#36229;</B> 
+    <A HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20Help%3A%20errors%20of%20TrouSers%27s%20Testsuites%20on%20tpm%0A%09emulator&In-Reply-To=%3CDM__100617154354_58155562624%40202.38.64.8%3E"
+       TITLE="[tpm-emulator-user] Help: errors of TrouSers's Testsuites on tpm	emulator">huangwc4 at mail.ustc.edu.cn
+       </A><BR>
+    <I>Thu Jun 17 09:44:20 CEST 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000162.html">[tpm-emulator-user] Pcr reset
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#163">[ date ]</a>
+              <a href="thread.html#163">[ thread ]</a>
+              <a href="subject.html#163">[ subject ]</a>
+              <a href="author.html#163">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi, all
+  I have a problem on running the TrouSers's Testsuites on tpm emulator.
+  The version of the binaries are
+tpm emulator 0.7
+trousers 0.3.4
+testsuite 0.3
+
+  testsuite runs with the following command
+sudo ./tsstests.sh -v 1.2 -l 4.txt
+
+  I'm glad that most of the tests succeed in the testsuite, however, there 
+are still some errors in the result, including the segment fault, the function errors. 
+the result in the err.summary is:
+
+---------------------------------------------------------------------------------------
+Test segfaulted or returned unknown error (rc=139): ./Tspi_Data_Seal01 -v 1.2
+Test segfaulted or returned unknown error (rc=139): ./Tspi_Data_Seal04 -v 1.2
+Test segfaulted or returned unknown error (rc=134): ./Tspi_Data_Unseal01 -v 1.2
+Test segfaulted or returned unknown error (rc=134): ./Tspi_Data_Unseal04 -v 1.2
+Test segfaulted or returned unknown error (rc=134): ./Tspi_Data_Unseal05 -v 1.2
+Test segfaulted or returned unknown error (rc=255): ./Tspi_NV_DefineSpace04 -v 1.2
+Tspi_TPM_CheckMaintenancePubKey01.c 0 FAIL : Tspi_TPM_CheckMaintenancePubKey01 returned (13) TPM_E_KEYNOTFOUND
+Tspi_TPM_CreateMaintenanceArchive01.c 0 FAIL : Tspi_TPM_CreateMaintenanceArchive01 returned (13) TPM_E_KEYNOTFOUND
+Test segfaulted or returned unknown error (rc=134): ./Tspi_Data_Seal-trans01 -v 1.2
+Test segfaulted or returned unknown error (rc=134): ./Tspi_Data_Seal-trans02 -v 1.2
+Test segfaulted or returned unknown error (rc=134): ./Tspi_Data_Seal-trans03 -v 1.2
+Test segfaulted or returned unknown error (rc=134): ./Tspi_Data_Unseal-trans01 -v 1.2
+Test segfaulted or returned unknown error (rc=134): ./Tspi_Data_Unseal-trans02 -v 1.2
+Test segfaulted or returned unknown error (rc=134): ./Tspi_Data_Unseal-trans03 -v 1.2
+Tspi_NV_ReadValue-trans01.c 0 FAIL : Tspi_Nv_ReadValue-trans01 returned (12292) TSS_E_INTERNAL_ERROR
+Tspi_NV_ReadValue-trans02.c 0 FAIL : Tspi_Nv_ReadValue-trans02 returned (12292) TSS_E_INTERNAL_ERROR
+Tspi_NV_WriteValue-trans01.c 0 FAIL : Tspi_nv_WriteValue-trans01 returned (12292) TSS_E_INTERNAL_ERROR
+Tspi_NV_WriteValue-trans02.c 0 FAIL : Tspi_nv_WriteValue-trans02 returned (12292) TSS_E_INTERNAL_ERROR
+Tspi_TPM_CreateMaintenanceArchive-trans01.c 0 FAIL : Tspi_TPM_CreateMaintenanceArchive-trans01 returned (12290) TSS_E_FAIL
+Tspi_TPM_CreateMaintenanceArchive-trans02.c 0 FAIL : Tspi_TPM_CreateMaintenanceArchive-trans02 returned (12290) TSS_E_FAIL
+
+Tspi_TPM_GetPubEndorsementKey-trans01.c 0 FAIL : Tspi_TPM_GetPubEndorsementKey returned (12558) TSS_E_KEY_NOT_LOADED
+Tspi_TPM_GetPubEndorsementKey-trans02.c 0 FAIL : Tspi_TPM_GetPubEndorsementKey returned (12558) TSS_E_KEY_NOT_LOADED
+Tspi_TPM_GetPubEndorsementKey-trans03.c 0 FAIL : Tspi_TPM_GetPubEndorsementKey returned (12558) TSS_E_KEY_NOT_LOADED
+Tspi_TPM_LoadMaintenancePubKey-trans01.c 0 FAIL : Tspi_TPM_LoadMaintenancePubKey-trans01 returned (12290) TSS_E_FAIL
+Tspi_TPM_LoadMaintenancePubKey-trans02.c 0 FAIL : Tspi_TPM_LoadMaintenancePubKey-trans02 returned (12290) TSS_E_FAIL
+Test segfaulted or returned unknown error (rc=134): ./Tspi_ChangeAuth08 -v 1.2
+Tspi_ChangeAuthAsym01.c 0 FAIL : Tspi_ChangeAuthAsym01 returned (12294) TSS_E_NOTIMPL
+Tspi_ChangeAuthAsym02.c 0 FAIL : Tspi_ChangeAuthAsym02 returned (12294) TSS_E_NOTIMPL
+Tspi_ChangeAuthAsym03.c 0 FAIL : Tspi_ChangeAuthAsym03 returned (12294) TSS_E_NOTIMPL
+Test segfaulted or returned unknown error (rc=134): ./Tspi_GetAttribData19 -v 1.2
+Test segfaulted or returned unknown error (rc=134): ./Tspi_GetAttribData20 -v 1.2
+PASSED: 580
+FAILED: 31 (NOTIMPL: 3)
+NOT APPLICABLE: 3
+SEGFAULTED: 15
+----------------------------------------------------------------------------------------
+
+  I'm asking for help for I've no idea if the errors come from trousers or the emulator.
+  I've tried compiling the trousers 0.3.3.2(earlier version), but the result is almost the same.
+  Specially, i've tried the Tspi_Data_Seal01 -v 1.2 by checking the tpmd log as follows:
+
+--------------------------------------------------------------------------------------------
+/home/colahuang/TPM/tpm/tpm_emulator-0.7/tpm/tpm_authorization.c:175: Info: TPM_OSAP()
+/home/colahuang/TPM/tpm/tpm_emulator-0.7/tpm/tpm_cmd_handler.c:4081: Info: TPM command succeeded
+/home/colahuang/TPM/tpm/tpm_emulator-0.7/tpm/tpm_storage.c:362: Info: TPM_Seal()
+/home/colahuang/TPM/tpm/tpm_emulator-0.7/tpm/tpm_authorization.c:526: Info: tpm_verify_auth()
+/home/colahuang/TPM/tpm/tpm_emulator-0.7/tpm/tpm_integrity.c:139: Info: tpm_compute_pcr_digest()
+/home/colahuang/TPM/tpm/tpm_emulator-0.7/tpm/tpm_cmd_handler.c:4081: Info: TPM command succeeded
+/home/colahuang/TPM/tpm/tpm_emulator-0.7/tpm/tpm_eviction.c:51: Info: TPM_FlushSpecific()
+/home/colahuang/TPM/tpm/tpm_emulator-0.7/tpm/tpm_eviction.c:51: Info: TPM_FlushSpecific()
+/home/colahuang/TPM/tpm/tpm_emulator-0.7/tpm/tpm_cmd_handler.c:4081: Info: TPM command succeeded
+----------------------------------------------------------------------------------------------
+ 
+  which seems that the execution of SEAL succeeds on the TPM level, while it fails on the TCS or TSS level. 
+  so, the question is, where are the errors from, trousers or the emulator? And, is there any solution of the problem?
+  THANKS in advance!
+               colahuang
+                    2010/6/17
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/tpm-emulator-user/attachments/20100617/91888552/attachment.html">https://lists.berlios.de/pipermail/tpm-emulator-user/attachments/20100617/91888552/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000162.html">[tpm-emulator-user] Pcr reset
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#163">[ date ]</a>
+              <a href="thread.html#163">[ thread ]</a>
+              <a href="subject.html#163">[ subject ]</a>
+              <a href="author.html#163">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">More information about the tpm-emulator-user
+mailing list</a><br>
+</body></html>

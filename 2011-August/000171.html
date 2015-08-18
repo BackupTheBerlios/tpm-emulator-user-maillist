@@ -1,0 +1,81 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [tpm-emulator-user] Communication failure in tpm_version
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/tpm-emulator-user/2011-August/index.html" >
+   <LINK REL="made" HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20Communication%20failure%20in%20tpm_version&In-Reply-To=%3CA0D5581BE022624487D06FF31DA39EAC46DB53095F%40cs-mail.cloudshield.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[tpm-emulator-user] Communication failure in tpm_version</H1>
+    <B>Li, David</B> 
+    <A HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20Communication%20failure%20in%20tpm_version&In-Reply-To=%3CA0D5581BE022624487D06FF31DA39EAC46DB53095F%40cs-mail.cloudshield.com%3E"
+       TITLE="[tpm-emulator-user] Communication failure in tpm_version">LiD at cloudshield.com
+       </A><BR>
+    <I>Wed Aug 31 18:34:44 CEST 2011</I>
+    <P><UL>
+        
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#171">[ date ]</a>
+              <a href="thread.html#171">[ thread ]</a>
+              <a href="subject.html#171">[ subject ]</a>
+              <a href="author.html#171">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi Experts,
+
+I have been struggling to get pass this error on my RHEL6 VM. I searched and found there was an earlier post with the same problem but  not sure how it's resolved. In my case, the error displays:
+
+[<A HREF="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">lid at rhel61-lid2</A> ~]$ tpmd -d clear
+tpmd.c:390: Info: starting TPM Emulator daemon (1.2.0.7-464)
+tpmd.c:93: Info: parsing options
+tpmd.c:100: Debug: debug mode enabled
+tpmd.c:145: Debug: startup mode = 'clear'
+tpmd.c:198: Info: installing signal handlers
+tpmd.c:220: Info: daemonizing process
+[<A HREF="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">lid at rhel61-lid2</A> ~]$ which tcsd
+/usr/sbin/tcsd
+[<A HREF="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">lid at rhel61-lid2</A> ~]$ tcsd
+[<A HREF="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">lid at rhel61-lid2</A> ~]$ tpm_version
+Tspi_Context_Connect failed: 0x00003011 - layer=tsp, code=0011 (17), Communication failure
+
+Did I start the tcsd correctly?
+
+---
+David Li
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/tpm-emulator-user/attachments/20110831/391aeecf/attachment.html">https://lists.berlios.de/pipermail/tpm-emulator-user/attachments/20110831/391aeecf/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#171">[ date ]</a>
+              <a href="thread.html#171">[ thread ]</a>
+              <a href="subject.html#171">[ subject ]</a>
+              <a href="author.html#171">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">More information about the tpm-emulator-user
+mailing list</a><br>
+</body></html>

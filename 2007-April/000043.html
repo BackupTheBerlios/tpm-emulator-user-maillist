@@ -1,0 +1,89 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [tpm-emulator-user] TPM Emulator daemon startup failed
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/tpm-emulator-user/2007-April/index.html" >
+   <LINK REL="made" HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20TPM%20Emulator%20daemon%20startup%20failed&In-Reply-To=%3C22960f8a0704030156i7be4cd6ar7d566814afa4cd8%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000044.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[tpm-emulator-user] TPM Emulator daemon startup failed</H1>
+    <B>Markus</B> 
+    <A HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20TPM%20Emulator%20daemon%20startup%20failed&In-Reply-To=%3C22960f8a0704030156i7be4cd6ar7d566814afa4cd8%40mail.gmail.com%3E"
+       TITLE="[tpm-emulator-user] TPM Emulator daemon startup failed">axianx at googlemail.com
+       </A><BR>
+    <I>Tue Apr  3 10:56:59 CEST 2007</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000044.html">[tpm-emulator-user] TPM Emulator daemon startup failed
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#43">[ date ]</a>
+              <a href="thread.html#43">[ thread ]</a>
+              <a href="subject.html#43">[ subject ]</a>
+              <a href="author.html#43">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi,
+
+after installing tpm-emulator 0.5 with
+
+# make
+# make install
+
+I successfully loaded the kernel module:
+
+# modprobe tpmd_dev
+# lsmod
+Module                  Size  Used by
+tpmd_dev                6064  0
+
+but when I try to start the deamon I get this error:
+
+# tpmd -d -f clear
+tpmd.c:367: Info: starting TPM Emulator daemon
+tpmd.c:145: Info: parsing options
+tpmd.c:152: Debug: debug mode enabled
+tpmd.c:147: Debug: handling option '-f'
+tpmd.c:155: Debug: application is forced to run in foreground
+tpmd.c:169: Debug: startup mode = 'clear'
+tpmd.c:187: Info: openening random device /dev/urandom
+tpmd.c:203: Info: installing signal handlers
+tpmd.c:280: Info: staring main loop
+tpmd.c:253: Info: initializing socket /var/tpm/tpmd_socket:0
+tpmd.c:262: Error: bind(/var/tpm/tpmd_socket:0) failed: Address already in use
+
+Where could I start to solve the problem?
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000044.html">[tpm-emulator-user] TPM Emulator daemon startup failed
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#43">[ date ]</a>
+              <a href="thread.html#43">[ thread ]</a>
+              <a href="subject.html#43">[ subject ]</a>
+              <a href="author.html#43">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">More information about the tpm-emulator-user
+mailing list</a><br>
+</body></html>

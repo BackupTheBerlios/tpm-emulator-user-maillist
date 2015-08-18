@@ -1,0 +1,156 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [tpm-emulator-user] TPM Emulator not working
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/tpm-emulator-user/2007-August/index.html" >
+   <LINK REL="made" HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20TPM%20Emulator%20not%20working&In-Reply-To=%3Cd5eaa710708031934y6c6fe98wf617f694d4bdce9%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000067.html">
+   <LINK REL="Next"  HREF="000069.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[tpm-emulator-user] TPM Emulator not working</H1>
+    <B>Roberto Nemirovsky</B> 
+    <A HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20TPM%20Emulator%20not%20working&In-Reply-To=%3Cd5eaa710708031934y6c6fe98wf617f694d4bdce9%40mail.gmail.com%3E"
+       TITLE="[tpm-emulator-user] TPM Emulator not working">roberto.paes at gmail.com
+       </A><BR>
+    <I>Sat Aug  4 04:34:04 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000067.html">[tpm-emulator-user] TPM Emulator not working
+</A></li>
+        <LI>Next message: <A HREF="000069.html">[tpm-emulator-user] info about tpm emulator
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#68">[ date ]</a>
+              <a href="thread.html#68">[ thread ]</a>
+              <a href="subject.html#68">[ subject ]</a>
+              <a href="author.html#68">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi Andreas and Mario,
+Thanks for the help, now tpm-emulator is working fine in my gentoo!!!
+
+[]'s Roberto
+
+On 7/31/07, Andreas Niederl &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">niederl at sbox.tugraz.at</A>&gt; wrote:
+&gt;<i> Hi,
+</I>&gt;<i>
+</I>&gt;<i> Roberto Nemirovsky wrote:
+</I>&gt;<i> &gt; Hi, i'm trying to play with tpm_emulator in gentoo (installed with
+</I>&gt;<i> &gt; emerge) but it's not working. Can someone help me??
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; rj8 ~ # /etc/init.d/tpm-emulator start
+</I>&gt;<i> &gt; * Starting tpm-emulator daemon with mode 'save' (tpmd) ... [ ok ]
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; rj8 ~ # tcsd -f
+</I>&gt;<i> &gt; TDDL tddl.c:66 ERROR: Could not find a device to open!
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; rj8 ~ # dmesg
+</I>&gt;<i> &gt; ....
+</I>&gt;<i> &gt; tpm_dev /var/tmp/portage/app-crypt/tpm-emulator-0.5/work/tpm_emulator-0.5/tpmd_dev/tpmd_dev.c:141:
+</I>&gt;<i> &gt; Debug: tpm_open()
+</I>&gt;<i> &gt; tpm_dev /var/tmp/portage/app-crypt/tpm-emulator-0.5/work/tpm_emulator-0.5/tpmd_dev/tpmd_dev.c:85:
+</I>&gt;<i> &gt; Error: sock_connect() failed: -2
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; rj8 ~ # ls -l /dev/tpm*
+</I>&gt;<i> &gt; crw-rw---- 1 root tss 10, 224 Jul 11 12:22 /dev/tpm
+</I>&gt;<i> &gt; lrwxrwxrwx 1 root root 3 Jul 11 12:22 /dev/tpm0 -&gt; tpm
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; rj8 var # lsmod
+</I>&gt;<i> &gt; Module                  Size  Used by
+</I>&gt;<i> &gt; tpmd_dev                6288  0
+</I>&gt;<i> &gt; rtc                    13108  0
+</I>&gt;<i> &gt; serio_raw               7300  0
+</I>&gt;<i> &gt; i2c_piix4               8976  0
+</I>&gt;<i> &gt; i2c_core               21136  1 i2c_piix4
+</I>&gt;<i> &gt; evdev                   9728  0
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; rj8 var # modinfo tpmd_dev
+</I>&gt;<i> &gt; filename:       /lib/modules/2.6.16.49-xen/crypt/tpmd_dev.ko
+</I>&gt;<i> &gt; description:    Trusted Platform Module (TPM) Emulator
+</I>&gt;<i> &gt; author:         Mario Strasser &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">mast at gmx.net</A>&gt;
+</I>&gt;<i> &gt; license:        GPL
+</I>&gt;<i> &gt; srcversion:     3633AA4BCD3427D872F9547
+</I>&gt;<i> &gt; depends:
+</I>&gt;<i> &gt; vermagic:       2.6.16.49-xen PENTIUMIII REGPARM gcc-4.1
+</I>&gt;<i> &gt; parm:           tpmd_socket_name: Sets the name of the TPM daemon
+</I>&gt;<i> &gt; socket. (charp)
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; rj8 ~ # uname -a
+</I>&gt;<i> &gt; Linux rj8 2.6.16.49-xen #5 Tue Jul 10 16:01:13 BRT 2007 i686 Pentium
+</I>&gt;<i> &gt; III (Katmai) GenuineIntel GNU/Linux
+</I>&gt;<i>
+</I>&gt;<i> I've encountered exactly the same error on my Gentoo box. So, I took a
+</I>&gt;<i> look at the tpm-emulator ebuild and noticed, that the location for
+</I>&gt;<i> tpmd_socket gets changed from /var/tpm to /var/run/tpm. Except that one
+</I>&gt;<i> source file is lost in the process.
+</I>&gt;<i>
+</I>&gt;<i> Please apply the following change to your ebuild (preferably in a
+</I>&gt;<i> private overlay), rebuild the tpm-emulator and retry. I've only tested
+</I>&gt;<i> it with a quick tpm_takeownership.
+</I>&gt;<i>
+</I>&gt;<i> --- /usr/portage/app-crypt/tpm-emulator/tpm-emulator-0.5.ebuild
+</I>&gt;<i> 2007-07-14 00:05
+</I>&gt;<i> :25.000000000 +0200
+</I>&gt;<i> +++ /usr/local/portage/app-crypt/tpm-emulator/tpm-emulator-0.5.ebuild
+</I>&gt;<i> 2007-07-
+</I>&gt;<i> 31 23:20:07.000000000 +0200
+</I>&gt;<i> @@ -33,7 +33,7 @@
+</I>&gt;<i>         unpack ${A}
+</I>&gt;<i>         cd &quot;${S}&quot;
+</I>&gt;<i>         sed -i 's/LDFLAGS :=/override LDFLAGS +=/g' tpmd/Makefile
+</I>&gt;<i> -       sed -i 's#/var/tpm#/var/run/tpm#g' tpmd/tpmd.c tddl/tddl.c
+</I>&gt;<i> tpm_dev/linux_module.c
+</I>&gt;<i> +       sed -i 's#/var/tpm#/var/run/tpm#g' tpmd/tpmd.c tddl/tddl.c
+</I>&gt;<i> tpm_dev/linux_module.c tpmd_dev/tpmd_dev.c
+</I>&gt;<i>  }
+</I>&gt;<i>
+</I>&gt;<i>  src_install() {
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> I'll do some more testing of my own and will open a bug report about
+</I>&gt;<i> this by the end of the week.
+</I>&gt;<i>
+</I>&gt;<i> Btw, wouldn't it be more feasible to provide such information somewhere
+</I>&gt;<i> centralized instead of directly hardcoded into the source code?
+</I>&gt;<i> There's also a feature request about this issue[1].
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Regards,
+</I>&gt;<i> Andi
+</I>&gt;<i>
+</I>&gt;<i> [1]
+</I>&gt;<i> <A HREF="https://developer.berlios.de/feature/index.php?func=detailfeature&amp;feature_id=3304&amp;group_id=2491">https://developer.berlios.de/feature/index.php?func=detailfeature&amp;feature_id=3304&amp;group_id=2491</A>
+</I>&gt;<i>
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000067.html">[tpm-emulator-user] TPM Emulator not working
+</A></li>
+	<LI>Next message: <A HREF="000069.html">[tpm-emulator-user] info about tpm emulator
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#68">[ date ]</a>
+              <a href="thread.html#68">[ thread ]</a>
+              <a href="subject.html#68">[ subject ]</a>
+              <a href="author.html#68">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">More information about the tpm-emulator-user
+mailing list</a><br>
+</body></html>

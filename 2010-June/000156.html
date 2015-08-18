@@ -1,0 +1,78 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [tpm-emulator-user] java.io.FileNotFoundException while opening the	device file /dev/tpm
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/tpm-emulator-user/2010-June/index.html" >
+   <LINK REL="made" HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20java.io.FileNotFoundException%20while%20opening%20the%0A%09device%20file%20/dev/tpm&In-Reply-To=%3C732632.8167.qm%40web110406.mail.gq1.yahoo.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000157.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[tpm-emulator-user] java.io.FileNotFoundException while opening the	device file /dev/tpm</H1>
+    <B>Chaudhary Tanveer</B> 
+    <A HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20java.io.FileNotFoundException%20while%20opening%20the%0A%09device%20file%20/dev/tpm&In-Reply-To=%3C732632.8167.qm%40web110406.mail.gq1.yahoo.com%3E"
+       TITLE="[tpm-emulator-user] java.io.FileNotFoundException while opening the	device file /dev/tpm">tanchaudhary at yahoo.com
+       </A><BR>
+    <I>Mon Jun  7 16:39:40 CEST 2010</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000157.html">[tpm-emulator-user] java.io.FileNotFoundException while opening the	device file /dev/tpm
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#156">[ date ]</a>
+              <a href="thread.html#156">[ thread ]</a>
+              <a href="subject.html#156">[ subject ]</a>
+              <a href="author.html#156">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi, 
+ 
+I have installed the tpm_emulator-0.7 on Linux (Ubuntu 10.04). I used modprobe tpmd_dev without any errors. The character device file /dev/tpm and the symbolic link /dev/tpm0 are created. I have started the tpm emulator, and test_tddl works fine. Now in Java I am trying to open the device file /dev/tpm directly and via the symbolic link /dev/tpm0, however, in both cases I am getting java.io.FileNotFoundException. In Java I follow these steps: 1) check if the device file exists, 2) check if the device file have read/write permissions, 3) finally open the device file in read/write (rw) mode. In the third step I get java.io.FileNotFoundException. 
+I do not understand why I am getting this exception even when the device file exists.
+ 
+Is there anything else that I have to configure before using/opening the device file /dev/tpm and/or /dev/tpm0?
+
+P.S. As a test, I tried to open some other existing Linux device files in Java. I can open, for example, /dev/urandom, /dev/ptmx, /dev/ashmem, etc. without any problem.
+ 
+Thanks in advance for your help. 
+ 
+Best Regards, 
+Tanveer
+
+
+
+      
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/tpm-emulator-user/attachments/20100607/3359918d/attachment.html">https://lists.berlios.de/pipermail/tpm-emulator-user/attachments/20100607/3359918d/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000157.html">[tpm-emulator-user] java.io.FileNotFoundException while opening the	device file /dev/tpm
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#156">[ date ]</a>
+              <a href="thread.html#156">[ thread ]</a>
+              <a href="subject.html#156">[ subject ]</a>
+              <a href="author.html#156">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">More information about the tpm-emulator-user
+mailing list</a><br>
+</body></html>

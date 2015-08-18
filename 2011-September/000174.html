@@ -1,0 +1,83 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [tpm-emulator-user] Communication failure in tpm_version
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/tpm-emulator-user/2011-September/index.html" >
+   <LINK REL="made" HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20Communication%20failure%20in%20tpm_version&In-Reply-To=%3C4E657416.4050903%40strasser.name%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000173.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[tpm-emulator-user] Communication failure in tpm_version</H1>
+    <B>Mario Strasser</B> 
+    <A HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20Communication%20failure%20in%20tpm_version&In-Reply-To=%3C4E657416.4050903%40strasser.name%3E"
+       TITLE="[tpm-emulator-user] Communication failure in tpm_version">mario at strasser.name
+       </A><BR>
+    <I>Tue Sep  6 03:15:02 CEST 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000173.html">[tpm-emulator-user] Communication failure in tpm_version
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#174">[ date ]</a>
+              <a href="thread.html#174">[ thread ]</a>
+              <a href="subject.html#174">[ subject ]</a>
+              <a href="author.html#174">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 8/31/11 6:34 PM, Li, David wrote:
+&gt;<i> I have been struggling to get pass this error on my RHEL6 VM.
+</I>&gt;<i> I searched and found there was an earlier post with the same
+</I>&gt;<i> problem but  not sure how it's resolved. In my case,
+</I>&gt;<i> the error displays:
+</I>&gt;<i> 
+</I>&gt;<i> [<A HREF="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">lid at rhel61-lid2</A> ~]$ tpmd -d clear
+</I>&gt;<i> tpmd.c:390: Info: starting TPM Emulator daemon (1.2.0.7-464)
+</I>&gt;<i> tpmd.c:93: Info: parsing options
+</I>&gt;<i> tpmd.c:100: Debug: debug mode enabled
+</I>&gt;<i> tpmd.c:145: Debug: startup mode = 'clear'
+</I>&gt;<i> tpmd.c:198: Info: installing signal handlers
+</I>&gt;<i> tpmd.c:220: Info: daemonizing process
+</I>&gt;<i> [<A HREF="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">lid at rhel61-lid2</A> ~]$ which tcsd
+</I>&gt;<i> /usr/sbin/tcsd
+</I>&gt;<i> [<A HREF="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">lid at rhel61-lid2</A> ~]$ tcsd
+</I>&gt;<i> [<A HREF="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">lid at rhel61-lid2</A> ~]$ tpm_version
+</I>&gt;<i> Tspi_Context_Connect failed: 0x00003011 - layer=tsp, code=0011 (17), Communication failure
+</I>The tcs daemon uses the device /dev/tpm0 to connect to the
+TPM by default. Please make sure that you have loaded the
+tpmd_dev kernel module in addition to the tpmd.
+
+Regards,
+Mario
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000173.html">[tpm-emulator-user] Communication failure in tpm_version
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#174">[ date ]</a>
+              <a href="thread.html#174">[ thread ]</a>
+              <a href="subject.html#174">[ subject ]</a>
+              <a href="author.html#174">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">More information about the tpm-emulator-user
+mailing list</a><br>
+</body></html>

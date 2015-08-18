@@ -1,0 +1,158 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [tpm-emulator-user] connection of jsr321 with tpm emulator is,	getting failed
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/tpm-emulator-user/2012-July/index.html" >
+   <LINK REL="made" HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20connection%20of%20jsr321%20with%20tpm%20emulator%20is%2C%0A%09getting%20failed&In-Reply-To=%3C4FF41675.1020705%40iaik.tugraz.at%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000208.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[tpm-emulator-user] connection of jsr321 with tpm emulator is,	getting failed</H1>
+    <B>Ronald T&#246;gl</B> 
+    <A HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20connection%20of%20jsr321%20with%20tpm%20emulator%20is%2C%0A%09getting%20failed&In-Reply-To=%3C4FF41675.1020705%40iaik.tugraz.at%3E"
+       TITLE="[tpm-emulator-user] connection of jsr321 with tpm emulator is,	getting failed">ronald.toegl at iaik.tugraz.at
+       </A><BR>
+    <I>Wed Jul  4 12:09:57 CEST 2012</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000208.html">[tpm-emulator-user] connection of jsr321 with tpm emulator is	getting failed
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#209">[ date ]</a>
+              <a href="thread.html#209">[ thread ]</a>
+              <a href="subject.html#209">[ subject ]</a>
+              <a href="author.html#209">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hello,
+
+We should probably take this discussion to the trustedJava mailing list.
+
+Anyway, apparently you seem to have issues with the jTSS component that 
+is needed between TPM (emulator) and the JSR321 RI.
+You'll need to be more specific on what you aactually did before we can 
+help you.
+Have you followed the installation guide at 
+<A HREF="http://java.net/projects/jsr321/pages/GettingStartedGuide">http://java.net/projects/jsr321/pages/GettingStartedGuide</A> ?
+
+Best regards,
+Ronald
+
+On 07/04/2012 12:00 PM, <A HREF="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">tpm-emulator-user-request at lists.berlios.de</A> wrote:
+&gt;<i> Send tpm-emulator-user mailing list submissions to
+</I>&gt;<i> 	<A HREF="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">tpm-emulator-user at lists.berlios.de</A>
+</I>&gt;<i>
+</I>&gt;<i> To subscribe or unsubscribe via the World Wide Web, visit
+</I>&gt;<i> 	<A HREF="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">https://lists.berlios.de/mailman/listinfo/tpm-emulator-user</A>
+</I>&gt;<i> or, via email, send a message with subject or body 'help' to
+</I>&gt;<i> 	<A HREF="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">tpm-emulator-user-request at lists.berlios.de</A>
+</I>&gt;<i>
+</I>&gt;<i> You can reach the person managing the list at
+</I>&gt;<i> 	<A HREF="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">tpm-emulator-user-owner at lists.berlios.de</A>
+</I>&gt;<i>
+</I>&gt;<i> When replying, please edit your Subject line so it is more specific
+</I>&gt;<i> than &quot;Re: Contents of tpm-emulator-user digest...&quot;
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Today's Topics:
+</I>&gt;<i>
+</I>&gt;<i>     1. connection of jsr321 with tpm emulator is	getting failed
+</I>&gt;<i>        (shreya sharma)
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> ----------------------------------------------------------------------
+</I>&gt;<i>
+</I>&gt;<i> Message: 1
+</I>&gt;<i> Date: Wed, 4 Jul 2012 11:53:08 +0530
+</I>&gt;<i> From: shreya sharma &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">shreya.sharma285 at gmail.com</A>&gt;
+</I>&gt;<i> To: <A HREF="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">tpm-emulator-user at lists.berlios.de</A>
+</I>&gt;<i> Subject: [tpm-emulator-user] connection of jsr321 with tpm emulator is
+</I>&gt;<i> 	getting failed
+</I>&gt;<i> Message-ID:
+</I>&gt;<i> 	&lt;<A HREF="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">CAFHoh-G77ZAkbDtxB9Ou4QWRwpG_0JW7T0Y6MbTr_h_px_S19g at mail.gmail.com</A>&gt;
+</I>&gt;<i> Content-Type: text/plain; charset=&quot;iso-8859-1&quot;
+</I>&gt;<i>
+</I>&gt;<i> I Have installed TPM Emulator on Ubuntu 12.04. The installation was
+</I>&gt;<i> successful. I have a file /dev/tpm made. However when I try to connect
+</I>&gt;<i> using JSR 321 following error message comes:
+</I>&gt;<i>
+</I>&gt;<i> 15:22:52:547 [ERROR] TcTcsBindingSoap::connect (116):    There seems no TCS
+</I>&gt;<i> running
+</I>&gt;<i> 15:22:52:560 [ERROR] TcTcsBindingSoap::connect (116):    There seems no TCS
+</I>&gt;<i> running
+</I>&gt;<i> iaik.tc.tss.api.exceptions.
+</I>&gt;<i> tsp.TcTspException:
+</I>&gt;<i>
+</I>&gt;<i> TSS Error:
+</I>&gt;<i> error layer:                0x3000 (TSP)
+</I>&gt;<i> error code (without layer): 0x0103
+</I>&gt;<i> error code (full):          0x3103
+</I>&gt;<i> error message: Core Service connection failed.
+</I>&gt;<i>
+</I>&gt;<i>      at
+</I>&gt;<i> iaik.tc.tss.impl.java.tsp.tcsbinding.soapservice.TcTcsBindingSoap.connect(TcTcsBindingSoap.java:117)
+</I>&gt;<i>      at
+</I>&gt;<i> iaik.tc.tss.impl.java.tsp.internal.TcTspInternal.TspContextConnect_Internal(TcTspInternal.java:368)
+</I>&gt;<i>      at iaik.tc.tss.impl.java.tsp.TcContext.connect(TcContext.java:174)
+</I>&gt;<i>      at iaik.tc.apps.jtt.tpm.TpmFlags.execute(TpmFlags.java:36)
+</I>&gt;<i>      at iaik.tc.utils.cmdline.SubCommand.run(SubCommand.java:69)
+</I>&gt;<i>      at
+</I>&gt;<i> iaik.tc.utils.cmdline.SubCommandParser.parse(SubCommandParser.java:41)
+</I>&gt;<i>      at iaik.tc.apps.JTpmTools.main(JTpmTools.java:224)
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Kindly let me know how to reslove this issue.
+</I>&gt;<i> -------------- next part --------------
+</I>&gt;<i> An HTML attachment was scrubbed...
+</I>&gt;<i> URL: &lt;<A HREF="https://lists.berlios.de/pipermail/tpm-emulator-user/attachments/20120704/347db9ce/attachment-0001.html">https://lists.berlios.de/pipermail/tpm-emulator-user/attachments/20120704/347db9ce/attachment-0001.html</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i> ------------------------------
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> tpm-emulator-user mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">tpm-emulator-user at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">https://lists.berlios.de/mailman/listinfo/tpm-emulator-user</A>
+</I>&gt;<i>
+</I>&gt;<i> End of tpm-emulator-user Digest, Vol 40, Issue 2
+</I>&gt;<i> ************************************************
+</I>
+
+-- 
+Dipl.-Ing. Ronald T&#246;gl          phone +43 316/873-5502
+Secure and Correct Systems      fax   +43 316/873-5520
+IAIK                            <A HREF="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">ronald.toegl at iaik.tugraz.at</A>
+Graz University of Technology   <A HREF="http://www.iaik.tugraz.at">http://www.iaik.tugraz.at</A>
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000208.html">[tpm-emulator-user] connection of jsr321 with tpm emulator is	getting failed
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#209">[ date ]</a>
+              <a href="thread.html#209">[ thread ]</a>
+              <a href="subject.html#209">[ subject ]</a>
+              <a href="author.html#209">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">More information about the tpm-emulator-user
+mailing list</a><br>
+</body></html>

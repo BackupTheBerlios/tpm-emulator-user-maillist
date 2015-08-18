@@ -1,0 +1,102 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [tpm-emulator-user] Troubles in tpm_emulator
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/tpm-emulator-user/2011-December/index.html" >
+   <LINK REL="made" HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20Troubles%20in%20tpm_emulator&In-Reply-To=%3C52f4ce84.3bcc.133fcd15d5d.Coremail.yxh21%40yeah.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000196.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[tpm-emulator-user] Troubles in tpm_emulator</H1>
+    <B>&#31505;&#21547;</B> 
+    <A HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20Troubles%20in%20tpm_emulator&In-Reply-To=%3C52f4ce84.3bcc.133fcd15d5d.Coremail.yxh21%40yeah.net%3E"
+       TITLE="[tpm-emulator-user] Troubles in tpm_emulator">yxh21 at yeah.net
+       </A><BR>
+    <I>Fri Dec  2 04:28:59 CET 2011</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000196.html">[tpm-emulator-user] Re;  Troubles in tpm_emulator
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#195">[ date ]</a>
+              <a href="thread.html#195">[ thread ]</a>
+              <a href="subject.html#195">[ subject ]</a>
+              <a href="author.html#195">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi all.
+    Firstly, I will thank you for your supporting such good tpm_emulator software freely.
+    Recently I meet some troubles when I use tpm_emulator 0.7. 
+    I've already installed tpm_emulator 0.7 &amp; tpm_tools correctly in openSUSE LInux(Kernel version:2.6.32), and run them as right as rain. However, some days later,  I start tpmd as usual by using commands as below:
+ #modprobe tpmd_dev
+ #tpmd -fd
+It runs well, the display content of last info is &quot;/usr/src/install/tpm_emulator-0.7/tpm/tpm_startup.c:43: Info: TPM_Startup(2)
+/usr/src/install/tpm_emulator-0.7/tpmd/unix/tpmd.c:401: Debug: waiting for connections...&quot;
+Next, I run TSS by using &quot;#tcsd start&quot; command, and then input &quot;#tpm_version&quot; command, the terminal  shows:
+----------------------------------------------------------
+TPM 1.2 Version Info:
+  Chip Version:        1.2.0.7
+  Spec Level:          2
+  Errata Revision:     1
+  TPM Vendor ID:       ETHZ
+  TPM Version:         01010000
+  Manufacturer Info:   4554485a
+-----------------------------------------------------------
+After that, I execute takeownership command as follow:
+------------------------------------------------------------
+#tpm_takeownership
+Enter owner password: 
+Confirm password: 
+Enter SRK password: 
+Confirm password: 
+Tspi_TPM_TakeOwnership failed: 0x00000008 - layer=tpm, code=0008 (8), The TPM target command has been disabled
+--------------------------------------------------------------
+The tpm_emulator debug info shows:
+----------------------------------------------------------------
+/usr/src/install/tpm_emulator-0.7/tpmd/unix/tpmd.c:443: Debug: received 30 bytes
+/usr/src/install/tpm_emulator-0.7/tpm/tpm_cmd_handler.c:4134: Debug: tpm_handle_command()
+/usr/src/install/tpm_emulator-0.7/tpm/tpm_cmd_handler.c:3447: Debug: [TPM_TAG_RQU_COMMAND]
+/usr/src/install/tpm_emulator-0.7/tpm/tpm_cmd_handler.c:3783: Debug: [TPM_ORD_ReadPubek]
+/usr/src/install/tpm_emulator-0.7/tpm/tpm_credentials.c:130: Info: TPM_ReadPubek()
+/usr/src/install/tpm_emulator-0.7/tpm/tpm_cmd_handler.c:4074: Info: TPM command failed: (0x08) The target command has been disabled.
+/usr/src/install/tpm_emulator-0.7/tpmd/unix/tpmd.c:449: Debug: sending 10 bytes
+/usr/src/install/tpm_emulator-0.7/tpmd/unix/tpmd.c:422: Debug: waiting for commands...
+-----------------------------------------------------------------
+It looks like the command of &quot;takeownership&quot; has been disabled.
+Then, HOW TO solve the above problems?
+Thank you!
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/tpm-emulator-user/attachments/20111202/9f37557c/attachment.html">https://lists.berlios.de/pipermail/tpm-emulator-user/attachments/20111202/9f37557c/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000196.html">[tpm-emulator-user] Re;  Troubles in tpm_emulator
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#195">[ date ]</a>
+              <a href="thread.html#195">[ thread ]</a>
+              <a href="subject.html#195">[ subject ]</a>
+              <a href="author.html#195">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">More information about the tpm-emulator-user
+mailing list</a><br>
+</body></html>

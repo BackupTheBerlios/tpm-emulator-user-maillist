@@ -1,0 +1,189 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [tpm-emulator-user] How to add directories?
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/tpm-emulator-user/2011-November/index.html" >
+   <LINK REL="made" HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20How%20to%20add%20directories%3F&In-Reply-To=%3CCAE0280C.8DAA%25uri%40ll.mit.edu%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000187.html">
+   <LINK REL="Next"  HREF="000189.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[tpm-emulator-user] How to add directories?</H1>
+    <B>Blumenthal, Uri - 0668 - MITLL</B> 
+    <A HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20How%20to%20add%20directories%3F&In-Reply-To=%3CCAE0280C.8DAA%25uri%40ll.mit.edu%3E"
+       TITLE="[tpm-emulator-user] How to add directories?">uri at ll.mit.edu
+       </A><BR>
+    <I>Wed Nov  9 18:55:06 CET 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000187.html">[tpm-emulator-user] How to add directories?
+</A></li>
+        <LI>Next message: <A HREF="000189.html">[tpm-emulator-user] How to add directories?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#188">[ date ]</a>
+              <a href="thread.html#188">[ thread ]</a>
+              <a href="subject.html#188">[ subject ]</a>
+              <a href="author.html#188">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Solved. 
+
+The problem was - xcodeproj file was missing SDK specifications, and
+Bundle Identifier in Plist contained forbidden (by Xcode-4?) character
+'_'. I'll post the corrected/edited Infoplist and xcodeproj files here
+next.
+-- 
+Regards,
+Uri Blumenthal                            Voice: (781) 981-1638
+
+
+
+
+On 11/9/11 8:25 , &quot;Blumenthal, Uri - 0668 - MITLL&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">uri at ll.mit.edu</A>&gt; wrote:
+
+&gt;<i>Hmm...
+</I>&gt;<i>
+</I>&gt;<i>Your file fails on my system at the linking kext stage:
+</I>&gt;<i>
+</I>&gt;<i>$ make
+</I>&gt;<i>Scanning dependencies of target tpm
+</I>&gt;<i>[  2%] Building C object tpm/CMakeFiles/tpm.dir/tpm_audit.o
+</I>&gt;<i>[  4%] Building C object tpm/CMakeFiles/tpm.dir/tpm_authorization.o
+</I>&gt;<i>[  6%] Building C object tpm/CMakeFiles/tpm.dir/tpm_capability.o
+</I>&gt;<i>[  8%] Building C object tpm/CMakeFiles/tpm.dir/tpm_cmd_handler.o
+</I>&gt;<i>[ 10%] Building C object tpm/CMakeFiles/tpm.dir/tpm_context.o
+</I>&gt;<i>[ 12%] Building C object tpm/CMakeFiles/tpm.dir/tpm_counter.o
+</I>&gt;<i>[ 14%] Building C object tpm/CMakeFiles/tpm.dir/tpm_credentials.o
+</I>&gt;<i>[ 16%] Building C object tpm/CMakeFiles/tpm.dir/tpm_crypto.o
+</I>&gt;<i>[ 18%] Building C object tpm/CMakeFiles/tpm.dir/tpm_daa.o
+</I>&gt;<i>[ 20%] Building C object tpm/CMakeFiles/tpm.dir/tpm_data.o
+</I>&gt;<i>[ 22%] Building C object tpm/CMakeFiles/tpm.dir/tpm_delegation.o
+</I>&gt;<i>[ 24%] Building C object tpm/CMakeFiles/tpm.dir/tpm_deprecated.o
+</I>&gt;<i>[ 26%] Building C object tpm/CMakeFiles/tpm.dir/tpm_emulator_extern.o
+</I>&gt;<i>[ 28%] Building C object tpm/CMakeFiles/tpm.dir/tpm_error.o
+</I>&gt;<i>[ 30%] Building C object tpm/CMakeFiles/tpm.dir/tpm_eviction.o
+</I>&gt;<i>[ 32%] Building C object tpm/CMakeFiles/tpm.dir/tpm_handles.o
+</I>&gt;<i>[ 34%] Building C object tpm/CMakeFiles/tpm.dir/tpm_identity.o
+</I>&gt;<i>[ 36%] Building C object tpm/CMakeFiles/tpm.dir/tpm_integrity.o
+</I>&gt;<i>[ 38%] Building C object tpm/CMakeFiles/tpm.dir/tpm_maintenance.o
+</I>&gt;<i>[ 40%] Building C object tpm/CMakeFiles/tpm.dir/tpm_management.o
+</I>&gt;<i>[ 42%] Building C object tpm/CMakeFiles/tpm.dir/tpm_marshalling.o
+</I>&gt;<i>[ 44%] Building C object tpm/CMakeFiles/tpm.dir/tpm_migration.o
+</I>&gt;<i>[ 46%] Building C object tpm/CMakeFiles/tpm.dir/tpm_nv_storage.o
+</I>&gt;<i>[ 48%] Building C object tpm/CMakeFiles/tpm.dir/tpm_owner.o
+</I>&gt;<i>[ 50%] Building C object tpm/CMakeFiles/tpm.dir/tpm_startup.o
+</I>&gt;<i>[ 52%] Building C object tpm/CMakeFiles/tpm.dir/tpm_storage.o
+</I>&gt;<i>[ 54%] Building C object tpm/CMakeFiles/tpm.dir/tpm_testing.o
+</I>&gt;<i>[ 56%] Building C object tpm/CMakeFiles/tpm.dir/tpm_ticks.o
+</I>&gt;<i>[ 58%] Building C object tpm/CMakeFiles/tpm.dir/tpm_transport.o
+</I>&gt;<i>Linking C static library libtpm.a
+</I>&gt;<i>[ 58%] Built target tpm
+</I>&gt;<i>Scanning dependencies of target mtm
+</I>&gt;<i>[ 60%] Building C object mtm/CMakeFiles/mtm.dir/mtm_capability.o
+</I>&gt;<i>[ 62%] Building C object mtm/CMakeFiles/mtm.dir/mtm_cmd_handler.o
+</I>&gt;<i>[ 64%] Building C object mtm/CMakeFiles/mtm.dir/mtm_counter.o
+</I>&gt;<i>[ 66%] Building C object mtm/CMakeFiles/mtm.dir/mtm_data.o
+</I>&gt;<i>[ 68%] Building C object mtm/CMakeFiles/mtm.dir/mtm_eviction.o
+</I>&gt;<i>[ 70%] Building C object mtm/CMakeFiles/mtm.dir/mtm_handles.o
+</I>&gt;<i>[ 72%] Building C object mtm/CMakeFiles/mtm.dir/mtm_integrity.o
+</I>&gt;<i>[ 74%] Building C object mtm/CMakeFiles/mtm.dir/mtm_marshalling.o
+</I>&gt;<i>[ 76%] Building C object mtm/CMakeFiles/mtm.dir/mtm_verification.o
+</I>&gt;<i>[ 78%] Building C object mtm/CMakeFiles/mtm.dir/__/tpm/tpm_cmd_handler.o
+</I>&gt;<i>[ 80%] Building C object mtm/CMakeFiles/mtm.dir/__/tpm/tpm_data.o
+</I>&gt;<i>Linking C static library libmtm.a
+</I>&gt;<i>[ 80%] Built target mtm
+</I>&gt;<i>Scanning dependencies of target tpm_crypto
+</I>&gt;<i>[ 82%] Building C object crypto/CMakeFiles/tpm_crypto.dir/hmac.o
+</I>&gt;<i>[ 84%] Building C object crypto/CMakeFiles/tpm_crypto.dir/rc4.o
+</I>&gt;<i>[ 86%] Building C object crypto/CMakeFiles/tpm_crypto.dir/rsa.o
+</I>&gt;<i>[ 88%] Building C object crypto/CMakeFiles/tpm_crypto.dir/sha1.o
+</I>&gt;<i>[ 90%] Building C object crypto/CMakeFiles/tpm_crypto.dir/bn_gmp.o
+</I>&gt;<i>Linking C static library libtpm_crypto.a
+</I>&gt;<i>[ 90%] Built target tpm_crypto
+</I>&gt;<i>Scanning dependencies of target tddl
+</I>&gt;<i>[ 92%] Building C object tddl/CMakeFiles/tddl.dir/tddl.o
+</I>&gt;<i>Linking C shared library libtddl.dylib
+</I>&gt;<i>[ 92%] Built target tddl
+</I>&gt;<i>Scanning dependencies of target tddl_static
+</I>&gt;<i>[ 94%] Building C object tddl/CMakeFiles/tddl_static.dir/tddl.o
+</I>&gt;<i>Linking C static library libtddl.a
+</I>&gt;<i>[ 94%] Built target tddl_static
+</I>&gt;<i>Scanning dependencies of target test_tddl
+</I>&gt;<i>[ 96%] Building C object tddl/CMakeFiles/test_tddl.dir/test_tddl.o
+</I>&gt;<i>Linking C executable test_tddl
+</I>&gt;<i>[ 96%] Built target test_tddl
+</I>&gt;<i>Scanning dependencies of target tpmd_dev
+</I>&gt;<i>[ 96%] Generating darwin/build/Release/tpm_bridge.kext
+</I>&gt;<i>** BUILD FAILED **
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>The following build commands failed:
+</I>&gt;<i>	Check dependencies
+</I>&gt;<i>(1 failure)
+</I>&gt;<i>make[3]: *** [all] Error 65
+</I>&gt;<i>make[2]: *** [tpmd_dev/darwin/build/Release/tpm_bridge.kext] Error 2
+</I>&gt;<i>make[1]: *** [tpmd_dev/CMakeFiles/tpmd_dev.dir/all] Error 2
+</I>&gt;<i>make: *** [all] Error 2
+</I>&gt;<i>$ 
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>-- 
+</I>&gt;<i>Regards,
+</I>&gt;<i>Uri Blumenthal                            Voice: (781) 981-1638
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>On 11/9/11 8:22 , &quot;Mario Strasser&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">mast at gmx.net</A>&gt; wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i>On 11/9/11 2:17 PM, Blumenthal, Uri - 0668 - MITLL wrote:
+</I>&gt;&gt;&gt;<i> Thanks - but it does not seem to work. Cmake succeeds (like before),
+</I>&gt;&gt;&gt;<i>but
+</I>&gt;&gt;&gt;<i> &quot;make&quot; fails on compilation - reporting that it couldn't find the
+</I>&gt;&gt;&gt;<i>include
+</I>&gt;&gt;&gt;<i> file which is located in /opt/local/include:
+</I>&gt;&gt;<i>Strange ... the attached makefile works for me
+</I>&gt;&gt;<i>on OS X where gmp is also located under /opt/local/:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>Regards,
+</I>&gt;&gt;<i>Mario
+</I>-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: smime.p7s
+Type: application/pkcs7-signature
+Size: 5124 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/tpm-emulator-user/attachments/20111109/ae231dcb/attachment.bin">https://lists.berlios.de/pipermail/tpm-emulator-user/attachments/20111109/ae231dcb/attachment.bin</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000187.html">[tpm-emulator-user] How to add directories?
+</A></li>
+	<LI>Next message: <A HREF="000189.html">[tpm-emulator-user] How to add directories?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#188">[ date ]</a>
+              <a href="thread.html#188">[ thread ]</a>
+              <a href="subject.html#188">[ subject ]</a>
+              <a href="author.html#188">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">More information about the tpm-emulator-user
+mailing list</a><br>
+</body></html>

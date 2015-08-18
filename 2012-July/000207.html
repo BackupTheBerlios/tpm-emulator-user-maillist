@@ -1,0 +1,93 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [tpm-emulator-user] TPM Emulator and JSR 321
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/tpm-emulator-user/2012-July/index.html" >
+   <LINK REL="made" HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20TPM%20Emulator%20and%20JSR%20321&In-Reply-To=%3CCANfM9bat%2BdKW8Xb3zkLdquW6fEGFULXLOm7SkSXYHzvKdS4ZNA%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000208.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[tpm-emulator-user] TPM Emulator and JSR 321</H1>
+    <B>P Govind Raj</B> 
+    <A HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20TPM%20Emulator%20and%20JSR%20321&In-Reply-To=%3CCANfM9bat%2BdKW8Xb3zkLdquW6fEGFULXLOm7SkSXYHzvKdS4ZNA%40mail.gmail.com%3E"
+       TITLE="[tpm-emulator-user] TPM Emulator and JSR 321">p.govind.raj at gmail.com
+       </A><BR>
+    <I>Tue Jul  3 11:55:21 CEST 2012</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000208.html">[tpm-emulator-user] connection of jsr321 with tpm emulator is	getting failed
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#207">[ date ]</a>
+              <a href="thread.html#207">[ thread ]</a>
+              <a href="subject.html#207">[ subject ]</a>
+              <a href="author.html#207">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I Have installed TPM Emulator on Ubuntu 12.04. The installation was
+successful. I have a file /dev/tpm made. However when I try to connect
+using JSR 321 following error message comes:
+
+15:22:52:547 [ERROR] TcTcsBindingSoap::connect (116):    There seems no TCS
+running
+15:22:52:560 [ERROR] TcTcsBindingSoap::connect (116):    There seems no TCS
+running
+iaik.tc.tss.api.exceptions.tsp.TcTspException:
+
+TSS Error:
+error layer:                0x3000 (TSP)
+error code (without layer): 0x0103
+error code (full):          0x3103
+error message: Core Service connection failed.
+
+    at
+iaik.tc.tss.impl.java.tsp.tcsbinding.soapservice.TcTcsBindingSoap.connect(TcTcsBindingSoap.java:117)
+    at
+iaik.tc.tss.impl.java.tsp.internal.TcTspInternal.TspContextConnect_Internal(TcTspInternal.java:368)
+    at iaik.tc.tss.impl.java.tsp.TcContext.connect(TcContext.java:174)
+    at iaik.tc.apps.jtt.tpm.TpmFlags.execute(TpmFlags.java:36)
+    at iaik.tc.utils.cmdline.SubCommand.run(SubCommand.java:69)
+    at
+iaik.tc.utils.cmdline.SubCommandParser.parse(SubCommandParser.java:41)
+    at iaik.tc.apps.JTpmTools.main(JTpmTools.java:224)
+
+
+Kindly let me know how to reslove this issue.
+-- 
+P Govind Raj
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/tpm-emulator-user/attachments/20120703/1b6e4d41/attachment.html">https://lists.berlios.de/pipermail/tpm-emulator-user/attachments/20120703/1b6e4d41/attachment.html</A>&gt;
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000208.html">[tpm-emulator-user] connection of jsr321 with tpm emulator is	getting failed
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#207">[ date ]</a>
+              <a href="thread.html#207">[ thread ]</a>
+              <a href="subject.html#207">[ subject ]</a>
+              <a href="author.html#207">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">More information about the tpm-emulator-user
+mailing list</a><br>
+</body></html>

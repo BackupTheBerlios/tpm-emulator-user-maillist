@@ -1,0 +1,76 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [tpm-emulator-user] Pcr reset
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/tpm-emulator-user/2010-June/index.html" >
+   <LINK REL="made" HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20Pcr%20reset&In-Reply-To=%3C4C18ECB8.1040601%40strasser.name%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000161.html">
+   <LINK REL="Next"  HREF="000163.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[tpm-emulator-user] Pcr reset</H1>
+    <B>Mario Strasser</B> 
+    <A HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20Pcr%20reset&In-Reply-To=%3C4C18ECB8.1040601%40strasser.name%3E"
+       TITLE="[tpm-emulator-user] Pcr reset">mario at strasser.name
+       </A><BR>
+    <I>Wed Jun 16 17:24:40 CEST 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000161.html">[tpm-emulator-user] Pcr reset
+</A></li>
+        <LI>Next message: <A HREF="000163.html">[tpm-emulator-user] Help: errors of TrouSers's Testsuites on tpm	emulator
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#162">[ date ]</a>
+              <a href="thread.html#162">[ thread ]</a>
+              <a href="subject.html#162">[ subject ]</a>
+              <a href="author.html#162">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On 10-6-16 15:48 , toro83 wrote:
+&gt;<i> i would like to know how to reset pcrs after having extended them, i
+</I>&gt;<i> mean, even a reboot doesn't seem to work, and i haven't founud anywhere
+</I>&gt;<i> else how to reset them, is it a problem in my installation maybe? or is
+</I>&gt;<i> it simply that i haven't read something?
+</I>By default the TPM emulator is started in &quot;persistent&quot;
+mode which means that (almost) all internal data is
+restored. To start it in &quot;clear&quot; mode simply specify
+&quot;clear&quot; as a command line parameter (e.g., tpmd -df clear).
+An entirely clean restart can be achieved by removing
+the persistent data before restart: rm -rf /var/lib/tpm.
+
+Regards,
+Mario
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000161.html">[tpm-emulator-user] Pcr reset
+</A></li>
+	<LI>Next message: <A HREF="000163.html">[tpm-emulator-user] Help: errors of TrouSers's Testsuites on tpm	emulator
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#162">[ date ]</a>
+              <a href="thread.html#162">[ thread ]</a>
+              <a href="subject.html#162">[ subject ]</a>
+              <a href="author.html#162">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">More information about the tpm-emulator-user
+mailing list</a><br>
+</body></html>

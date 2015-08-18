@@ -1,0 +1,168 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [tpm-emulator-user] TPM Emulator and Java
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/tpm-emulator-user/2011-October/index.html" >
+   <LINK REL="made" HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20TPM%20Emulator%20and%20Java&In-Reply-To=%3CCAPj5%2Bz9pdCLpv7SdWCJfHs46WogvOfjMVR5tz_n7o7Y5Lf%2BipQ%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000175.html">
+   <LINK REL="Next"  HREF="000177.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[tpm-emulator-user] TPM Emulator and Java</H1>
+    <B>F&#225;bio Resner</B> 
+    <A HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20TPM%20Emulator%20and%20Java&In-Reply-To=%3CCAPj5%2Bz9pdCLpv7SdWCJfHs46WogvOfjMVR5tz_n7o7Y5Lf%2BipQ%40mail.gmail.com%3E"
+       TITLE="[tpm-emulator-user] TPM Emulator and Java">fabiusks at gmail.com
+       </A><BR>
+    <I>Tue Oct 18 22:06:11 CEST 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000175.html">[tpm-emulator-user] TPM Emulator and Java
+</A></li>
+        <LI>Next message: <A HREF="000177.html">[tpm-emulator-user] TPM Emulator and Java
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#176">[ date ]</a>
+              <a href="thread.html#176">[ thread ]</a>
+              <a href="subject.html#176">[ subject ]</a>
+              <a href="author.html#176">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>One more info,
+
+I have tested it with a real TPM and it is working fine.
+And I've changed to TPM Emulator in the same machine under the same configs
+and
+it stills gives me the problem i've reported in the last message.
+
+Thanks,
+
+On Tue, Oct 18, 2011 at 3:26 PM, F&#225;bio Resner &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">fabiusks at gmail.com</A>&gt; wrote:
+
+&gt;<i> Hi,
+</I>&gt;<i>
+</I>&gt;<i> I'm not shure if this a TPMEmulator issue but maybe you're able to help me.
+</I>&gt;<i> I'm trying to communicate with the emulator via java using JTPM.
+</I>&gt;<i>
+</I>&gt;<i> I've already loaded the tpmd_dev kernel module so the /dev/tpm and
+</I>&gt;<i> /dev/tpm0 files are ok.
+</I>&gt;<i> Then I run the tpmd with -f and -d flags to check if is there any
+</I>&gt;<i> communication.
+</I>&gt;<i>
+</I>&gt;<i> When i run the application from java, it gives me the following error
+</I>&gt;<i> message in the java console:
+</I>&gt;<i>
+</I>&gt;<i> BasicTPMDriver: TPMIOException encountered.
+</I>&gt;<i> (edu.mit.csail.tpmj.TPMIOException: java.io.FileNotFoundException: /dev/tpm0
+</I>&gt;<i> (Input/output error))
+</I>&gt;<i> Waiting 2.0 s, then retrying ...
+</I>&gt;<i>
+</I>&gt;<i> edu.mit.csail.tpmj.TPMIOException: java.io.FileNotFoundException: /dev/tpm0
+</I>&gt;<i> (Input/output error)
+</I>&gt;<i>
+</I>&gt;<i> at
+</I>&gt;<i> edu.mit.csail.tpmj.drivers.linux.LinuxTPMDriver.transmitBytes(LinuxTPMDriver.java:136)
+</I>&gt;<i>  at
+</I>&gt;<i> edu.mit.csail.tpmj.drivers.BasicTPMDriver.transmit(BasicTPMDriver.java:274)
+</I>&gt;<i> at
+</I>&gt;<i> edu.mit.csail.tpmj.drivers.BasicTPMDriver.transmit(BasicTPMDriver.java:1)
+</I>&gt;<i>  at edu.mit.csail.tpmj.commands.TPMCommand.execute(TPMCommand.java:230)
+</I>&gt;<i> at
+</I>&gt;<i> edu.mit.csail.tpmj.commands.TPM_GetCapability.execute(TPM_GetCapability.java:110)
+</I>&gt;<i>  at
+</I>&gt;<i> edu.mit.csail.tpmj.drivers.BasicTPMDriver.getTPMManufacturer(BasicTPMDriver.java:102)
+</I>&gt;<i> at edu.mit.csail.tpmj.drivers.BasicTPMDriver.init(BasicTPMDriver.java:73)
+</I>&gt;<i>  at
+</I>&gt;<i> edu.mit.csail.tpmj.drivers.TPMDriverFactory.createTPMDriver(TPMDriverFactory.java:77)
+</I>&gt;<i> at
+</I>&gt;<i> edu.mit.csail.tpmj.drivers.TPMDriverFactory.getTPMDriver(TPMDriverFactory.java:85)
+</I>&gt;<i>  at
+</I>&gt;<i> edu.mit.csail.tpmj.funcs.TPMUtilityFuncs.initTPMDriver(TPMUtilityFuncs.java:64)
+</I>&gt;<i> at
+</I>&gt;<i> edu.mit.csail.tpmj.funcs.TPMUtilityFuncs.getTPMDriver(TPMUtilityFuncs.java:82)
+</I>&gt;<i>  at
+</I>&gt;<i> edu.mit.csail.tpmj.util.TPMToolsUtil.initDriverFromParams(TPMToolsUtil.java:95)
+</I>&gt;<i> at edu.mit.csail.tpmj.tools.TPMInfo.main(TPMInfo.java:46)
+</I>&gt;<i> Caused by: java.io.FileNotFoundException: /dev/tpm0 (Input/output error)
+</I>&gt;<i> at java.io.RandomAccessFile.open(Native Method)
+</I>&gt;<i> at java.io.RandomAccessFile.&lt;init&gt;(RandomAccessFile.java:216)
+</I>&gt;<i>  at java.io.RandomAccessFile.&lt;init&gt;(RandomAccessFile.java:101)
+</I>&gt;<i> at
+</I>&gt;<i> edu.mit.csail.tpmj.drivers.linux.LinuxTPMDriver.transmitBytes(LinuxTPMDriver.java:94)
+</I>&gt;<i>  ... 12 more
+</I>&gt;<i>
+</I>&gt;<i> And in the debug mode of the daemon nothing happens, it just keeps
+</I>&gt;<i> printing:
+</I>&gt;<i>
+</I>&gt;<i> tpmd.c:309: Debug: waiting for connections...
+</I>&gt;<i>
+</I>&gt;<i> I also used tail -f /var/log/messages to see if something happens but
+</I>&gt;<i> nothings happens too.
+</I>&gt;<i> The code that I'm running with java is the code from jtpm-tools so I don't
+</I>&gt;<i> think it has something to do with the code.
+</I>&gt;<i>
+</I>&gt;<i> The problem is always with this line in the java code:
+</I>&gt;<i>
+</I>&gt;<i>             raf = new RandomAccessFile(this.devicePath, &quot;rw&quot; );
+</I>&gt;<i>
+</I>&gt;<i> I've put some debugging code to check if there's something wrong with the
+</I>&gt;<i> file as I'm running the code from eclipse:
+</I>&gt;<i>
+</I>&gt;<i> File tpmFile = new File(this.devicePath);
+</I>&gt;<i>         System.out.println(&quot;AbsoluePath: &quot; + tpmFile.getAbsolutePath());
+</I>&gt;<i>         System.out.println(&quot;Exists: &quot; + tpmFile.exists());
+</I>&gt;<i>         System.out.println(&quot;Readable: &quot; + tpmFile.canRead());
+</I>&gt;<i>         System.out.println(&quot;Writable: &quot; + tpmFile.canWrite());
+</I>&gt;<i>
+</I>&gt;<i> The output is:
+</I>&gt;<i>
+</I>&gt;<i> AbsoluePath: /dev/tpm0
+</I>&gt;<i> Exists: true
+</I>&gt;<i> Readable: true
+</I>&gt;<i> Writable: true
+</I>&gt;<i>
+</I>&gt;<i> Any suggestions?
+</I>&gt;<i>
+</I>&gt;<i> Thanks in advance,
+</I>&gt;<i>
+</I>&gt;<i> --
+</I>&gt;<i> Fabio Resner.
+</I>&gt;<i>
+</I>
+
+
+-- 
+Fabio Resner.
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/tpm-emulator-user/attachments/20111018/40d27077/attachment.html">https://lists.berlios.de/pipermail/tpm-emulator-user/attachments/20111018/40d27077/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000175.html">[tpm-emulator-user] TPM Emulator and Java
+</A></li>
+	<LI>Next message: <A HREF="000177.html">[tpm-emulator-user] TPM Emulator and Java
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#176">[ date ]</a>
+              <a href="thread.html#176">[ thread ]</a>
+              <a href="subject.html#176">[ subject ]</a>
+              <a href="author.html#176">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">More information about the tpm-emulator-user
+mailing list</a><br>
+</body></html>

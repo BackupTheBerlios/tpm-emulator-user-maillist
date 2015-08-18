@@ -1,0 +1,98 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [tpm-emulator-user] Problem with CertifyKey
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/tpm-emulator-user/2008-October/index.html" >
+   <LINK REL="made" HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20Problem%20with%20CertifyKey&In-Reply-To=%3C48E3A9FD.7050702%40comlab.ox.ac.uk%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000108.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[tpm-emulator-user] Problem with CertifyKey</H1>
+    <B>John Lyle</B> 
+    <A HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20Problem%20with%20CertifyKey&In-Reply-To=%3C48E3A9FD.7050702%40comlab.ox.ac.uk%3E"
+       TITLE="[tpm-emulator-user] Problem with CertifyKey">john.lyle at comlab.ox.ac.uk
+       </A><BR>
+    <I>Wed Oct  1 18:49:01 CEST 2008</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000108.html">[tpm-emulator-user] Problem with CertifyKey
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#107">[ date ]</a>
+              <a href="thread.html#107">[ thread ]</a>
+              <a href="subject.html#107">[ subject ]</a>
+              <a href="author.html#107">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi,
+
+I'm having some difficulty using the TPM Emulator for certifying keys 
+bound to PCR values.  The emulator works in other respects (and has been 
+very useful, thanks!), but consistently fails on this operation.  I 
+discovered the problem using the JTSS libraries from IAIK, and first 
+contacted them (see the attached email).  However, they think the 
+problem might be with the emulator instead.
+
+There are a few things I've spotted and tried to code around while 
+debugging this error.  However, I still can't make it work 
+successfully.  I've been comparing results to those generated using an 
+Infineon TPM.  Ultimately, the validation of authorization values is 
+failing.  Before that, however, there are some other issues:
+ * The TPM_PCR_INFO structure returned appears to be given the wrong 
+length (PCRInfoSize in the TPM_CERTIFY_INFO structure).  It reports at 
+56 bytes but ought (I think) to be 44.
+ * The outData operand (signature on the CertifyInfo) also appears to be 
+a strange size.  Although it reports to be 256 bytes, it is actually 
+268.  I'm not sure where the spare 12 bytes came from.  Does it have 
+anything to do with the extra 12 bytes given in the size of the 
+TPM_PCR_INFO stucture?
+
+Finally, having tried to mitigate these issues, the  validation of the 
+output authorization against the input fails (within the JTSS TSP this 
+is the 'validateRespAuth' method).
+
+Any suggestions for solving this problem would be greatly appreciated.
+
+Many thanks,
+
+John
+
+-------------- next part --------------
+An embedded message was scrubbed...
+From: John Lyle &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">john.lyle at keble.ox.ac.uk</A>&gt;
+Subject: Problem with CertifyKey on a TPM Emulator 
+Date: Fri, 26 Sep 2008 10:09:45 +0100
+Size: 3413
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/tpm-emulator-user/attachments/20081001/3d37d74c/attachment.mht">https://lists.berlios.de/pipermail/tpm-emulator-user/attachments/20081001/3d37d74c/attachment.mht</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000108.html">[tpm-emulator-user] Problem with CertifyKey
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#107">[ date ]</a>
+              <a href="thread.html#107">[ thread ]</a>
+              <a href="subject.html#107">[ subject ]</a>
+              <a href="author.html#107">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">More information about the tpm-emulator-user
+mailing list</a><br>
+</body></html>

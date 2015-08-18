@@ -1,0 +1,86 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [tpm-emulator-user] Restoring TPM
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/tpm-emulator-user/2009-December/index.html" >
+   <LINK REL="made" HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20Restoring%20TPM&In-Reply-To=%3C9EE7FA7FF60AA9498B68A9E7D3DD0F06016B7E29%40xmb-rtp-217.amer.cisco.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000132.html">
+   <LINK REL="Next"  HREF="000134.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[tpm-emulator-user] Restoring TPM</H1>
+    <B>Alexander Loukissas (aloukiss)</B> 
+    <A HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20Restoring%20TPM&In-Reply-To=%3C9EE7FA7FF60AA9498B68A9E7D3DD0F06016B7E29%40xmb-rtp-217.amer.cisco.com%3E"
+       TITLE="[tpm-emulator-user] Restoring TPM">aloukiss at cisco.com
+       </A><BR>
+    <I>Thu Dec  3 23:32:47 CET 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000132.html">[tpm-emulator-user] Restoring TPM
+</A></li>
+        <LI>Next message: <A HREF="000134.html">[tpm-emulator-user] PKCS#11 Data Management Commands fail
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#133">[ date ]</a>
+              <a href="thread.html#133">[ thread ]</a>
+              <a href="subject.html#133">[ subject ]</a>
+              <a href="author.html#133">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Thank you, this worked.
+
+Alex
+
+-----Original Message-----
+From: Mario Strasser [mailto:<A HREF="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">strasser at tik.ee.ethz.ch</A>] 
+Sent: Wednesday, December 02, 2009 11:37 PM
+To: <A HREF="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">tpm-emulator-user at lists.berlios.de</A>
+Cc: Alexander Loukissas (aloukiss)
+Subject: Re: [tpm-emulator-user] Restoring TPM
+
+On Thursday, 03. December 2009 00:24:33 Alexander Loukissas (aloukiss)
+wrote:
+&gt;<i> I've successfully set up the tpm-emulator and I'm using the tpm-tools
+</I>to
+&gt;<i> interact with it. I'd like to know how I can reset/restore the TPM, so
+</I>I
+&gt;<i> can retake ownership of it.
+</I>The simplest way to reset the TPM emulator is to delete the state
+file /var/lib/tpm/tpm_emulator-1.2.xxx and restart it in mode clear.
+Of course you can also restore a previous state by replacing the
+file with a backup copy.
+
+Regards,
+Mario
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000132.html">[tpm-emulator-user] Restoring TPM
+</A></li>
+	<LI>Next message: <A HREF="000134.html">[tpm-emulator-user] PKCS#11 Data Management Commands fail
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#133">[ date ]</a>
+              <a href="thread.html#133">[ thread ]</a>
+              <a href="subject.html#133">[ subject ]</a>
+              <a href="author.html#133">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">More information about the tpm-emulator-user
+mailing list</a><br>
+</body></html>

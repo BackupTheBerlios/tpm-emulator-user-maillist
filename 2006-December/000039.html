@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [tpm-emulator-user] build the tpm_emulator on	Kernel-2.6.15-1.2054_FC5
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/tpm-emulator-user/2006-December/index.html" >
+   <LINK REL="made" HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20build%20the%20tpm_emulator%20on%0A%09Kernel-2.6.15-1.2054_FC5&In-Reply-To=%3CFF9D611BFCDB1E42B37FAA148096BECE010BA74F%40weshml03.winbond.com.tw%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000040.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[tpm-emulator-user] build the tpm_emulator on	Kernel-2.6.15-1.2054_FC5</H1>
+    <B>JGong at winbond.com</B> 
+    <A HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20build%20the%20tpm_emulator%20on%0A%09Kernel-2.6.15-1.2054_FC5&In-Reply-To=%3CFF9D611BFCDB1E42B37FAA148096BECE010BA74F%40weshml03.winbond.com.tw%3E"
+       TITLE="[tpm-emulator-user] build the tpm_emulator on	Kernel-2.6.15-1.2054_FC5">JGong at winbond.com
+       </A><BR>
+    <I>Fri Dec  1 09:57:25 CET 2006</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000040.html">[tpm-emulator-user] test suits for /dev/tpm device file
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#39">[ date ]</a>
+              <a href="thread.html#39">[ thread ]</a>
+              <a href="subject.html#39">[ subject ]</a>
+              <a href="author.html#39">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi Mario:
+
+Thanks your reply. :)
+I have added the code into the linux_module.c,it cleared up the warning during the compilation, but when I run the command : modprobe tpm_emulator startup=&quot;clear&quot;
+The ERROR message shows:
+&quot;tpm_emulator: Unknown symbol __stack_chk_fail 
+FATAL:error inserting tpm_emulator():Unknown symbol in the module ,or unknown parameter (see dmesg)&quot;
+
+And then I add one line:
+EXPORT_SYMBOL(__stack_chk_fail);
+
+But it still makes no sense.
+
+So could you give me more hints about this? 
+
+Any help will be thankful.
+
+Best regards 
+PI14 
+GongJun
+
+-----Original Message-----
+From: Mario Strasser [mailto:<A HREF="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">mast at gmx.net</A>] 
+Sent: 2006&#24180;11&#26376;30&#26085; 17:01
+To: PI14 JGONG
+Cc: <A HREF="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">tpm-emulator-user at lists.berlios.de</A>
+Subject: Re: build the tpm_emulator on Kernel-2.6.15-1.2054_FC5
+
+Hi,
+
+On Thursday, 30. November 2006 09:48, <A HREF="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">JGong at winbond.com</A> wrote:
+&gt;<i> I had done the building process again with your advice, however, it
+</I>&gt;<i> still can't work. The warnings remain there.
+</I>The __stack_chk_fail warning is not related to the stack issue of FC5
+that is responsible for the system freeze. In order to  get rid of the
+warning, just append the following code at the end of linux_module.c:
+
+void __stack_chk_fail(void)
+{
+      error(&quot;stack-protector: stack is corrupted\n&quot;);
+}
+
+Regards,
+Mario
+
+
+===========================================================================================
+The privileged confidential information contained in this email is intended for use only by the addressees as indicated by the original sender of this email. If you are not the addressee indicated in this email or are not responsible for delivery of the email to such  a person, please kindly reply to the sender indicating this fact and delete all copies of it from your computer and network server immediately. Your cooperation is highly appreciated. It is advised that any unauthorized use of confidential information of Winbond is strictly prohibited; and any information in this email irrelevant to the official business of Winbond shall be deemed as neither given nor endorsed by Winbond.
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000040.html">[tpm-emulator-user] test suits for /dev/tpm device file
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#39">[ date ]</a>
+              <a href="thread.html#39">[ thread ]</a>
+              <a href="subject.html#39">[ subject ]</a>
+              <a href="author.html#39">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">More information about the tpm-emulator-user
+mailing list</a><br>
+</body></html>

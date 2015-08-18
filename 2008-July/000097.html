@@ -1,0 +1,112 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [tpm-emulator-user] Installation issues
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/tpm-emulator-user/2008-July/index.html" >
+   <LINK REL="made" HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20Installation%20issues&In-Reply-To=%3Ce8d03e0c0807171421i7aa2089bsc7d8e3e241912800%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000094.html">
+   <LINK REL="Next"  HREF="000098.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[tpm-emulator-user] Installation issues</H1>
+    <B>Akshay Dua</B> 
+    <A HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20Installation%20issues&In-Reply-To=%3Ce8d03e0c0807171421i7aa2089bsc7d8e3e241912800%40mail.gmail.com%3E"
+       TITLE="[tpm-emulator-user] Installation issues">akshay at cs.pdx.edu
+       </A><BR>
+    <I>Thu Jul 17 23:21:59 CEST 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000094.html">[tpm-emulator-user] about&quot;TPM_TakeOwnership&quot;
+</A></li>
+        <LI>Next message: <A HREF="000098.html">[tpm-emulator-user] How to takeownership of TPM
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#97">[ date ]</a>
+              <a href="thread.html#97">[ thread ]</a>
+              <a href="subject.html#97">[ subject ]</a>
+              <a href="author.html#97">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hello all,
+
+I recently downloaded the tpm emulator and installed it on my machine and
+wanted to share the installation issues I had and how they can be fixed.
+
+Problem 1
+---
+
+When running 'sudo make install' on my Ubuntu machine, I got the following
+error:
+
+make[1]: Entering directory `/home/akshay/tmp/tpm_emulator-0.5.1/tpmd'
+install -m 755 -o tss -g tss -d /var/lib/tpm
+install: invalid user `tss'
+
+Solution:
+
+run 'make' the following way:
+
+sudo make TPMD_USER=root TPMD_GROUP=root install
+
+I think that the documentation should include that the tpmd user either
+needs to be created or modified during installation.
+
+Problem 2
+---
+
+running 'modprobe' after a successfull install gives the following error*:
+
+$ sudo modprobe tpmd_dev
+**FATAL: Module tpmd_dev not found*
+
+Solution:
+
+run the following command before executing 'modprobe'
+
+depmod -a
+
+Again, i think this should be included as part of installation instructions
+to make the emulator easier to install.
+
+
+All in all installation was not very hard just some of the instructions were
+missing :)
+
+-- 
+Akshay Dua
+PhD Student, Department of Computer Science
+Portland State University
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/tpm-emulator-user/attachments/20080717/0aa833b9/attachment.html">https://lists.berlios.de/pipermail/tpm-emulator-user/attachments/20080717/0aa833b9/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000094.html">[tpm-emulator-user] about&quot;TPM_TakeOwnership&quot;
+</A></li>
+	<LI>Next message: <A HREF="000098.html">[tpm-emulator-user] How to takeownership of TPM
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#97">[ date ]</a>
+              <a href="thread.html#97">[ thread ]</a>
+              <a href="subject.html#97">[ subject ]</a>
+              <a href="author.html#97">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">More information about the tpm-emulator-user
+mailing list</a><br>
+</body></html>

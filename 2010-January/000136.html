@@ -1,0 +1,137 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [tpm-emulator-user] PKCS#11 Data Management Commands fail
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/tpm-emulator-user/2010-January/index.html" >
+   <LINK REL="made" HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20PKCS%2311%20Data%20Management%20Commands%20fail&In-Reply-To=%3C4B4A15B1.5060002%40unifr.ch%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000137.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[tpm-emulator-user] PKCS#11 Data Management Commands fail</H1>
+    <B>Carolin Latze</B> 
+    <A HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20PKCS%2311%20Data%20Management%20Commands%20fail&In-Reply-To=%3C4B4A15B1.5060002%40unifr.ch%3E"
+       TITLE="[tpm-emulator-user] PKCS#11 Data Management Commands fail">carolin.latze at unifr.ch
+       </A><BR>
+    <I>Sun Jan 10 19:00:17 CET 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000137.html">[tpm-emulator-user] Problems using tpm emulator and tss -	unable to load 1.2 key in 1.1 tpm
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#136">[ date ]</a>
+              <a href="thread.html#136">[ thread ]</a>
+              <a href="subject.html#136">[ subject ]</a>
+              <a href="author.html#136">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Yup, I did today :-D
+
+I solved it by adding the user that executes the command to the pkcs11 
+group plus by executing pkcs11_startup as well as /etc/init.d/pkcsslotd.
+
+Afterwards I ran into a couple of other errors :) I was able to resolve 
+those by following that howto:
+
+<A HREF="http://www.mail-archive.com/dev-tech-crypto@lists.mozilla.org/msg08052.html">http://www.mail-archive.com/dev-tech-crypto@lists.mozilla.org/msg08052.html</A>
+
+That was all ....
+
+Cheers
+Carolin
+
+Alexander Loukissas (aloukiss) wrote:
+&gt;<i>
+</I>&gt;<i> Hello,
+</I>&gt;<i>
+</I>&gt;<i>  
+</I>&gt;<i>
+</I>&gt;<i> I have been playing with the tpm-tools package of TrouSerS  over the 
+</I>&gt;<i> emulator and I&#8217;ve found that all the PKCS#11 commands fail, giving me 
+</I>&gt;<i> the same error:
+</I>&gt;<i>
+</I>&gt;<i> C_Initialize failed: 0x00000002
+</I>&gt;<i>
+</I>&gt;<i>  
+</I>&gt;<i>
+</I>&gt;<i> Has anybody here come across the same error and perhaps know a way 
+</I>&gt;<i> around it?
+</I>&gt;<i>
+</I>&gt;<i>  
+</I>&gt;<i>
+</I>&gt;<i> Thanks
+</I>&gt;<i>
+</I>&gt;<i> Alex
+</I>&gt;<i>
+</I>&gt;<i>  
+</I>&gt;<i>
+</I>&gt;<i> <A HREF="http://www.cisco.com/swa/i/logo.gif">http://www.cisco.com/swa/i/logo.gif</A>
+</I>&gt;<i>
+</I>&gt;<i> *Alexander Loukissas*
+</I>&gt;<i> *Software Engineer*
+</I>&gt;<i> *Adv Arch &amp; Research**
+</I>&gt;<i> *
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">aloukiss at cisco.com</A> &lt;mailto:<A HREF="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">aloukiss at cisco.com</A>&gt;
+</I>&gt;<i> Phone: *(408) 424-4481*
+</I>&gt;<i>
+</I>&gt;<i> 	
+</I>&gt;<i>
+</I>&gt;<i> *Cisco Systems, Inc.*
+</I>&gt;<i> 170 West Tasman Drive
+</I>&gt;<i> Mail Stop SJC07/3
+</I>&gt;<i> San Jose, CA 95134
+</I>&gt;<i>
+</I>&gt;<i> Cisco home page &lt;<A HREF="http://www.cisco.com/">http://www.cisco.com/</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i> 	
+</I>&gt;<i>
+</I>&gt;<i>  
+</I>&gt;<i>
+</I>&gt;<i>  
+</I>&gt;<i>
+</I>&gt;<i> Think before you print.Think before you print.
+</I>&gt;<i>
+</I>&gt;<i> This e-mail may contain confidential and privileged material for the 
+</I>&gt;<i> sole use of the intended recipient. Any review, use, distribution or 
+</I>&gt;<i> disclosure by others is strictly prohibited. If you are not the 
+</I>&gt;<i> intended recipient (or authorized to receive for the recipient), 
+</I>&gt;<i> please contact the sender by reply e-mail and delete all copies of 
+</I>&gt;<i> this message.
+</I>&gt;<i>
+</I>&gt;<i>  
+</I>&gt;<i>
+</I>&gt;<i>  
+</I>&gt;<i>
+</I>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000137.html">[tpm-emulator-user] Problems using tpm emulator and tss -	unable to load 1.2 key in 1.1 tpm
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#136">[ date ]</a>
+              <a href="thread.html#136">[ thread ]</a>
+              <a href="subject.html#136">[ subject ]</a>
+              <a href="author.html#136">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">More information about the tpm-emulator-user
+mailing list</a><br>
+</body></html>

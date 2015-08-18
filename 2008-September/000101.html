@@ -1,0 +1,143 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [tpm-emulator-user] Ubuntu8.04.1 - test_tddl in emulator 0.5 -	Segmentation fault
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/tpm-emulator-user/2008-September/index.html" >
+   <LINK REL="made" HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20Ubuntu8.04.1%20-%20test_tddl%20in%20emulator%200.5%20-%0A%09Segmentation%20fault&In-Reply-To=%3C20080914172052.tc3coiks6c8ow4k0%40mailbox.pircher.at%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000100.html">
+   <LINK REL="Next"  HREF="000102.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[tpm-emulator-user] Ubuntu8.04.1 - test_tddl in emulator 0.5 -	Segmentation fault</H1>
+    <B>armin.simma at bregenznet.at</B> 
+    <A HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20Ubuntu8.04.1%20-%20test_tddl%20in%20emulator%200.5%20-%0A%09Segmentation%20fault&In-Reply-To=%3C20080914172052.tc3coiks6c8ow4k0%40mailbox.pircher.at%3E"
+       TITLE="[tpm-emulator-user] Ubuntu8.04.1 - test_tddl in emulator 0.5 -	Segmentation fault">armin.simma at bregenznet.at
+       </A><BR>
+    <I>Sun Sep 14 17:20:52 CEST 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000100.html">[tpm-emulator-user] VMKnoppix 5.3.1DVD 20080827 (Virtual TPM is supported on Xen and KVM/QEMU) is released.
+</A></li>
+        <LI>Next message: <A HREF="000102.html">[tpm-emulator-user] Ubuntu8.04.1 - test_tddl in emulator 0.5 -	Segmentation fault
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#101">[ date ]</a>
+              <a href="thread.html#101">[ thread ]</a>
+              <a href="subject.html#101">[ subject ]</a>
+              <a href="author.html#101">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hello,
+
+when trying to compile test_tddl I get the following error:
+
+<A HREF="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">root at climb-desktop</A>:/home/climb/Desktop/tpm_emulator-0.5/tddl# make test_tddl
+gcc -Wall  -Wno-unused -Wpointer-arith -Wcast-align -Wwrite-strings  
+-Wsign-compare -Wno-multichar -O2 -I. -L. test_tddl.c -ltddl -o  
+test_tddl
+test_tddl.c: In function ?main?:
+test_tddl.c:135: warning: comparison between signed and unsigned
+test_tddl.c:145: warning: comparison between signed and unsigned
+/usr/bin/ld: test_tddl: hidden symbol `__stack_chk_fail_local' in  
+/usr/lib/libc_nonshared.a(stack_chk_fail_local.oS) is referenced by DSO
+/usr/bin/ld: final link failed: Nonrepresentable section on output
+collect2: ld returned 1 exit status
+make: *** [test_tddl] Error 1
+
+I removed -Werror (ignoring the warnings) BUT
+the Problem is the linker stage:  hidden symbol...
+I found in the internet some info about this: so i added -shared to  
+the compiler options in Makefile:
+$(TDDL): tddl.c tddl.h
+         $(CC) $(CFLAGS) -fPIC -c -o tddl.o tddl.c
+         ld -shared -o $(TDDL) tddl.o
+
+Using this options I could compile and link test_tddl
+But when I start test_tddl I get a Segmentation fault - I assume that  
+this has to do with this -shared option??
+
+I successfully started tpmd:
+
+<A HREF="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">root at climb-desktop</A>:/home/climb/Desktop/tpm_emulator-0.5# tpmd  -d save -f
+tpmd.c:367: Info: starting TPM Emulator daemon
+tpmd.c:145: Info: parsing options
+tpmd.c:152: Debug: debug mode enabled
+tpmd.c:147: Debug: handling option '-f'
+tpmd.c:155: Debug: application is forced to run in foreground
+tpmd.c:169: Debug: startup mode = 'save'
+tpmd.c:187: Info: openening random device /dev/urandom
+tpmd.c:203: Info: installing signal handlers
+tpmd.c:280: Info: staring main loop
+tpmd.c:253: Info: initializing socket /var/tpm/tpmd_socket:0
+tpmd.c:285: Debug: initializing TPM emulator: 2
+../tpm/tpm_cmd_handler.c:4151: Debug: tpm_emulator_init()
+../tpm/tpm_startup.c:30: Info: TPM_Init()
+../tpm/tpm_testing.c:242: Info: TPM_SelfTestFull()
+../tpm/tpm_testing.c:40: Debug: tpm_test_prng()
+../tpm/tpm_testing.c:68: Debug: Monobit: 10095
+../tpm/tpm_testing.c:69: Debug: Poker:   18.4
+../tpm/tpm_testing.c:70: Debug: run_1:   2476, 2405
+../tpm/tpm_testing.c:71: Debug: run_2:   1211, 1247
+../tpm/tpm_testing.c:72: Debug: run_3:   594, 645
+../tpm/tpm_testing.c:73: Debug: run_4:   321, 307
+../tpm/tpm_testing.c:74: Debug: run_5:   169, 139
+../tpm/tpm_testing.c:75: Debug: run_6+:  156, 184
+../tpm/tpm_testing.c:76: Debug: run_34:  0
+../tpm/tpm_testing.c:110: Debug: tpm_test_sha1()
+../tpm/tpm_testing.c:156: Debug: tpm_test_hmac()
+../tpm/tpm_testing.c:183: Debug: tpm_test_rsa_EK()
+../tpm/tpm_testing.c:185: Debug: tpm_rsa_generate_key()
+../tpm/tpm_testing.c:190: Debug: testing endorsement key
+../tpm/tpm_testing.c:196: Debug: tpm_rsa_sign(RSA_SSA_PKCS1_SHA1)
+../tpm/tpm_testing.c:199: Debug: tpm_rsa_verify(RSA_SSA_PKCS1_SHA1)
+../tpm/tpm_testing.c:202: Debug: tpm_rsa_sign(RSA_SSA_PKCS1_DER)
+../tpm/tpm_testing.c:205: Debug: tpm_rsa_verify(RSA_SSA_PKCS1_DER)
+../tpm/tpm_testing.c:209: Debug: tpm_rsa_encrypt(RSA_ES_PKCSV15)
+../tpm/tpm_testing.c:213: Debug: tpm_rsa_decrypt(RSA_ES_PKCSV15)
+../tpm/tpm_testing.c:217: Debug: verify plain text
+../tpm/tpm_testing.c:220: Debug: tpm_rsa_encrypt(RSA_ES_OAEP_SHA1)
+../tpm/tpm_testing.c:224: Debug: tpm_rsa_decrypt(RSA_ES_OAEP_SHA1)
+../tpm/tpm_testing.c:228: Debug: verify plain text
+../tpm/tpm_testing.c:260: Info: Self-Test succeeded
+../tpm/tpm_startup.c:44: Info: TPM_Startup(2)
+tpmd.c:290: Debug: waiting for connections...
+
+Thanks in advance; any help would be very much appreciated. I would  
+like to use TPM emulator in a lecture at FH Vorarlberg - not so far  
+from Zuerich (Hello Zuerich - Thanks for writing tpm emulator!
+
+Armin
+
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000100.html">[tpm-emulator-user] VMKnoppix 5.3.1DVD 20080827 (Virtual TPM is supported on Xen and KVM/QEMU) is released.
+</A></li>
+	<LI>Next message: <A HREF="000102.html">[tpm-emulator-user] Ubuntu8.04.1 - test_tddl in emulator 0.5 -	Segmentation fault
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#101">[ date ]</a>
+              <a href="thread.html#101">[ thread ]</a>
+              <a href="subject.html#101">[ subject ]</a>
+              <a href="author.html#101">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">More information about the tpm-emulator-user
+mailing list</a><br>
+</body></html>

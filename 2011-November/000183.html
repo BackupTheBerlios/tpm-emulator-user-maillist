@@ -1,0 +1,77 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [tpm-emulator-user] How to add directories?
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/tpm-emulator-user/2011-November/index.html" >
+   <LINK REL="made" HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20How%20to%20add%20directories%3F&In-Reply-To=%3C4EBA26B8.4080309%40gmx.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000182.html">
+   <LINK REL="Next"  HREF="000184.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[tpm-emulator-user] How to add directories?</H1>
+    <B>Mario Strasser</B> 
+    <A HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20How%20to%20add%20directories%3F&In-Reply-To=%3C4EBA26B8.4080309%40gmx.net%3E"
+       TITLE="[tpm-emulator-user] How to add directories?">mast at gmx.net
+       </A><BR>
+    <I>Wed Nov  9 08:07:36 CET 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000182.html">[tpm-emulator-user] How to add directories?
+</A></li>
+        <LI>Next message: <A HREF="000184.html">[tpm-emulator-user] How to add directories?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#183">[ date ]</a>
+              <a href="thread.html#183">[ thread ]</a>
+              <a href="subject.html#183">[ subject ]</a>
+              <a href="author.html#183">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 11/8/11 11:07 PM, Blumenthal, Uri - 0668 - MITLL wrote:
+&gt;<i> Can you please tell me what file(s) of the CMAKE config to
+</I>&gt;<i> edit and what lines to add there to tell CMAKE that:
+</I>&gt;<i> 
+</I>&gt;<i> - Related include files are in /opt/local/include
+</I>&gt;<i> - Related libraries are in /opt/local/lib
+</I>You can specify them with
+
+include_directories(&quot;/opt/local/include&quot;)
+link_directories(&quot;/opt/local/lib&quot;)
+
+in the main CMakeLists.txt file -- or simply update the
+generated Makefile in build.
+
+Regards,
+Mario
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000182.html">[tpm-emulator-user] How to add directories?
+</A></li>
+	<LI>Next message: <A HREF="000184.html">[tpm-emulator-user] How to add directories?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#183">[ date ]</a>
+              <a href="thread.html#183">[ thread ]</a>
+              <a href="subject.html#183">[ subject ]</a>
+              <a href="author.html#183">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">More information about the tpm-emulator-user
+mailing list</a><br>
+</body></html>

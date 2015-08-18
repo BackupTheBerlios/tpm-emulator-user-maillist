@@ -1,0 +1,73 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [tpm-emulator-user] Error accessing PCRs from QEMU vm
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/tpm-emulator-user/2009-November/index.html" >
+   <LINK REL="made" HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20Error%20accessing%20PCRs%20from%20QEMU%20vm&In-Reply-To=%3C1B7B579317CDDA42A89B33BA1869316C02EF428229%40VMBX113.ihostexchange.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000118.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[tpm-emulator-user] Error accessing PCRs from QEMU vm</H1>
+    <B>Roman Brehm</B> 
+    <A HREF="mailto:tpm-emulator-user%40lists.berlios.de?Subject=Re%3A%20%5Btpm-emulator-user%5D%20Error%20accessing%20PCRs%20from%20QEMU%20vm&In-Reply-To=%3C1B7B579317CDDA42A89B33BA1869316C02EF428229%40VMBX113.ihostexchange.net%3E"
+       TITLE="[tpm-emulator-user] Error accessing PCRs from QEMU vm">mail at romanbrehm.de
+       </A><BR>
+    <I>Wed Nov  4 10:22:06 CET 2009</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000118.html">[tpm-emulator-user] Error accessing PCRs from QEMU vm
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#117">[ date ]</a>
+              <a href="thread.html#117">[ thread ]</a>
+              <a href="subject.html#117">[ subject ]</a>
+              <a href="author.html#117">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hello,
+
+I'm running tpm-emulator on my host and want to access it in a QEMU virtual machine.
+After I loaded the tpm_atmel module, the tpm appears as /sys/class/misc/tpm0.
+
+But when I want to print its PCRs using cat /sys/class/misc/tpm0/device/pcrs I do not get any message and in the (tpm-emulator-)terminal on the host I get multiple warnings:
+
+&quot;WARNING: tpm received data when not supposed to! Discarding&quot;
+
+Any idea what I'm doing wrong?
+
+Thanks a lot!
+
+Roman
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000118.html">[tpm-emulator-user] Error accessing PCRs from QEMU vm
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#117">[ date ]</a>
+              <a href="thread.html#117">[ thread ]</a>
+              <a href="subject.html#117">[ subject ]</a>
+              <a href="author.html#117">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/tpm-emulator-user">More information about the tpm-emulator-user
+mailing list</a><br>
+</body></html>
